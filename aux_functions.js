@@ -42,7 +42,7 @@ function nextPanel(current, next) {
     nextButton.attr("data-message", next);    	
     previousButton.attr("data-message", next)
     verificarCamposCompletos(next, nextButton);
-    cargarDatos(current);
+    //cargarDatos(current);
 }
 //verificar si el formato de la IP es correcto
 function ipPublicaCorrecta (ip) {
