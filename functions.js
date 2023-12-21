@@ -120,10 +120,10 @@ function Anterior(anterior){
     }	
    
 }
-function populateInterfaces(select){
-        
+function populateInterfaces(){
+    var select = $("#deviceModel");
     var selected = select.val();
-    var select = $("#interface");
+    select = $("#interface");
     var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
     var data = [];
      
