@@ -7,9 +7,10 @@ function Siguiente (siguiente){
     switch (name) {
         case "contacto": {
             var email = $('#email').val();
+            alert(email);
             if(emailRegex.test(email)){
                nextPanel ("contacto", "general");
-            }else {alert("Por favor ingrese un email valido");}
+            } else {alert("Por favor ingrese un email valido");}
             break;
             }
         case "general": {
