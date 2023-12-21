@@ -95,4 +95,16 @@
     </div>
 
 </body>
+<script>
+    $(document).ready(function () {
+                
+        //asigna funcion a evento onInput en todos los inputs que tenga atributo required
+        $('.formDiv input[required]').on('input', function() {
+            var divId = $(this).closest('.formDiv').attr('id');
+            verificarCamposCompletos(divId, $("#siguiente"));
+            alertCharLimit($(this));
+        });
+
+    }); 
+</script>      	
 </html>
