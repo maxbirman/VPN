@@ -35,7 +35,7 @@ function nextPanel(current, next) {
 
     currentPanel.attr("style","display:none");
     nextPanel.removeAttr("style");
-    if (current == "contacto" {previousButton.removeAttr("style");}
+    if (current == "contacto") {previousButton.removeAttr("style");}
     nextButton.attr('disabled', 'disabled');
     nextButton.attr("data-message", next);    	
     previousButton.attr("data-message", next)
