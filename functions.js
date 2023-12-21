@@ -5,9 +5,9 @@ function Siguiente (siguiente){
     
     switch (name) {
         case "contacto": {
-            var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-            var email = $('#email').val();
-            if(emailRegex.test(email)){
+            //var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+            //var email = $('#email').val();
+            if(emailCorrecto($('#email').val();)){
                nextPanel ("contacto", "general");
             } else {alert("Por favor ingrese un email valido");}
             break;
@@ -15,8 +15,7 @@ function Siguiente (siguiente){
         case "general": {
             nextPanel("general", "network");
             verificarCamposCompletos("network", siguiente);
-            populateModels();
-            cargarDatos("general");							
+            populateModels();						
             break;
             }
         case "network": {
