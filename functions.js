@@ -7,18 +7,13 @@ function Siguiente (siguiente){
         case "contacto": {
             var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
             var email = $('#email').val();
-            alert(email);
             if(emailRegex.test(email)){
                nextPanel ("contacto", "general");
             } else {alert("Por favor ingrese un email valido");}
             break;
             }
         case "general": {
-            $("#general").attr("style", "display: none");
-            $("#network").removeAttr("style");
-            $("#anterior").attr("data-message", "network");
-            $("#siguiente").attr("data-message", "network");
-            $("#siguiente").attr('disabled', 'disabled');
+            nextPanel("general", "network");
             verificarCamposCompletos("network", siguiente);
             populateModels();
             cargarDatos("general");							
