@@ -8,14 +8,7 @@ function Siguiente (siguiente){
         case "contacto": {
             var email = $('#email').val();
             if(emailRegex.test(email)){
-                $("#contacto").attr("style","display:none");
-                $("#general").removeAttr("style");
-                $("#siguiente").attr("data-message", "general");
-                $("#anterior").removeAttr("style");	
-                $("#anterior").attr("data-message", "general")
-                //$("#siguiente").attr('disabled', 'disabled');
-                verificarCamposCompletos("general", $("#siguiente"));
-                cargarDatos("contacto");
+               nextPanel ("contacto", "general");
             }else {alert("Por favor ingrese un email valido");}
             break;
             }
