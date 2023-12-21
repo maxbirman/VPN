@@ -42,4 +42,22 @@ function nextPanel(current, next) {
     verificarCamposCompletos(next, nextButton);
     cargarDatos(current);
 }
+//verificar si el formato de la IP es correcto
+function ipPublicaCorrecta (ip) {
+    var correcto = false;
+    if(publicIpRegex.test(ip)) {correcto = true;}
 
+    return correcto;
+}	
+
+//verificar si la IP es publica
+function ipCorrecta (ip) {
+    var correcto = false;
+    if(ipRegex.test(ip)) {correcto = true;}
+
+    return correcto;
+}	
+
+function emailCorrecto(email) {
+    return emailRegex.test(email);    
+}
