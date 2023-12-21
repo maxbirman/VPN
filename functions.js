@@ -6,7 +6,7 @@ function Siguiente (siguiente){
     switch (name) {
         case "contacto": {
             var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-            if(emailCorrecto($('#email').val())){
+            if(emailRegex.test($('#email').val())){
                nextPanel ("contacto", "general");
             } else {alert("Por favor ingrese un email valido");}
             break;
