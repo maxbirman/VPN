@@ -27,3 +27,19 @@ function alertCharLimit(input){
         else {input.removeAttr("style");}
     }
 }
+
+function nextPanel(current, next) {
+
+    var currentPanel = $("#" + current);
+    var nextPanel = ("#" + next);
+
+    currentPanel.attr("style","display:none");
+    nextPanel.removeAttr("style");
+    nextButton.attr("data-message", next);
+    previousButton.removeAttr("style");	
+    previousButton.attr("data-message", next)
+    verificarCamposCompletos(next, nextButton);
+    cargarDatos(current);
+
+}
+
