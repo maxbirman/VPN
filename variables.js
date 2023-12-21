@@ -27,8 +27,8 @@
             var phase2KeyLifetime;
 
         //Variables para referenciar los botones
-            var previousButton = $("#anterior");
-            var nextButton = $("#siguiente");
+           // var previousButton = $("#anterior");
+           // var nextButton = $("#siguiente");
         
         //clave para cifrar archivo de salida
             var clave;
