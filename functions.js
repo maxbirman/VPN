@@ -13,3 +13,18 @@ function verificarCamposCompletos(divId, siguiente) {
 siguiente.prop('disabled', !formularioCompleto); //si no esta completo deshabilita el botón
 
 }
+
+function alertCharLimit(input){
+    if(input.attr('maxlength') !== undefined) {
+        var valor = input.val();
+        var maxLength = input.attr('maxlength');
+
+        if(valor.length == maxLength) {
+            alert("El nombre de la VPN no puede tener más de 15 caracteres");        
+            input.val(valor.substring(0, maxLength-1));        
+        }
+
+        else {input.removeAttr("style");}
+    }
+}
+
