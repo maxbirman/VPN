@@ -32,6 +32,8 @@ function nextPanel(current, next) {
 
     var currentPanel = $("#" + current);
     var nextPanel = $("#" + next);
+    var previousButton = $("#anterior");
+    var nextButton = $("#siguiente");
 
     currentPanel.attr("style","display:none");
     nextPanel.removeAttr("style");
