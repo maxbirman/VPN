@@ -70,10 +70,11 @@ function Siguiente (){
         }
     }
 //asigna funcion al clickear en "anterior" - oculta div actual y vuelve al anterior	
-  function Anterior(anterior){
+function Anterior(anterior){
 
     var name = anterior.getAttribute("data-message");    
     var siguiente = $("#siguiente");        
+
     switch (name) {
         case "general": {
             $("#general").attr("style","display:none");
@@ -82,7 +83,7 @@ function Siguiente (){
             $("#siguiente").attr("data-message", "contacto");
             verificarCamposCompletos("contacto", siguiente);
             break;
-            }
+        }
         case "network": {
             $("#network").attr("style","display:none");
             $("#general").removeAttr("style");
@@ -90,7 +91,7 @@ function Siguiente (){
             $("#siguiente").attr("data-message", "general");
             verificarCamposCompletos("general", siguiente);
             break;
-            }
+        }
         case "authentication": {
             $("#authentication").attr("style","display:none");
             $("#network").removeAttr("style");
@@ -98,7 +99,7 @@ function Siguiente (){
             $("#siguiente").attr("data-message", "network");
             verificarCamposCompletos("network", siguiente);
             break;
-            }
+        }
         case "phase1Proposal": {
             $("#phase1Proposal").attr("style","display:none");
             $("#authentication").removeAttr("style");
@@ -106,7 +107,7 @@ function Siguiente (){
             $("#siguiente").attr("data-message", "authentication");
             verificarCamposCompletos("general", siguiente);
             break;
-            }
+        }
         case "phase2Proposal": {
             $("#phase2Proposal").attr("style","display:none");
             $("#phase1Proposal").removeAttr("style");
@@ -115,8 +116,26 @@ function Siguiente (){
             $("#siguiente").text("Siguiente"); // Vuelve a tomar el texto de "siguiente"
             verificarCamposCompletos("phase1Proposal", siguiente);
             break;
-            }
-        }	
-    }
+        }
+    }	
+   
+}
+function populateInterfaces(select){
+        
+    var selected = select.val();
+    var select = $("#interface");
+    var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
+    var data = [];
+     
+    getArrayFromFile(file, function(extData) {
+        data = extData;
+        var interfaceList = getOptionsFromArray(data, selected);
+        select.empty();
+        select.append('<option value="" disabled selected="selected">--Seleccione una interface--</option>');
+        populateSelect(select, interfaceList);
+    })
+    
+    select.removeAttr('disabled');
 
+    } 
 
