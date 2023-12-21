@@ -1,5 +1,5 @@
 //asigna funcion al clickear en "siguiente" - oculta div actual y pasa al siguiente
-function Siguiente (siguiente){
+function Siguiente (){
 
     var name = siguiente.getAttribute("data-message");
     
