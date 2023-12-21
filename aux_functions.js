@@ -105,3 +105,13 @@ function getArrayFromFile(file, callback) {
         }
     });
 }
+
+function populateModels (){
+    var select = $("#deviceModel");
+    var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
+    var data = [];
+    getArrayFromFile(file, function(extData) {
+        data = extData;            
+        populateSelect(select,data);
+    });                   
+  }
