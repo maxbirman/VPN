@@ -35,7 +35,7 @@ function Siguiente (siguiente){
     
     switch (name) {
         case "contacto": {
-            var email = $('#contactoEmailPrimario').val();
+            var email = $('#email').val();
             if(emailRegex.test(email)){
                 $("#contacto").attr("style","display:none");
                 $("#general").removeAttr("style");
