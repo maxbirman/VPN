@@ -13,7 +13,6 @@ function Siguiente (siguiente){
             }
         case "general": {
             nextPanel("general", "network");
-            verificarCamposCompletos("network", siguiente);
             populateModels();						
             break;
             }
