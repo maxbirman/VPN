@@ -31,7 +31,7 @@ function alertCharLimit(input){
 function nextPanel(current, next) {
 
     var currentPanel = $("#" + current);
-    var nextPanel = $("#" + next);
+    var nextPanel = $e("#" + next);
 
     currentPanel.attr("style","display:none");
     nextPanel.removeAttr("style");
