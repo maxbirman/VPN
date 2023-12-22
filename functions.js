@@ -183,7 +183,7 @@ function addAuthEnc(phase, index){   //0 , 1
                             </div>    `)
 
     if (nextIndex == 3){
-        $("#" + p + phase + "AEAdd_" + index).attr('style', 'display:none');
+        $("#p" + phase + "AEAdd_" + index).attr('style', 'display:none');
     }                        
 }
 
