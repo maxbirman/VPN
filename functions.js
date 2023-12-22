@@ -184,6 +184,8 @@ function addAuthEnc(phase, index){   //0 , 1
                                  </div>                                
                             </div>    `)
 
+    populatePhase(phase, index, "authEnc");                        
+
     $("#p" + phase + "AEAdd_" + prevIndex).attr('style', 'display:none');
     $("#p" + phase + "AERemove_" + prevIndex).attr('style', 'display:none');
 
