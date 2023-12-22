@@ -132,4 +132,19 @@ function populateInterfaces(){
     select.removeAttr('disabled');
 
     } 
+function pskOrCert(){
+    if($("#authMethod").val() == "psk"){
+        $("#pskOrCertificate").text("PSK");
+    }else{
+        $("#pskOrCertificate").text("Certificado");
+    }
+} 
+
+function hideShowMode() {
+    if ($("#ikeVersion").val() == "2") {
+        $("#ikeModeParent").attr('style', 'display:none;');
+    } else {
+        $("#ikeModeParent").removeAttr('style');
+    }
+}    
 
