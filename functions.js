@@ -39,17 +39,14 @@ function Siguiente (){
             }
         case "authentication": {
             nextPanel("authentication", "phase1Proposal");
-            populatePhase("1");
+            populatePhase("1","0", "authEnc");
+            populatePhase("1", "0", "dh")
             break;
             }
         case "phase1Proposal": {
-            $("#phase1Proposal").attr("style","display:none");
-            $("#phase2Proposal").removeAttr("style");
-            $("#anterior").attr("data-message", "phase2Proposal");
-            $("#siguiente").attr("data-message", "phase2Proposal");
-            //$("#siguiente").attr('disabled', 'disabled');
-            verificarCamposCompletos("phase2Proposal", siguiente);
-            cargarDatos("phase1Proposal");
+            nextPanel("phase1Proposal", "phase2Proposal");
+            populatePhase("2", "0", "authEnc");
+            populatePhase("2", "0", "dh");
             $(this).text("Finalizar"); // al pasar al ultimo div "siguiente" se convierte en "finalizar"
             break;
             }
@@ -144,35 +141,17 @@ function hideShowMode() {
     }
 }    
 
-function populatePhase(phase) {
-    var selectEnc = $("#phase" + phase + "Encrypt");
-    var selectAuth = $("#phase" + phase + "Auth");
-    var dhGroup = $("#phase" + phase + "DH");
-    var panel = $("#phase" + phase + "Proposal");
-    var file = "https://raw.githubusercontent.com/maxbirman/VPN/main/authenc.csv";
-    var data = [];
-
-    getArrayFromFile(file, function(extData) {
-        data = extData; 
-        var auth = getOptionsFromArray(data, "auth");
-        var enc = getOptionsFromArray(data, "enc");
-        var dh = getDH(data);
-        populateSelect(selectAuth, auth);
-        populateSelect(selectEnc, enc);
-        populateDH(dhGroup, dh);
-    })
-}
 function addAuthEnc(phase, index){   //0 , 1
     var parentId = 'p' + phase + 'AE';
     var childId = parentId + "_" + index;
 
     jQuery('div', {
         id: childId,
-        name: newDivId,
+        name: childId,
         class: 'row'
     }).appendTo($("#" + partenId));
 
-    $("#" + newDivId).append(`
+    $("#" + childId).append(`
                             <div class="col-5">
                                 <div class="row">
                                     <div class="col-4"></div>	
@@ -200,4 +179,9 @@ function addAuthEnc(phase, index){   //0 , 1
                                  </div>                                
                             </div>    `)
 }
+
+
+    
+        
+     
 

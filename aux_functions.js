@@ -140,3 +140,29 @@ function populateModels (){
   function getAuth(data){
 
   }
+
+  function populatePhase (phase, index, section) { 
+    var parent = $("#phase" + phase + "Proposal");
+    var file = "https://raw.githubusercontent.com/maxbirman/VPN/main/authenc.csv";
+    var data = [];
+
+    getArrayFromFile(file, function(extData) {
+        data = extData; 
+        switch (section) {
+            case authEnc: {
+                var selectEnc = $("#phase" + phase + "Encrypt_" + index);
+                var selectAuth = $("#phase" + phase + "Auth_" + index);
+                var auth = getOptionsFromArray(data, "auth");
+                var enc = getOptionsFromArray(data, "enc");
+                populateSelect(selectAuth, auth);
+                populateSelect(selectEnc, enc);
+                break;
+            }
+            case dh: {
+                var dhGroup = $("#phase" + phase + "DH");
+                var dh = getDH(data);
+                populateDH(dhgroup, dh);
+            }
+        }
+    }
+}
