@@ -159,7 +159,7 @@ function populateModels (){
 
                 if (index == 0) {
                     selectEnc.attr("id", "#phase" + phase + "Encrypt_");
-                    selectAuth.attr("id", "#phase" + phase + "Auth_")
+                    selectAuth.attr("id", "#phase" + phase + "Auth_");
                 }
                 break;
             }
