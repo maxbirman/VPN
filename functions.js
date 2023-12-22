@@ -35,7 +35,7 @@ function Siguiente (){
                 }else if(ipCorrecta(publicaLocal) && !ipCorrecta(publicaRemota)){
                     alert("El valor introducido como IP pública local no es un formato IP válido");
                 }else {alert("Los valores introducidos como IPs públicas no son formatos IP válidos")}
-                break;
+            break;
             }
         case "authentication": {
             $("#authentication").attr("style","display:none");

@@ -184,6 +184,64 @@
                         </div>			
                     </div>
                 </div>
+                <div class="row border rounded p-3 formDiv" id="authentication" style="display:none;">
+                    <div class="bg-black text-white">
+                        <h3>Autenticaci&oacute;n</h3>			
+                    </div>	
+                    <div class="row mt-3 mb-1">	
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-4 mt-2">
+                                    <label for="authMetod" id="authMetodLabel" name="authMethodLabel">M&eacute;todo</label>
+                                </div>
+                                <div class="col-8">
+                                    <select class="form-control" id="authMethod" name="authMethod" onchange="pskOrCert()">
+                                        <option value="psk">Pre Shared Key</option>
+                                        <option value="signature">Certificado</option>
+                                    </select>
+                                </div>	
+                            </div>
+                        </div>							
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-4 pt-2">
+                                    <label id="pskOrCertificate" for="psk">PSK</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="password" class="form-control" id="psk" name="psk" required>
+                                </div>
+                            </div>
+                        </div>									
+                    </div>	
+                    <div class=" row mb-1">	
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-4 mt-2">
+                                    <label for="ikeVersion" id="ikeVersionLabel" name="ikeVersionLabel">IKE Versi&oacute;n</label>
+                                </div>
+                                <div class="col-8">
+                                    <select class="form-control" id="ikeVersion" name="ikeVersion" onchange="hideShowMode()">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6" id="ikeModeParent">
+                            <div class="row">	
+                                <div class="col-4 mt-2">
+                                    <label>Modo</label>
+                                </div>
+                            <div class="col-8">
+                                <select class="form-control" id="ikeMode" name="ikeMode">
+                                    <option value="main">Main</option>
+                                    <option value="aggresive">Aggresive</option>
+                                </select>
+                            </div>			
+                        </div>	
+                        </div>
+                    </div>    						
+                </div>	
                 <div class="row border rounded p-3 formDiv" id="phase1Proposal" style="display:none;">
                     <div class="bg-black text-white">
                         <h3>Phase 1 Proposal</h3>		
