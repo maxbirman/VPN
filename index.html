@@ -246,36 +246,38 @@
                     <div class="bg-black text-white">
                         <h3>Phase 1 Proposal</h3>		
                     </div>				
-                    <div class="row mb-1 mt-3">	
-                        <div class="col-5">
-                            <div class="row">
-                                <div class="col-4">
-                                   <label class="pt-2" for= "phase1Auth" id="phase1AuthLabel" name="pahse1AuthLabel">Autenticaci&oacute;n</label>
-                                </div>	
-                                <div class="col-8">
-                                    <select class="form-control" id="phase1Auth" name="phase1Auth" required>
-                                    </select>
-                                </div>	
+                    <div class="row mb-1 mt-3" id="p1AE">	
+                        <div class="row" id="p1AE_0">
+                            <div class="col-5">
+                                <div class="row">
+                                    <div class="col-4">
+                                    <label class="pt-2" for= "phase1Auth_0" id="phase1AuthLabel" name="pahse1AuthLabel">Autenticaci&oacute;n</label>
+                                    </div>	
+                                    <div class="col-8">
+                                        <select class="form-control" id="phase1Auth_0" name="phase1Auth_0" required>
+                                        </select>
+                                    </div>	
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-5 mx-3">
-                            <div class="row">
-                                <div class="col-4">
-                                    <label class="pt-2" for= "phase1Encrypt" id="phase1EncryptLabel" name="phase1EncryptLabel">Encriptaci&oacute;n</label>
-                                </div>	
-                                <div class="col-8">
-                                    <select class="form-control" id="phase1Encrypt" name="phase1Encrypt" required>
-                                    </select>
-                                </div>	
-                            </div>
-                        </div>	
-                        <div class="col-2">
-                            <div class="row">
-                                <div class="col-6" style="float: inherit;" id="addButton_0">
-                                    <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_0" disabled>+</a>
-                                </div>                                    
-                            </div>                                
-                        </div>									
+                            <div class="col-5 mx-3">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label class="pt-2" for= "phase1Encrypt_0" id="phase1EncryptLabel" name="phase1EncryptLabel">Encriptaci&oacute;n</label>
+                                    </div>	
+                                    <div class="col-8">
+                                        <select class="form-control" id="phase1Encrypt_0" name="phase1Encrypt_0" required>
+                                        </select>
+                                    </div>	
+                                </div>
+                            </div>	
+                            <div class="col-2">
+                                <div class="row">
+                                    <div class="col-6" style="float: right;" id="p1AEAddButton_0">
+                                        <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="p1AEAdd_0" disabled onclick="addAuthEnc(1,1)">+</a>
+                                    </div>                                    
+                                </div>                                
+                            </div>						
+                        </div>    			
                     </div>
                     <div class=" row mb-1">	
                         <div class="col-2">

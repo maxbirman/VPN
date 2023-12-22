@@ -162,4 +162,42 @@ function populatePhase(phase) {
         populateDH(dhGroup, dh);
     })
 }
+function addAuthEnc(phase, index){   //0 , 1
+    var parentId = 'p' + phase + 'AE';
+    var childId = parentId + "_" + index;
+
+    jQuery('div', {
+        id: childId,
+        name: newDivId,
+        class: 'row'
+    }).appendTo($("#" + partenId));
+
+    $("#" + newDivId).append(`
+                            <div class="col-5">
+                                <div class="row">
+                                    <div class="col-4"></div>	
+                                    <div class="col-8">
+                                        <select class="form-control" id="phase${phase}Auth_${index} name="phase${phase}Auth_${index}" required></select>
+                                    </div>	
+                                </div>
+                            </div>
+                            <div class="col-5 mx-3">
+                                <div class="row">
+                                    <div class="col-4"></div>	
+                                    <div class="col-8">
+                                        <select class="form-control" id="phase${phase}Encrypt_${index}" name="phase${phase}Encrypt_${index}" required></select>
+                                    </div>	
+                                </div>
+                            </div>	
+                            <div class="col-2">
+                                <div class="row">
+                                    <div class="col-6" id="p${phase}AERemoveButton_${index}">
+                                        <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="p${phase}AERemove_${index}">-</a>
+                                    </div>
+                                    <div class="col-6" style="float: right;" id="p${phase}AEAddButton_${index}">
+                                        <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="p${phase}AEAdd_${index}" disabled>+</a>
+                                    </div>                                    
+                                 </div>                                
+                            </div>    `)
+}
 
