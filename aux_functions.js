@@ -87,7 +87,7 @@ function getOptionsFromArray (data, selected){
 
 function getDH (data){
     var rows = data.split("\n");
-    alert(rows);
+    alert(rows[2]);
     //return rows.split(";");
     return "bleE"
 }
