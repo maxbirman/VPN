@@ -149,7 +149,7 @@ function populateModels (){
     getArrayFromFile(file, function(extData) {
         data = extData; 
         switch (section) {
-            case authEnc: {
+            case "authEnc": {
                 var selectEnc = $("#phase" + phase + "Encrypt_" + index);
                 var selectAuth = $("#phase" + phase + "Auth_" + index);
                 var auth = getOptionsFromArray(data, "auth");
@@ -158,7 +158,7 @@ function populateModels (){
                 populateSelect(selectEnc, enc);
                 break;
             }
-            case dh: {
+            case "dh": {
                 var dhGroup = $("#phase" + phase + "DH");
                 var dh = getDH(data);
                 populateDH(dhgroup, dh);
