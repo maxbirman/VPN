@@ -161,7 +161,7 @@ function populateModels (){
             case "dh": {
                 var dhGroup = $("#phase" + phase + "DH");
                 var dh = getDH(data);
-                populateDH(dhgroup, dh);
+                populateDH(dhGroup, dh);
             }
         }
     });
