@@ -156,12 +156,18 @@ function populateModels (){
                 var enc = getOptionsFromArray(data, "enc");
                 populateSelect(selectAuth, auth);
                 populateSelect(selectEnc, enc);
+
+                if (index == 0) {
+                    selectEnc.attr("id", "#phase" + phase + "Encrypt_");
+                    selectAuth.attr("id", "#phase" + phase + "Auth_")
+                }
                 break;
             }
             case "dh": {
-                var dhGroup = $("#phase" + phase + "DH");
+                var dhGroup = $("#phase" + phase + "DH");                
                 var dh = getDH(data);
                 populateDH(dhGroup, dh);
+                dhGroup.attr("id","dhgroup_");
             }
         }
     });
