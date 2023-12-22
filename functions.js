@@ -149,7 +149,6 @@ function addAuthEnc(phase, index){   //0 , 1
 
     jQuery('div', {
         id: childId,
-        name: childId,
         class: 'row'
     }).appendTo("#" + parentId);
 
