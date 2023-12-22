@@ -146,11 +146,7 @@ function addAuthEnc(phase, index){   //0 , 1
     var childId = parentId + "_" + index;
     var nextIndex = index + 1;
     var prevIndex = index - 1;
-
-    alert(nextIndex);
-
-    alert(parentId + "\n" + childId);
-
+    
     jQuery('<div>', {
         class: 'row mt-2',
         id: childId        
