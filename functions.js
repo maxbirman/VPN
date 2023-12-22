@@ -39,8 +39,8 @@ function Siguiente (){
             }
         case "authentication": {
             nextPanel("authentication", "phase1Proposal");
-            populatePhase("1","0", "authEnc");
-            populatePhase("1", "0", "dh")
+            populatePhase("1","100", "authEnc");
+            populatePhase("1", "100", "dh")
             break;
             }
         case "phase1Proposal": {
