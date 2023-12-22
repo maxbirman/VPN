@@ -45,8 +45,8 @@ function Siguiente (){
             }
         case "phase1Proposal": {
             nextPanel("phase1Proposal", "phase2Proposal");
-            populatePhase("2", "0", "authEnc");
-            populatePhase("2", "0", "dh");
+            populatePhase("2", "100", "authEnc");
+            populatePhase("2", "100", "dh");
             $(this).text("Finalizar"); // al pasar al ultimo div "siguiente" se convierte en "finalizar"
             break;
             }
@@ -146,7 +146,7 @@ function addAuthEnc(phase, index){   //0 , 1
     var childId = parentId + "_" + index;
     var nextIndex = index + 1;
     var prevIndex = index - 1;
-    
+
     jQuery('<div>', {
         class: 'row mt-2',
         id: childId        
