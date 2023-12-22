@@ -177,10 +177,14 @@ function addAuthEnc(phase, index){   //0 , 1
                                         <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="p${phase}AERemove_${index}">-</a>
                                     </div>
                                     <div class="col-6" style="float: right;" id="p${phase}AEAddButton_${index}">
-                                        <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="p${phase}AEAdd_${index} onclick="addAuthEnc(${phase}, ${nextIndex})">+</a>
+                                        <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="p${phase}AEAdd_${index}" onclick="addAuthEnc(${phase}, ${nextIndex})">+</a>
                                     </div>                                    
                                  </div>                                
                             </div>    `)
+
+    if (nextIndex == 3){
+        $("#" + p + phase + "AEAdd_" + index).attr('style', 'display:none');
+    }                        
 }
 
 
