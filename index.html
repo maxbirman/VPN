@@ -97,99 +97,150 @@
                     <div class="bg-black text-white">
                         <h3>Network</h3>			
                     </div>
-                    <div class="mb-1">	
-                        <div class="row mt-3">	
-                            <div class="col-6">
-                                <div class="row">
-                                    <div class="col-4 pt-2">
-                                        <label for="deviceModel">Interface</label>
-                                    </div>
-                                    <div class="col-8">
-                                        <select name="deviceModel" class="form-control" id="deviceModel" onchange="populateInterfaces()">
-                                            <option value="" disabled selected="selected">--Seleccione el modelo del dispositivo--</option>										
-                                        </select>									
-                                    </div>			
-                                </div>	
-                            </div>		
-                            <div class="col-6">
-                                <div class="row">
-                                    <div class="col-4 pt-2">
-                                        <label for="interface" id="interfaceLabel" name="interfaceLabel">
-                                            Interface
-                                        </label>
-                                    </div>
-                                    <div class="col-8">
-                                        <select class="form-control" name="interface" id="interface" disabled>
-                                            <option value="" disabled selected="selected">--Seleccione una interface--</option>
-                                        </select>
-                                    </div>
+                    <div class="row mb-1 mt-3">		
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-4 pt-2">
+                                    <label for="deviceModel">Interface</label>
                                 </div>
-                            </div>                            
-                        </div>
-                    </div>	
-                    <div class="mb-1">
-                        <div class="row">	
-                            <div class="col-6">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <label for="publicaLocal" id="publicaLocalLabel" name="publicaLocalLabel">IP P&uacute;blica Local</label>
-                                    </div>
-                                    <div class="col-8">
-                                        <input type="text" class="form-control" id="publicaLocal" aria-describedby="emailHelp" placeholder="IP P&uacute;blica Local" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <label for="publicaRemota" id="publicaRemotaLabel" name="publicaRemotaLabel">IP P&uacute;blica Remota</label>
-                                    </div>
-                                    <div class="col-8">
-                                        <input type="text" class="form-control" id="publicaRemota" aria-describedby="emailHelp" placeholder="IP P&uacute;blica Local" required>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>	
-                    <div class="mb-1">	
-                        <div class="row">	
-                            <div class="col-3">
-                                <div class="row p-3">
-                                    <div class="col-6">
-                                        <label>NAT Traversal</label>
-                                    </div>
-                                    <div class="col-6">
-                                        <input class="form-check-input" type="checkbox" id="natTraversal">
-                                    </div>
-                                </div>
-                            </div>								
-                            <div class="col-4">
-                                <div class="row p-3">
-                                    <div class="col-6">
-                                        <label>Keepalive Frequency</label>
-                                    </div>	
-                                    <div class="col-6">
-                                        <input type="number" class="form-control" id="keepAlive" name="keepAlive" min="5" max="8900" value="8600" required>
-                                    </div>
-                                </div>
+                                <div class="col-8">
+                                    <select name="deviceModel" class="form-control" id="deviceModel" onchange="populateInterfaces()">
+                                        <option value="" disabled selected="selected">--Seleccione el modelo del dispositivo--</option>										
+                                    </select>									
+                                </div>			
                             </div>	
-                            <div class="col-4">
-                                <div class="row p-3">
-                                    <div class="col-6">
-                                        <label>Dead Peer Detection</label>
-                                    </div>
-                                    <div class="col-6">
-                                        <select class="form-control" id="deadPeerDetection" name="deadPeerDetection">
-                                            <option value="disable">Disable</option>
-                                            <option value="on-idle">On Idle</option>
-                                            <option value="on-demand">On Demand</option>
-                                        </select>
-                                    </div>
+                        </div>		
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-4 pt-2">
+                                    <label for="interface" id="interfaceLabel" name="interfaceLabel">
+                                        Interface
+                                    </label>
                                 </div>
-                            </div>			
+                                <div class="col-8">
+                                    <select class="form-control" name="interface" id="interface" disabled>
+                                        <option value="" disabled selected="selected">--Seleccione una interface--</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>                            
+                    </div>                    
+                    <div class="row mb-1">	
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="publicaLocal" id="publicaLocalLabel" name="publicaLocalLabel">IP P&uacute;blica Local</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="publicaLocal" aria-describedby="emailHelp" placeholder="IP P&uacute;blica Local" required>
+                                </div>
+                            </div>
                         </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="publicaRemota" id="publicaRemotaLabel" name="publicaRemotaLabel">IP P&uacute;blica Remota</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="publicaRemota" aria-describedby="emailHelp" placeholder="IP P&uacute;blica Local" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                    <div class="row mb-1">	
+                        <div class="col-3">
+                            <div class="row p-3">
+                                <div class="col-6">
+                                    <label>NAT Traversal</label>
+                                </div>
+                                <div class="col-6">
+                                    <input class="form-check-input" type="checkbox" id="natTraversal">
+                                </div>
+                            </div>
+                        </div>								
+                        <div class="col-4">
+                            <div class="row p-3">
+                                <div class="col-6">
+                                    <label>Keepalive Frequency</label>
+                                </div>	
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="keepAlive" name="keepAlive" min="5" max="8900" value="8600" required>
+                                </div>
+                            </div>
+                        </div>	
+                        <div class="col-4">
+                            <div class="row p-3">
+                                <div class="col-6">
+                                    <label>Dead Peer Detection</label>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-control" id="deadPeerDetection" name="deadPeerDetection">
+                                        <option value="disable">Disable</option>
+                                        <option value="on-idle">On Idle</option>
+                                        <option value="on-demand">On Demand</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>			
                     </div>
                 </div>
+                <div class="row border rounded p-3 formDiv" id="phase1Proposal" style="display:none;">
+                    <div class="bg-black text-white">
+                        <h3>Phase 1 Proposal</h3>		
+                    </div>				
+                    <div class="row mb-1 mt-3">	
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-4">
+                                   <label class="pt-2" for= "auth" id="authLabel" name="authLabel">Autenticaci&oacute;n</label>
+                                </div>	
+                                <div class="col-3">
+                                    <select class="form-control" id="phase1Proposal1" name="phase1Proposal1" required>
+                                        <option value="none" disabled>---Seleccione un m&eacute;todo de autenticaci&oacute;n---</option>
+                                    </select>
+                                </div>	
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label class="pt-2" for= "encrypt" id="encryptLabel" name="enxryptLabel">Encriptaci&oacute;n</label>
+                                </div>	
+                                <div class="col-3">
+                                    <select class="form-control" id="phase1Proposal1" name="phase1Proposal1" required>
+                                        <option value="none" disabled>---Seleccione un m&eacute;todo de encriptaci&oacute;n---</option>
+                                    </select>
+                                </div>	
+                            </div>
+                        </div>									
+                    </div>
+                    <div class=" row mb-1">	
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label class="pt-2" for= "auth" id="authLabel" name="authLabel">Autenticaci&oacute;n</label>
+                                    </div>	
+                                    <div class="col-3">
+                                        <select class="form-control" id="phase1Proposal1" name="phase1Proposal1" required>
+                                            <option value="none" disabled>---Seleccione un m&eacute;todo de autenticaci&oacute;n---</option>
+                                        </select>
+                                    </div>	
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label class="pt-2" for= "encrypt" id="encryptLabel" name="enxryptLabel">Encriptaci&oacute;n</label>
+                                    </div>	
+                                    <div class="col-3">
+                                        <select class="form-control" id="phase1Proposal1" name="phase1Proposal1" required>
+                                            <option value="none" disabled>---Seleccione un m&eacute;todo de encriptaci&oacute;n---</option>
+                                        </select>
+                                    </div>	
+                                </div>
+                            </div>									
+                    </div>		
+                </div>	
                 <div class="row mt-3" id="buttons">					
 					<div class="col-1">
 						<button type="button" id="anterior" data-message="general" class="btn btn-primary" style="display: none" onclick="Anterior(this)">Anterior</button>
