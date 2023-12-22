@@ -98,7 +98,7 @@ function populateDH(dh, data){
         var col = `<div class="col-1" id="dhcol${value}"></div>`;        
         var check = `<input type=checkbox class="form-check-input" id = "${value}" value="${value}"></input>`;
         var label = `<label for="${value}" id="${value}Label">${value}</label>`;
-        alert(value);
+        //alert(value);
         dh.append(col);
         var colId = $("#dhcol" + value);
         colId.append(check);
