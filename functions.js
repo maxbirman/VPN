@@ -145,6 +145,8 @@ function addAuthEnc(phase, index){   //0 , 1
     var parentId = 'p' + phase + 'AE';
     var childId = parentId + "_" + index;
     var nextIndex = index + 1;
+    var prevIndex = index - 1;
+
     alert(nextIndex);
 
     alert(parentId + "\n" + childId);
@@ -181,6 +183,9 @@ function addAuthEnc(phase, index){   //0 , 1
                                     </div>                                    
                                  </div>                                
                             </div>    `)
+
+    $("#p" + phase + "AEAdd_" + prevIndex).attr('style', 'display:none');
+    $("#p" + phase + "AERemove_" + prevIndex).attr('style', 'display:none');
 
     if (nextIndex == 3){
         $("#p" + phase + "AEAdd_" + index).attr('style', 'display:none');
