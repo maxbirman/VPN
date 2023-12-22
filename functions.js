@@ -161,7 +161,7 @@ function addAuthEnc(phase, index){   //0 , 1
                                 <div class="row">
                                     <div class="col-4"></div>	
                                     <div class="col-8">
-                                        <select class="form-control" id="phase${phase}Auth_${index} name="phase${phase}Auth_${index}" required></select>
+                                        <select class="form-control" id="phase${phase}Auth_${index}" name="phase${phase}Auth_${index}" required></select>
                                     </div>	
                                 </div>
                             </div>
