@@ -151,7 +151,7 @@ function populatePhase(phase) {
     var file = "https://raw.githubusercontent.com/maxbirman/VPN/main/authenc.csv";
     var data = [];
 
-    getArrayFromFile(file, function(exData) {
+    getArrayFromFile(file, function(extData) {
         data = extData; 
         var auth = getOptionsFromArray(data, "auth");
         var enc = getOptionsFromArray(data, "enc");
