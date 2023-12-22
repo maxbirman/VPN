@@ -17,19 +17,13 @@ function Siguiente (){
             break;
             }
         case "network": {
-                publicaLocal = $("#publicaLocal").val();
-                publicaRemota = $("#publicaRemota").val();
+            publicaLocal = $("#publicaLocal").val();
+            publicaRemota = $("#publicaRemota").val();
 
-                if(ipCorrecta(publicaLocal) && ipCorrecta(publicaRemota)){      
-                    if(ipPublicaCorrecta(publicaLocal) && ipPublicaCorrecta(publicaRemota)){                      	
-                        if(publicaLocal !== publicaRemota){    
-                            cargarDatos("network");						
-                            $("#network").attr("style","display:none");
-                            $("#authentication").removeAttr("style");
-                            $("#anterior").attr("data-message", "authentication");
-                            $("#siguiente").attr("data-message", "authentication");
-                            //$("#siguiente").attr('disabled', 'disabled');
-                            verificarCamposCompletos("authentication", siguiente);
+            if(ipCorrecta(publicaLocal) && ipCorrecta(publicaRemota)){      
+                if(ipPublicaCorrecta(publicaLocal) && ipPublicaCorrecta(publicaRemota)){                      	
+                    if(publicaLocal !== publicaRemota){    
+                        nextPanel("network", "authentication");
                         }else {alert("Las IP pública local y la IP pública remota no pueden ser iguales")}
                     }else if (ipPublicaCorrecta(publicaLocal) && !ipPublicaCorrecta(publicaRemota)){
                         alert("La IP remota introducida no es una IP pública");
