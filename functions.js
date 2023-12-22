@@ -142,6 +142,7 @@ function hideShowMode() {
 }    
 
 function addAuthEnc(phase, index){   //0 , 1
+    alert(index);
     var parentId = 'p' + phase + 'AE';
     var childId = parentId + "_" + index;
 
