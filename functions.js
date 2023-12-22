@@ -144,6 +144,8 @@ function hideShowMode() {
 function addAuthEnc(phase, index){   //0 , 1
     var parentId = 'p' + phase + 'AE';
     var childId = parentId + "_" + index;
+    var nextIndex = index + 1;
+    alert(nextIndex);
 
     alert(parentId + "\n" + childId);
 
@@ -161,7 +163,7 @@ function addAuthEnc(phase, index){   //0 , 1
                                     </div>	
                                 </div>
                             </div>
-                            <div class="col-5 mx-3">
+                            <div class="col-5">
                                 <div class="row">
                                     <div class="col-4"></div>	
                                     <div class="col-8">
@@ -175,7 +177,7 @@ function addAuthEnc(phase, index){   //0 , 1
                                         <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="p${phase}AERemove_${index}">-</a>
                                     </div>
                                     <div class="col-6" style="float: right;" id="p${phase}AEAddButton_${index}">
-                                        <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="p${phase}AEAdd_${index}" disabled>+</a>
+                                        <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="p${phase}AEAdd_${index} onclick="addAuthEnc(${phase}, ${nextIndex})" disabled>+</a>
                                     </div>                                    
                                  </div>                                
                             </div>    `)
