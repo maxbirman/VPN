@@ -85,6 +85,21 @@ function getOptionsFromArray (data, selected){
     return options;
 }
 
+function getDH (data){
+    var rows = data.split("\n");
+    return rows.split(";");
+}
+
+function populateDH(dh, data){
+    var value;
+    var check = `<input type=checkbox class="form-check-input" id = "${value}" value="${value}">${value}</input>`
+
+    for (var i = 0; i <= data.length; i ++) {
+        value = data[i];
+        dh.append(check);
+    }
+}
+
 //funcion para popular cualquier select
 function populateSelect (select, data) {
     var options = data.split('\n');
@@ -117,5 +132,5 @@ function populateModels (){
   }
 
   function getAuth(data){
-    
+
   }
