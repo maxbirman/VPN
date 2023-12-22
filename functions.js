@@ -145,7 +145,7 @@ function addAuthEnc(phase, index){   //0 , 1
     var parentId = 'p' + phase + 'AE';
     var childId = parentId + "_" + index;
 
-    alert(parent + "\n" + childId);
+    alert(parentId + "\n" + childId);
 
     jQuery('div', {
         id: childId,
