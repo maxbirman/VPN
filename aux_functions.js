@@ -164,5 +164,5 @@ function populateModels (){
                 populateDH(dhgroup, dh);
             }
         }
-    }
+    });
 }
