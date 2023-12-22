@@ -99,7 +99,7 @@ function populateDH(dh, data){
     for (var i = 0; i <= data.length; i ++) {     
         value = data[i];
         dh.append(col);
-        col.appen(check);
+        col.append(check);
     }
 }
 
