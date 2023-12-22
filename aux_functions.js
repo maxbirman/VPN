@@ -164,10 +164,10 @@ function populateModels (){
                 break;
             }
             case "dh": {
-                var dhGroup = $("#phase" + phase + "DH");                
+                var dhGroup = $("#phase" + phase + "DH_" + index);                
                 var dh = getDH(data);
                 populateDH(dhGroup, dh);
-                dhGroup.attr("id","phase" + phase + "DH_");
+                dhGroup.attr("id","phase" + phase + "DH");
             }
         }
     });
