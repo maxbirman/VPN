@@ -167,7 +167,7 @@ function populateModels (){
                 var dhGroup = $("#phase" + phase + "DH");                
                 var dh = getDH(data);
                 populateDH(dhGroup, dh);
-                dhGroup.attr("id","dhgroup_");
+                dhGroup.attr("id","phase" + phase + "DH_");
             }
         }
     });
