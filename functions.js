@@ -145,7 +145,7 @@ function hideShowMode() {
 }    
 
 function populatePhase(phase) {
-    var selectEnc = $("#phase" + phase + "Encryp");
+    var selectEnc = $("#phase" + phase + "Encrypt");
     var selectAuth = $("#phase" + phase + "Auth");
     var panel = $("#phase" + phase + "Proposal");
     var file = "https://raw.githubusercontent.com/maxbirman/VPN/main/authenc.csv";
