@@ -99,7 +99,8 @@ function populateDH(dh, data){
     for (var i = 0; i <= data.length; i ++) {     
         value = data[i];
         dh.append(col);
-        col.append(check);
+        var colId = $("#dhcol" + value);
+        colId.append(check);
     }
 }
 
