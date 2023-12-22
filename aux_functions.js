@@ -90,12 +90,12 @@ function getDH (data){
     return rows[2].split(";");
 }
 
-function populateDH(dh, data){
-        
-    var col = `<div class="col-1" id="dhcol${value}"></div>`;
+function populateDH(dh, data){      
+    
 
     for (var i = 0; i <= data.length; i ++) {     
-        value = data[i];
+        var col = `<div class="col-1" id="dhcol${value}"></div>`;
+        var value = data[i];
         var check = `<input type=checkbox class="form-check-input" id = "${value}" value="${value}">${value}</input>`;
         alert(value);
         dh.append(col);
