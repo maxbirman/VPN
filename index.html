@@ -208,7 +208,7 @@
                                     <label id="pskOrCertificate" for="psk">PSK</label>
                                 </div>
                                 <div class="col-8">
-                                    <input type="password" class="form-control" id="psk" name="psk" required>
+                                    <input type="text" class="form-control" id="psk" name="psk" required>
                                 </div>
                             </div>
                         </div>									
@@ -250,10 +250,10 @@
                         <div class="col-6">
                             <div class="row">
                                 <div class="col-4">
-                                   <label class="pt-2" for= "auth" id="authLabel" name="authLabel">Autenticaci&oacute;n</label>
+                                   <label class="pt-2" for= "phase1Auth" id="phase1AuthLabel" name="pahse1AuthLabel">Autenticaci&oacute;n</label>
                                 </div>	
                                 <div class="col-3">
-                                    <select class="form-control" id="phase1Proposal1" name="phase1Proposal1" required>
+                                    <select class="form-control" id="phase1Auth" name="phase1Auth" required>
                                         <option value="none" disabled>---Seleccione un m&eacute;todo de autenticaci&oacute;n---</option>
                                     </select>
                                 </div>	
@@ -262,10 +262,10 @@
                         <div class="col-6">
                             <div class="row">
                                 <div class="col-4">
-                                    <label class="pt-2" for= "encrypt" id="encryptLabel" name="enxryptLabel">Encriptaci&oacute;n</label>
+                                    <label class="pt-2" for= "phase1Encrypt" id="phase1EncryptLabel" name="phase1EncryptLabel">Encriptaci&oacute;n</label>
                                 </div>	
                                 <div class="col-3">
-                                    <select class="form-control" id="phase1Proposal1" name="phase1Proposal1" required>
+                                    <select class="form-control" id="phase1Encrypt" name="phase1Encrypt" required>
                                         <option value="none" disabled>---Seleccione un m&eacute;todo de encriptaci&oacute;n---</option>
                                     </select>
                                 </div>	
@@ -276,27 +276,15 @@
                             <div class="col-6">
                                 <div class="row">
                                     <div class="col-4">
-                                        <label class="pt-2" for= "auth" id="authLabel" name="authLabel">Autenticaci&oacute;n</label>
+                                        <label class="pt-2" for= "phase1DH" id="phaseDHLabel" name="phaseDHLabel">Autenticaci&oacute;n</label>
                                     </div>	
                                     <div class="col-3">
-                                        <select class="form-control" id="phase1Proposal1" name="phase1Proposal1" required>
+                                        <select class="form-control" id="phase1DH" name="phase1DH" required>
                                             <option value="none" disabled>---Seleccione un m&eacute;todo de autenticaci&oacute;n---</option>
                                         </select>
                                     </div>	
                                 </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <label class="pt-2" for= "encrypt" id="encryptLabel" name="enxryptLabel">Encriptaci&oacute;n</label>
-                                    </div>	
-                                    <div class="col-3">
-                                        <select class="form-control" id="phase1Proposal1" name="phase1Proposal1" required>
-                                            <option value="none" disabled>---Seleccione un m&eacute;todo de encriptaci&oacute;n---</option>
-                                        </select>
-                                    </div>	
-                                </div>
-                            </div>									
+                            </div>								
                     </div>		
                 </div>	
                 <div class="row mt-3" id="buttons">					

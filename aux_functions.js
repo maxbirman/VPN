@@ -115,3 +115,7 @@ function populateModels (){
         populateSelect(select,data);
     });                   
   }
+
+  function getAuth(data){
+    
+  }

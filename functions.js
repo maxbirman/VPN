@@ -38,12 +38,8 @@ function Siguiente (){
             break;
             }
         case "authentication": {
-            $("#authentication").attr("style","display:none");
-            $("#phase1Proposal").removeAttr("style");
-            $("#anterior").attr("data-message", "phase1Proposal");
-            $("#siguiente").attr("data-message", "phase1Proposal");
-            verificarCamposCompletos("phase1Proposal", siguiente);
-            cargarDatos("authentication");
+            nextPanel("authentication", "phase1Proposal");
+            populatePhase("1");
             break;
             }
         case "phase1Proposal": {
@@ -147,4 +143,20 @@ function hideShowMode() {
         $("#ikeModeParent").removeAttr('style');
     }
 }    
+
+function populatePhase(phase) {
+    var selectEnc = $("#phase" + phase + "Encryp");
+    var selectAuth = $("#phase" + phase + "Auth");
+    var panel = $("#phase" + phase + "Proposal");
+    var file = "https://raw.githubusercontent.com/maxbirman/VPN/main/authenc.csv";
+    var data = [];
+
+    getArrayFromFile(file, function(exData) {
+        data = extData; 
+        var auth = getOptionsFromArray(data, "auth");
+        var enc = getOptionsFromArray(data, "enc");
+        populateSelect(selectAuth, auth);
+        populateSelect(selectEnc, enc);
+    })
+}
 
