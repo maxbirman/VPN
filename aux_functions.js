@@ -92,7 +92,6 @@ function getDH (data){
 
 function populateDH(dh, data){      
     
-
     for (var i = 0; i < data.length; i ++) {     
         var value = data[i];
         var col = `<div class="col-1" id="dhcol${value}"></div>`;        
