@@ -90,7 +90,7 @@ function getDH (data){
     return rows[2].split(";");
 }
 
-function populateDH(dh, data){      
+function populateDH(dh, phase, data){      
     
     for (var i = 0; i < data.length; i ++) {     
         var value = data[i];
@@ -164,7 +164,7 @@ function populateModels (){
                 var dhGroup = $("#phase" + phase + "DH");                
                 if (dhGroup.attr("data-message") == "empty"){
                     var dh = getDH(data);
-                    populateDH(dhGroup, dh);
+                    populateDH(dhGroup, phase, dh);
                     dhGroup.attr("data-message", "full");
                 }
             }
