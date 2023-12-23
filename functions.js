@@ -39,14 +39,14 @@ function Siguiente (){
             }
         case "authentication": {
             nextPanel("authentication", "phase1Proposal");
-            populatePhase("1","100", "authEnc");
-            populatePhase("1", "100", "dh")
+            populatePhase("1","0", "authEnc");
+            populatePhase("1", "0", "dh")
             break;
             }
         case "phase1Proposal": {
             nextPanel("phase1Proposal", "phase2Proposal");
-            populatePhase("2", "100", "authEnc");
-            populatePhase("2", "100", "dh");
+            populatePhase("2", "0", "authEnc");
+            populatePhase("2", "0", "dh");
             $(this).text("Finalizar"); // al pasar al ultimo div "siguiente" se convierte en "finalizar"
             break;
             }

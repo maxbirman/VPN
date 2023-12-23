@@ -153,21 +153,21 @@ function populateModels (){
                 var selectEnc = $("#phase" + phase + "Encrypt_" + index);
                 var selectAuth = $("#phase" + phase + "Auth_" + index);
                 var auth = getOptionsFromArray(data, "auth");
-                var enc = getOptionsFromArray(data, "enc");
-                populateSelect(selectAuth, auth);
-                populateSelect(selectEnc, enc);
-
-                if (index == 100) {
-                    selectEnc.attr("id", "#phase" + phase + "Encrypt_0");
-                    selectAuth.attr("id", "#phase" + phase + "Auth_0");
+                if(selectEnc.attr("data-message") == "empty"){
+                    var enc = getOptionsFromArray(data, "enc");
+                    populateSelect(selectAuth, auth);
+                    populateSelect(selectEnc, enc);
+                    selectEnc.attr("data-message", "full");
                 }
                 break;
-            }
+                }                            
             case "dh": {
-                var dhGroup = $("#phase" + phase + "DH_" + index);                
-                var dh = getDH(data);
-                populateDH(dhGroup, dh);
-                dhGroup.attr("id","phase" + phase + "DH");
+                var dhGroup = $("#phase" + phase + "DH");                
+                if (dhGroup.attr("data-message") == "empty"){
+                    var dh = getDH(data);
+                    populateDH(dhGroup, dh);
+                    dhGroup.attr("data-message", "full");
+                }
             }
         }
     });
