@@ -47,7 +47,7 @@ function Siguiente (){
             nextPanel("phase1Proposal", "phase2Proposal");
             populatePhase("2", "0", "authEnc");
             populatePhase("2", "0", "dh");
-            $(this).text("Finalizar"); // al pasar al ultimo div "siguiente" se convierte en "finalizar"
+            $("#siguiente").text("Finalizar"); // al pasar al ultimo div "siguiente" se convierte en "finalizar"
             break;
             }
         case "phase2Proposal": {
