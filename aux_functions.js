@@ -95,8 +95,8 @@ function populateDH(dh, data){
     for (var i = 0; i < data.length; i ++) {     
         var value = data[i];
         var col = `<div class="col-1" id="dh${phase}col${value}"></div>`;        
-        var check = `<input type=checkbox class="form-check-input" id = "p${phases}dh${value}" value="${value}"></input>`;
-        var label = `<label for="p${phases}dh${value}" id="p${phases}dh${value}Label" style="float: right;">${value}</label>`;
+        var check = `<input type=checkbox class="form-check-input" id = "p${phase}dh${value}" value="${value}"></input>`;
+        var label = `<label for="p${phase}dh${value}" id="p${phase}dh${value}Label" style="float: right;">${value}</label>`;
         //alert(value);
         dh.append(col);
         var colId = $("#dh" + phase + "col" + value);
