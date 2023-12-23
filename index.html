@@ -292,6 +292,106 @@
                         </div>                                							
                     </div>		
                 </div>	
+                <div class="row border rounded p-3 mt-2 formDiv" id="phase2Proposal">
+                    <div class="bg-black text-white">
+                        <h3>Phase 2 Proposal</h3>		
+                    </div>						
+                    <div class="mb-1" id="subnets">	
+                        <div class="row mt-3" id="subnets_0">	
+                            <div class="col-3">
+                                <label class="pt-2">Subnets</label>
+                            </div>								
+                            <div class="col-3 pe-0">
+                                <input type="localSubnet" class="form-control subnet" id="localSubnet" onblur="checkSubnet(this)" aria-describedby="nameHelp" placeholder="Local Subnet" required>
+                            </div>
+                            <div class="col-1 ps-0">
+                                <select class="form-control" name="localMask" id="localMask" disabled>							
+                                </select>
+                            </div>								
+                            <div class="col-3 pe-0">
+                                <input type="remoteSubnet" class="form-control subnet" id="remoteSubnet" onblur="checkSubnet(this)" aria-describedby="nameHelp" placeholder="Remote Subnet" required>
+                            </div>
+                            <div class="col-1 ps-0">
+                                <select class="form-control" name="remoteMask" id="remoteMask" disabled>
+                                </select>
+                            </div>
+                            <div class="col-1">
+                                <div class="row">
+                                    <div class="col-6" id="addButton_0">
+                                        <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_0" disabled>+</a>
+                                    </div>                                    
+                                </div>                                
+                            </div>	
+                        </div>
+                    </div>						
+                    <div class="row mb-1 mt-3" id="p2AE">	
+                        <div class="row" id="p2AE_0">
+                            <div class="col-5">
+                                <div class="row">
+                                    <div class="col-4">
+                                    <label class="pt-2" for= "phase2Auth_0" id="phase2AuthLabel" name="pahse2AuthLabel">Autenticaci&oacute;n</label>
+                                    </div>	
+                                    <div class="col-8">
+                                        <select class="form-control" id="phase2Auth_0" name="phase2Auth_0" data-message="empty" required>
+                                        </select>
+                                    </div>	
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label class="pt-2" for= "phase2Encrypt_0" id="phase2EncryptLabel" name="phase2EncryptLabel">Encriptaci&oacute;n</label>
+                                    </div>	
+                                    <div class="col-8">
+                                        <select class="form-control" id="phase2Encrypt_0" name="phase2Encrypt_0" data-message="empty" required>
+                                        </select>
+                                    </div>	
+                                </div>
+                            </div>	
+                            <div class="col-2">
+                                <div class="row">
+                                    <div class="col-6" style="float: right;" id="p2AEAddButton_0">
+                                        <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="p1AEAdd_0" onclick="addAuthEnc(1,1)">+</a>
+                                    </div>                                    
+                                </div>                                
+                            </div>						
+                        </div>    			
+                    </div>
+                    <div class=" row mb-1">	
+                        <div class="col-2">
+                            <label class="pt-2" for= "phase2DH" id="phase2DHLabel" name="phase2DHLabel">Diffie-Hellman</label>
+                        </div>	
+                        <div class="col-10">
+                            <div class="row" id="phase2DH" data-message="empty">                                            
+                            </div>
+                        </div>                                							
+                    </div>							
+                            			
+                    <div class="mb-1">	
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="row">		
+                                    <div class="col-6">
+                                        <label class="pt-2">Keepalive Frequency</label>
+                                    </div>	
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" id="phase2KeyLifetime" name="phase2KeyLifetime" min="120" max="172800" value="43200" required>
+                                    </div>									
+                                </div>			
+                            </div>			
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <input type="randomKey" class="form-control subnet" id="randomKey" aria-describedby="nameHelp" disabled >									</div>
+                                    <div class="col-6">
+                                        <button type="button" id="randomize" data-message="randomize" class="btn btn-primary" disabled>Generar Clave</button>
+                                    </div>
+                                </div>
+                            </div>	
+                        </div>
+                    </div>	
+                </div>
+            
                 <div class="row mt-3" id="buttons">					
 					<div class="col-1">
 						<button type="button" id="anterior" data-message="general" class="btn btn-primary" style="display: none" onclick="Anterior(this)">Anterior</button>
