@@ -62,10 +62,10 @@ function nextPanel(current, next) {
 function cargarDatos(panel){
     switch(panel){
         case "contacto": {
-            info = {referencia: '$("#reference").val()',
-                    nombre: '$("#contactName").val()',
-                    telefono: '$(#phone").val()',
-                    email: '$("#email").val()'};
+            info = {referencia: $("#reference").val(),
+                    nombre: $("#contactName").val(),
+                    telefono: $("#phone").val(),
+                    email: $("#email").val()};
                     var infoText;
                     $.each(info, function(key, value) {
                         infoText += (key + " " + value + "\n");
