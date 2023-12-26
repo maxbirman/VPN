@@ -261,8 +261,8 @@ function removeSubnets(index){
 
     $("#" + currentId).remove();
 
-    $("#addButton_" + (index - 1)).removeAttr("style");
-    $("#removeButton_" + (index - 1)).removeAttr("style");
+    $("#addSubnet_" + (index - 1)).removeAttr("style");
+    $("#removeSubnet_" + (index - 1)).removeAttr("style");
 }
     
         
