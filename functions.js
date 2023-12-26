@@ -216,7 +216,7 @@ function addSubnets(index){
     }).appendTo('#subnets');
 
     $('#' + childId).append(
-                    `<div class="col-3 mt-2">
+                    `<div class="col-1 me-2 mt-2">
                         <labelclass="pt-2"></label>
                     </div>								
                     <div class="col-3 pe-0">
