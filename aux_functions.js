@@ -94,7 +94,7 @@ function cargarDatos(panel){
 
                 for (var i = 0; i <= 2; i++) {
                     if($("#phase1Auth_" + i).length > 0){
-                        proposal += $("#phase1Auth_" + i).val() + $("#phase1Enc_" + i).val() + " ";
+                        proposal += $("#phase1Auth_" + i).val() + "-" + $("#phase1Encrypt_" + i).val() + " ";
                     }
                 }
                phase1["proposal"] = proposal;
@@ -104,7 +104,7 @@ function cargarDatos(panel){
                 for (i = 0; i <= 31; i++) {
                     var dh = $("#p1dh" + i);
                     if (dh.length > 0 && dh.val() == "enable"){
-                        dhgrp += (dh + " ");
+                        dhgrp += (dh.val() + " ");
                     }
 
                 phase1["dhgrp"] = dhgrp;    
