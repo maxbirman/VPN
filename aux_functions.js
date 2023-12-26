@@ -101,7 +101,7 @@ function cargarDatos(panel){
 
                 var dhgrp;
 
-                for (i = 0; i <= 31; i++) {
+                for (i = 1; i <= 31; i++) {
                     var dh = $("#p1dh" + i);
                     if (dh.length > 0 && dh.is(':checked')){
                         dhgrp += (dh.val() + " ");
