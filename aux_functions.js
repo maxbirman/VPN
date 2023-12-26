@@ -62,45 +62,151 @@ function nextPanel(current, next) {
 function cargarDatos(panel){
     switch(panel){
         case "contacto": {
-                info["referencia"] = $("#reference").val(),
-                info["nombre"] = $("#contactName").val(),
-                info["telefono"] = $("#phone").val(),
+                info["referencia"] = $("#reference").val();
+                info["nombre"] = $("#contactName").val();
+                info["telefono"] = $("#phone").val();
                 info["email"] = $("#email").val();
-                var infoText;
-                $.each(info, function(key, value) {
-                    infoText += (key + " " + value + "\n");
-                })         
-                alert(infoText);
                 break;                    
         }
         case "general": {
-            config["nombreVPN"] = '$("#vpnName").val()';
-            break;
+               phase1["nombreVPN"] = $("#vpnName").val();
+                break;
         }
         case "network": {
-            info += {modelo: '$("#deviceModel").val()'};
-            config += {interface: '$("#interface").val()',
-                       publicLocal: '$("#publicLocal").val()',
-                       publicRemote: '$("#publicRemote").val()',
-                       natTraversal: '$("#natTraversal").val()',
-                       keepalive: '$("#keepAlive).val()',
-                       dpd: '$("#deadPeerDetection).val()'
-                     };
+                info["modelo"] = $("#deviceModel").val();
+               phase1["interface"] = $("#interface").val();
+               phase1["publicLocal"] = $("#publicLocal").val();
+               phase1["publicRemote"] = $("#publicRemote").val();
+               phase1["natTraversal"] = $("#natTraversal").val();
+               phase1["keepalive"] = $("#keepAlive").val();
+               phase1["dpd"] = $("#deadPeerDetection").val();
+                break;                  
+        }
+        case "authentication": {
+               phase1["authMethod"] = $("#authMethod").val();
+               phase1["psk"] = $("#psk").val();
+               phase1["ikeVersion"] = $("#ikeVersion").val();
+               phase1["ikeMode"] = $("#ikeMode").val();
+                break;
+        }
+        case "phase1Proposal" : {
+               phase1["proposal"] = {0: $("#phase1Auth0").val() + "-" + $("#phase1Enc0").val(),
+                                      1: $("#phase1Auth1").val() + "-" + $("#phase1Enc1").val(),
+                                      2: $("#phase1Auth2").val() + "-" + $("#phase1Enc2").val()
+                                    };
+                var dhgrp;                    
+                for (i = 0; i <= 31; i++) {
+                    var dh = $("#p1dh" + i);
+                    if (dh.length > 0 && dh.val() == "enable"){
+                        dhgrp += dh + " ";
+                    }
+                }
+                break;                                
+            }
+            case "phase2Proposal": {
+                var nombreVPN = $("#nombreVPN").val();
+                var dhgrp;
+                var proposal = {0: $("#phase2Auth0").val() + "-" + $("#phase2Enc0").val() + " ",
+                                1: $("#phase2Auth1").val() + "-" + $("#phase2Enc1").val() + " ",
+                                2: $("#phase2Auth2").val() + "-" + $("#phase2Enc2").val()
+                              }; 
+                var keylife = $("#phase2KeyLifetime").val();
 
-            var infoText;
-            $.each(info, function(key, value) {
-                infoText += (key + " " + value + "\n");
-            })         
-            alert(infoText);
+                for (i = 0; i <= 31; i++) {
+                    var dh = $("#p2dh" + i);
+                    if (dh.length > 0 && dh.val() == "enable"){
+                        dhgrp += dh + " ";
+                    }
+                }
 
-            var configText;
-            $.each(config, function(key, value) {
-                configText += (key + " " + value + "\n");
-            })   
-            alert(configText);         
+                for (j = 0; j <=2; j++ ) {
+                    if($("#localSubnet_" + j).length > 0) {
+                        phase2[j] = {name: nombreVPN,
+                                     dhgrp: dhgrp,
+                                     proposal: proposal,
+                                     keylife = keylife,
+                                     localSubnet = $("#localSubnet_" + j).val() + " " + $("#localMask_" + j).val(),
+                                     remoteSubnet = $("#remoteSubnet_" + j).val() + " " + $("#remoteMask_" + j).val()
+                                    };
+                    }
+                }
+                crearArchivoConf();
+                break;
+            }
         }
     }
+
+function generarConf(){
+    var infoContacto = `
+********************************************
+* Referencia: ${info["referencia"]}        *
+* Nombre de contacto: ${info["nombre"]}    *
+* Telefono: ${info["telefono"]}            *
+* Email: ${info["email"]}                  *   
+* Modelo de equipo: ${info["modelo"]}      *
+* ****************************************** `;
+    
+    var phase1Conf = `
+config vpn ipsec phase1-interface
+    edit ${phase1["nombreVPN"]}
+        set interface ${phase1['interface']}
+        set dpd ${phase1['dpd']}
+        set local-gw ${phase1['publicLocal']}
+        set dhgrp ${phase1['dhgrp']}
+        set proposal ${phase1['proposal']}
+        set keylife ${phase1['keepalive']}
+        set remote-gw ${phase1['publicRemote']}
+        set ${phase1['authMethod']} ${phase1['psk']}
+    end`;
+
+    var phase2Conf = `
+config vpn ipsec phase2-interface`;
+
+    for (var i = 0; i <3 ; i++) {
+        if (phase2[i].length > 0) {
+            var phase2Data = phase2[i];
+            phase2Conf += `
+    edit ${phase2Data['nombreVPN']}_${i}
+        set phase1name "${phase2Data['nombreVPN']}
+        set dhgrp = ${phase2Data['dhgrp']}
+        set proposal = ${phase2Data['proposal']}
+        set keylife = ${phase2Data['keylife']}
+        set src-subnet = ${phase2Data['localSubnet']}
+        set dst-subnet = ${phase2Data['remoteSubnet']}
+    next`;
+        }
+    }
+    phase2Conf += `
+end`;
+
+    var route = `
+config router static`;
+
+    for (var i = 0; i <3 ; i++) {
+        if (phase2[i].length > 0) {
+            var phase2Data = phase2[i];
+            var dst = phase2Data["remoteSubnet"];
+            route += `
+    edit 0
+        set dstaddr ${dst}
+        set device "${phase2Data["nombreVPN"]}
+    next`;
+        }
+    }
+
+    route +=`
+end`;
+
+return phase1Conf + phase2Conf + route;
+
+}    
+
+function crearArchivoConf(){
+    var configuracion = generarConf();
+
+    alert(configuracion);
 }
+
 //verificar si el formato de la IP es correcto
 function ipPublicaCorrecta (ip) {
     var correcto = false;

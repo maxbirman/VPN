@@ -1,43 +1,11 @@
 //Variables para referenciar los datos ingresados por el usuario
             
             var info = {};
-            var config = {};
+            var phase1 = {};
+            var phase2 = {};            
 
-
-            //contacto
-            var referencia;
-            var emailPrincipal = "";
-            //General
-            var vpn;
-            //Network
-            var publicaLocal;
-            var publicaRemota;
-            var natTraversal;
-            var keepAlive;
-            var dpd;
-            //Authentication
-            var authMethod;
-            var psk;
-            var signature;
-            var ikeVersion;
-            var ikeMode;
-            //Phase1
-            var phase1Proposal;			
-            var phase1DiffieHellman;
-            //Phase2
-            var phase2Proposal;
-            var phase2DiffieHellman;
-            var localSubnet;
-            var remoteSubnet;
-            var phase2KeyLifetime;
-
-        //Variables para referenciar los botones
-           // var previousButton = $("#anterior");
-           // var nextButton = $("#siguiente");
-        
         //clave para cifrar archivo de salida
-            var clave;
-        
+            var clave;        
 
         //variables para cargar los select de modelos e interfaces
             var modelo;
