@@ -162,7 +162,7 @@ config vpn ipsec phase1-interface
     var phase2Conf = `
 config vpn ipsec phase2-interface`;
 
-    for (var i = 0; i <3 ; i++) {
+    for (var i = 0; i < phase2.length ; i++) {
         if (phase2[i].length > 0) {
             var phase2Data = phase2[i];
             phase2Conf += `
