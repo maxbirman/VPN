@@ -62,20 +62,19 @@ function nextPanel(current, next) {
 function cargarDatos(panel){
     switch(panel){
         case "contacto": {
-            info += {referencia: $("#reference").val(),
-                    nombre: $("#contactName").val(),
-                    telefono: $("#phone").val(),
-                    email: $("#email").val()};
-                    var infoText;
-                    $.each(info, function(key, value) {
-                        infoText += (key + " " + value + "\n");
-                    })         
-                    alert(infoText);
-            break;                    
+                info["referencia"] = $("#reference").val(),
+                info["nombre"] = $("#contactName").val(),
+                info["telefono"] = $("#phone").val(),
+                info["email"] = $("#email").val();
+                var infoText;
+                $.each(info, function(key, value) {
+                    infoText += (key + " " + value + "\n");
+                })         
+                alert(infoText);
+                break;                    
         }
         case "general": {
-            config += {nombreVPN: '$("#vpnName").val()'};
-            alert(config);
+            config["nombreVPN"] = '$("#vpnName").val()';
             break;
         }
         case "network": {
