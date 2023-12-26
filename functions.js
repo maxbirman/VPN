@@ -239,7 +239,7 @@ function addSubnets(index){
                                 <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="removeSubnets_${index}" onclick="removeSubnets(${index})">-</a>
                             </div> 
                             <div class="col-6" id="addButton_${index}">
-                                <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_${index}" onclick="addSubnets($[]{nextIndex})">+</a>
+                                <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_${index}" onclick="addSubnets(${nextIndex})">+</a>
                             </div>                                    
                         </div>                                
                     </div>`);	
