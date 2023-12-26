@@ -247,8 +247,8 @@ function addSubnets(index){
     $('#removeSubnet_' + index).on('click', removeSubnets);
    
 
-    $('#addSubnet_' + prevIndex).remove();
-    $('#removeSubnet_' + prevIndex).remove();
+    $('#addSubnet_' + prevIndex).attr("style", "display:none");
+    $('#removeSubnet_' + prevIndex).attr("style", "display:none");
 
     if (nextIndex == 3){
         $("#addSubnet_" + index).attr('style', 'display:none');
