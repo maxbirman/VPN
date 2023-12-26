@@ -83,8 +83,18 @@ function cargarDatos(panel){
                        keepalive: '$("#keepAlive).val()',
                        dpd: '$("#deadPeerDetection).val()'
                      };
-            alert(info);
-            alert(config);         
+
+            var infoText;
+            $.each(info, function(key, value) {
+                infoText += (key + " " + value + "\n");
+            })         
+            alert(infoText);
+
+            var configText;
+            $.each(config, function(key, value) {
+                configText += (key + " " + value + "\n");
+            })   
+            alert(configText);         
         }
     }
 }
