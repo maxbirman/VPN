@@ -269,7 +269,7 @@ function checkSubnet(inputId, index) {
                                 {id: "255.255.255.254", name: "/31"},{id: "255.255.255.255", name: "/32"}
                             ];
                     select.empty();		
-                    populate(select, maskList);
+                    populateSelect(select, maskList);
                 }
                 else {
                     maskList = [
