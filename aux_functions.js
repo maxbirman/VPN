@@ -108,6 +108,7 @@ function cargarDatos(panel){
                     }
 
                 phase1["dhgrp"] = dhgrp;    
+                console.log(phase1["dhgrp"]);
                 }
                 break;                                
             }
