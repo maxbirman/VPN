@@ -236,22 +236,22 @@ function addSubnets(index){
                     <div class="col-1">
                         <div class="row">
                             <div class="col-6" id="removeButton_${index}">
-                                <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="removeSubnets_${index}" onclick="removeSubnets(${index})">-</a>
+                                <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="removeSubnet_${index}" onclick="removeSubnets(${index})">-</a>
                             </div> 
                             <div class="col-6" id="addButton_${index}">
-                                <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_${index}" onclick="addSubnets(${nextIndex})">+</a>
+                                <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnet_${index}" onclick="addSubnets(${nextIndex})">+</a>
                             </div>                                    
                         </div>                                
                     </div>`);	
 
-    $('#removeSubnets_' + index).on('click', removeSubnets);
+    $('#removeSubnet_' + index).on('click', removeSubnets);
    
 
-    $('#addSubnets_' + prevIndex).remove();
-    $('#removeSubnets_' + prevIndex).remove();
+    $('#addSubnet_' + prevIndex).remove();
+    $('#removeSubnet_' + prevIndex).remove();
 
     if (nextIndex == 3){
-        $("#addSubnets_" + index).attr('style', 'display:none');
+        $("#addSubnet_" + index).attr('style', 'display:none');
     }   
 }
     
