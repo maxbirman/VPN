@@ -251,7 +251,7 @@ function addSubnets(index){
     $('#removeSubnets_' + prevIndex).remove();
 
     if (nextIndex == 3){
-        $("#p" + phase + "AEAdd_" + index).attr('style', 'display:none');
+        $("#addSubnets_" + index).attr('style', 'display:none');
     }   
 }
     
