@@ -8,8 +8,9 @@ function verificarCamposCompletos(divId, siguiente) {
         formularioCompleto = false;
         return false; // Romper el bucle si se encuentra un campo vacío
       }
+    
 });
-
+}
 function verificarSelect(divId, siguiente) {
     var formularioCompleto = true;
     // Iterar a través de los elementos del formulario
