@@ -108,7 +108,7 @@ function cargarDatos(panel){
                     }
 
                 phase1["dhgrp"] = dhgrp;    
-                console.log(phase1["dhgrp"]);
+                console.log("#p1dh" + i + ": " + phase1["dhgrp"]);
                 }
                 break;                                
             }
