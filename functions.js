@@ -254,6 +254,16 @@ function addSubnets(index){
         $("#addSubnet_" + index).attr('style', 'display:none');
     }   
 }
+
+function removeSubnets(index){
+    currentId = "subnets_" + index;
+    prevId = "subnets_"  + (index -1);
+
+    $("#" + currentId).remove();
+
+    $("#addButton_" + (index - 1)).removeAttr("style");
+    $("#removeButton_" + (index - 1)).removeAttr("style");
+}
     
         
      
