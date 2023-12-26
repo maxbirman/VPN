@@ -201,15 +201,17 @@ function removeAuthEnc(phase,index) {
 
 }
 
-function addSubnets(){
-
-    var childId = "subnets_" + numSubnets;    
+function addSubnets(index){
+ 
+    var childId = "subnets_" + index; 
+	var nextIndex = index + 1;
+	var prevIndex = index - 1;
 
     //alert(currentSubnet);
     
     jQuery('<div>', {
-        id: `${childId}`,
-        class: 'row'
+        class: 'row mt-2',
+		id: childId
 
     }).appendTo('#subnets');
 
@@ -218,46 +220,39 @@ function addSubnets(){
                         <labelclass="pt-2"></label>
                     </div>								
                     <div class="col-3 pe-0">
-                        <input type="localSubnet" class="form-control subnet"  onblur="checkSubnet(this)" id="localSubnet_${numSubnets}" aria-describedby="nameHelp" placeholder="Local Subnet" required>
+                        <input type="localSubnet" class="form-control subnet"  onblur="checkSubnet(this)" id="localSubnet_${index}" aria-describedby="nameHelp" placeholder="Local Subnet" required>
                     </div>
                     <div class="col-1 ps-0">
-                        <select class="form-control" name="localMask" id="localMask_${numSubnets}" disabled>							
+                        <select class="form-control" name="localMask" id="localMask_${index}" disabled>							
                         </select>
                     </div>								
                     <div class="col-3 pe-0">
-                        <input type="remoteSubnet" class="form-control subnet" onblur="checkSubnet(this)"  id="remoteSubnet_${numSubnets}" aria-describedby="nameHelp" placeholder="Remote Subnet" required>
+                        <input type="remoteSubnet" class="form-control subnet" onblur="checkSubnet(this)"  id="remoteSubnet_${index}" aria-describedby="nameHelp" placeholder="Remote Subnet" required>
                     </div>
                     <div class="col-1 ps-0">
-                        <select class="form-control" name="remoteMask" id="remoteMask_${numSubnets}" disabled>
+                        <select class="form-control" name="remoteMask" id="remoteMask_${index}" disabled>
                         </select>
                     </div>
                     <div class="col-1">
                         <div class="row">
-                            <div class="col-6" id="removeButton_${numSubnets}">
-                                <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="removeSubnets_${numSubnets}">-</a>
+                            <div class="col-6" id="removeButton_${index}">
+                                <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="removeSubnets_${index}" onclick="removeSubnets(${index})">-</a>
                             </div> 
-                            <div class="col-6" id="addButton_${numSubnets}">
-                                <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_${numSubnets}">+</a>
+                            <div class="col-6" id="addButton_${index}">
+                                <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_${index}" onclick="addSubnets($[]{nextIndex})">+</a>
                             </div>                                    
                         </div>                                
                     </div>`);	
 
-    $('#removeSubnets_' + numSubnets).on('click', removeSubnets);
-    //$('#addSubnets_' + currentSubnet).attr('style','display:none');
-   // $('#removeSubnets_' + currentSubnet).attr('style' , 'display:none');
+    $('#removeSubnets_' + index).on('click', removeSubnets);
+   
 
-    $('#addSubnets_' + currentSubnet).remove();
-    $('#removeSubnets_' + currentSubnet).remove();
+    $('#addSubnets_' + prevIndex).remove();
+    $('#removeSubnets_' + prevIndex).remove();
 
-    if(numSubnets <= 2){
-        $('#addSubnets_' + numSubnets).on('click', addSubnets);          
-        
-    } else {
-        $('#addSubnets_' + numSubnets).on('click', function() {alert("No se permiten más de 4 Phase 2")});
-    }
-        numSubnets ++;
-        currentSubnet ++;
-    alert("current: " + currentSubnet + "\n num: " + numSubnets);
+    if (nextIndex == 3){
+        $("#p" + phase + "AEAdd_" + index).attr('style', 'display:none');
+    }   
 }
     
         
