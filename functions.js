@@ -201,6 +201,64 @@ function removeAuthEnc(phase,index) {
 
 }
 
+function addSubnets(){
+
+    var childId = "subnets_" + numSubnets;    
+
+    //alert(currentSubnet);
+    
+    jQuery('<div>', {
+        id: `${childId}`,
+        class: 'row'
+
+    }).appendTo('#subnets');
+
+    $('#' + childId).append(
+                    `<div class="col-3 mt-2">
+                        <labelclass="pt-2"></label>
+                    </div>								
+                    <div class="col-3 pe-0">
+                        <input type="localSubnet" class="form-control subnet"  onblur="checkSubnet(this)" id="localSubnet_${numSubnets}" aria-describedby="nameHelp" placeholder="Local Subnet" required>
+                    </div>
+                    <div class="col-1 ps-0">
+                        <select class="form-control" name="localMask" id="localMask_${numSubnets}" disabled>							
+                        </select>
+                    </div>								
+                    <div class="col-3 pe-0">
+                        <input type="remoteSubnet" class="form-control subnet" onblur="checkSubnet(this)"  id="remoteSubnet_${numSubnets}" aria-describedby="nameHelp" placeholder="Remote Subnet" required>
+                    </div>
+                    <div class="col-1 ps-0">
+                        <select class="form-control" name="remoteMask" id="remoteMask_${numSubnets}" disabled>
+                        </select>
+                    </div>
+                    <div class="col-1">
+                        <div class="row">
+                            <div class="col-6" id="removeButton_${numSubnets}">
+                                <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="removeSubnets_${numSubnets}">-</a>
+                            </div> 
+                            <div class="col-6" id="addButton_${numSubnets}">
+                                <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_${numSubnets}">+</a>
+                            </div>                                    
+                        </div>                                
+                    </div>`);	
+
+    $('#removeSubnets_' + numSubnets).on('click', removeSubnets);
+    //$('#addSubnets_' + currentSubnet).attr('style','display:none');
+   // $('#removeSubnets_' + currentSubnet).attr('style' , 'display:none');
+
+    $('#addSubnets_' + currentSubnet).remove();
+    $('#removeSubnets_' + currentSubnet).remove();
+
+    if(numSubnets <= 2){
+        $('#addSubnets_' + numSubnets).on('click', addSubnets);          
+        
+    } else {
+        $('#addSubnets_' + numSubnets).on('click', function() {alert("No se permiten más de 4 Phase 2")});
+    }
+        numSubnets ++;
+        currentSubnet ++;
+    alert("current: " + currentSubnet + "\n num: " + numSubnets);
+}
     
         
      
