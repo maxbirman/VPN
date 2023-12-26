@@ -216,13 +216,14 @@ function crearArchivoConf(){
 
     alert(configuracion);
 }
-function checkSubnet(subnetInput) {
-           
-    var ip = subnetInput.val();
+function checkSubnet(inputId) {
+    
+    var input = $("#inputId"); 
+    var ip = input.val();
     var select = $("#localMask");
                         
 
-    if(input.getAttribute("id") == "remoteSubnet"){  //si se aplica a la subnet remota
+    if(inputId == "remoteSubnet"){  //si se aplica a la subnet remota
         select = $("#remoteMask");
     }					
     
