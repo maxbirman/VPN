@@ -220,6 +220,7 @@ function checkSubnet(inputId) {
     
     var input = $("#inputId"); 
     var ip = input.val();
+    console.log(ip);
     var select = $("#localMask");
                         
 
