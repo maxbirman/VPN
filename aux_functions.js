@@ -206,9 +206,9 @@ function crearArchivoConf(){
 
     alert(configuracion);
 }
-function checkSubnet(input) {
+function checkSubnet(subnetInput) {
            
-    var ip = input.val();
+    var ip = subnetInput.val();
     var select = $("#localMask");
                         
 
