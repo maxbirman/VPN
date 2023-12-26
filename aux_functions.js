@@ -207,7 +207,7 @@ config router static`;
     route +=`
 end`;
 
-return phase1Conf + phase2Conf + route;
+return infoContacto + phase1Conf + phase2Conf + route;
 
 }    
 
