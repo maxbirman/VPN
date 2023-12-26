@@ -10,6 +10,7 @@ function verificarCamposCompletos(divId, siguiente) {
       }
     
 });
+siguiente.prop('disabled', !formularioCompleto); //si no esta completo deshabilita el botón
 }
 function verificarSelect(divId, siguiente) {
     var formularioCompleto = true;
