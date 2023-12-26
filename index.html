@@ -104,7 +104,7 @@
                                     <label for="deviceModel">Interface</label>
                                 </div>
                                 <div class="col-8">
-                                    <select name="deviceModel" class="form-control" id="deviceModel" onchange="populateInterfaces()">
+                                    <select name="deviceModel" class="form-control" id="deviceModel" onchange="populateInterfaces()" required>
                                         <option value="" disabled selected="selected">--Seleccione el modelo del dispositivo--</option>										
                                     </select>									
                                 </div>			
@@ -118,7 +118,7 @@
                                     </label>
                                 </div>
                                 <div class="col-8">
-                                    <select class="form-control" name="interface" id="interface" disabled>
+                                    <select class="form-control" name="interface" id="interface" required disabled>
                                         <option value="" disabled selected="selected">--Seleccione una interface--</option>
                                     </select>
                                 </div>
@@ -411,6 +411,7 @@
         $('.formDiv input[required]').on('input', function() {
             var divId = $(this).closest('.formDiv').attr('id');
             verificarCamposCompletos(divId, $("#siguiente"));
+            verificarSelect(divId, $("#siguiente"));
             alertCharLimit($(this));
         });        
 
