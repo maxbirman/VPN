@@ -13,7 +13,6 @@ function verificarCamposCompletos(divId, siguiente) {
 siguiente.prop('disabled', !formularioCompleto); //si no esta completo deshabilita el botón
 }
 
-
 function verificarSelect(divId, siguiente) {
     var formularioCompleto = true;
     // Iterar a través de los elementos del formulario
@@ -57,7 +56,37 @@ function nextPanel(current, next) {
     nextButton.attr("data-message", next);    	
     previousButton.attr("data-message", next)
     verificarCamposCompletos(next, nextButton);
-    //cargarDatos(current);
+    cargarDatos(current);
+}
+
+function cargarDatos(panel){
+    switch(panel){
+        case "contacto": {
+            info = {referencia: '$("#reference").val()',
+                    nombre: '$("#contactName").val()',
+                    telefono: '$(#phone").val()',
+                    email: '$("#email").val()'};
+                    alert(info);
+            break;                    
+        }
+        case "general": {
+            config += {nombreVPN: '$("#vpnName").val()'};
+            alert(config);
+            break;
+        }
+        case "network": {
+            info += {modelo: '$("#deviceModel").val()'};
+            config += {interface: '$("#interface").val()',
+                       publicLocal: '$("#publicLocal").val()',
+                       publicRemote: '$("#publicRemote").val()',
+                       natTraversal: '$("#natTraversal").val()',
+                       keepalive: '$("#keepAlive).val()',
+                       dpd: '$("#deadPeerDetection).val()'
+                     };
+            alert(info);
+            alert(config);         
+        }
+    }
 }
 //verificar si el formato de la IP es correcto
 function ipPublicaCorrecta (ip) {

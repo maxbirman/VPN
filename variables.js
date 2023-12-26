@@ -1,4 +1,9 @@
 //Variables para referenciar los datos ingresados por el usuario
+            
+            var info = {};
+            var config = {};
+
+
             //contacto
             var referencia;
             var emailPrincipal = "";
