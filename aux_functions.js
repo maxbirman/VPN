@@ -75,8 +75,8 @@ function cargarDatos(panel){
         case "network": {
                 info["modelo"] = $("#deviceModel").val();
                phase1["interface"] = $("#interface").val();
-               phase1["publicLocal"] = $("#publicLocal").val();
-               phase1["publicRemote"] = $("#publicRemote").val();
+               phase1["publicLocal"] = $("#publicaLocal").val();
+               phase1["publicRemote"] = $("#publicaRemota").val();
                phase1["natTraversal"] = $("#natTraversal").val();
                phase1["keepalive"] = $("#keepAlive").val();
                phase1["dpd"] = $("#deadPeerDetection").val();
@@ -100,6 +100,7 @@ function cargarDatos(panel){
                     if (dh.length > 0 && dh.val() == "enable"){
                         dhgrp += dh + " ";
                     }
+                phase1["dhgroup"] = dhgrp;    
                 }
                 break;                                
             }
@@ -118,6 +119,7 @@ function cargarDatos(panel){
                         dhgrp += dh + " ";
                     }
                 }
+
 
                 for (j = 0; j <=2; j++ ) {
                     if($("#localSubnet_" + j).length > 0) {
