@@ -62,7 +62,7 @@ function nextPanel(current, next) {
 function cargarDatos(panel){
     switch(panel){
         case "contacto": {
-            info = {referencia: $("#reference").val(),
+            info += {referencia: $("#reference").val(),
                     nombre: $("#contactName").val(),
                     telefono: $("#phone").val(),
                     email: $("#email").val()};
