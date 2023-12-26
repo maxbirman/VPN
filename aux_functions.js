@@ -90,9 +90,9 @@ function cargarDatos(panel){
                 break;
         }
         case "phase1Proposal" : {
-               phase1["proposal"] = {0: $("#phase1Auth0").val() + "-" + $("#phase1Enc0").val(),
-                                      1: $("#phase1Auth1").val() + "-" + $("#phase1Enc1").val(),
-                                      2: $("#phase1Auth2").val() + "-" + $("#phase1Enc2").val()
+               phase1["proposal"] = {0: $("#phase1Auth_0").val() + "-" + $("#phase1Enc_0").val(),
+                                      1: $("#phase1Auth_1").val() + "-" + $("#phase1Enc_1").val(),
+                                      2: $("#phase1Auth_2").val() + "-" + $("#phase1Enc_2").val()
                                     };
                 var dhgrp;                    
                 for (i = 0; i <= 31; i++) {
@@ -100,7 +100,7 @@ function cargarDatos(panel){
                     if (dh.length > 0 && dh.val() == "enable"){
                         dhgrp += dh + " ";
                     }
-                phase1["dhgroup"] = dhgrp;    
+                phase1["dhgrp"] = dhgrp;    
                 }
                 break;                                
             }
