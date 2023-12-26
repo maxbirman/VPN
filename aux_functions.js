@@ -206,7 +206,72 @@ function crearArchivoConf(){
 
     alert(configuracion);
 }
+function checkSubnet(input) {
+           
+    var ip = input.val();
+    var select = $("#localMask");
+                        
 
+    if(input.getAttribute("id") == "remoteSubnet"){  //si se aplica a la subnet remota
+        select = $("#remoteMask");
+    }					
+    
+    if (ip !== ""){
+        if(ipCorrecta(ip)){     //evalua que el formato de IP sea correcto
+            if(ipPublicaCorrecta(ip)){   //evalua que sea una IP privada
+                alert("Las subnets deben ser privadas"); //si es una IP publica da error
+                return;														
+            
+            }
+            else if (ip =="0.0.0.0") {
+                    select.empty();
+                    var maskList = [{id: "0.0.0.0", name: "/0"}]; // en caso de que la red sea 0.0.0.0 solo se permite mascara 0
+                    populate(select, maskList);
+                    select.attr('disabled','disabled');
+
+                }else if($("#localSubnet").val() == $("#remoteSubnet").val()){
+                alert("Las subnets no pueden ser iguales");
+                } else if (claseARegex.test(ip)) {
+                    var maskList = [
+                                {id: "255.0.0.0", name: "/8"},{id: "255.128.0.0", name: "/9"},{id: "255.192.0.0", name: "/10"},
+                                {id: "255.224.0.0", name: "/11"},{id: "255.240.0.0", name: "/12"},{id: "255.248.0.0", name: "/13"},
+                                {id: "255.252.0.0", name: "/14"},{id: "255.254.0.0", name: "/15"},{id: "255.255.0.0", name: "/16"},
+                                {id: "255.255.128.0", name: "/17"},{id: "255.255.192.0", name: "/18"},{id: "255.255.224.0", name: "/19"},
+                                {id: "255.255.240.0", name: "/20"},{id: "255.255.248.0", name: "/21"},{id: "255.255.252.0", name: "/22"},
+                                {id: "255.255.254.0", name: "/23"},{id: "255.255.255.0", name: "/24"},{id: "255.255.255.128", name: "/25"},
+                                {id: "255.255.255.192", name: "/26"},{id: "255.255.255.224", name: "/27"},{id: "255.255.255.240", name: "/28"},
+                                {id: "255.255.255.248", name: "/29"},{id: "255.255.255.252", name: "/30"},{id: "255.255.255.254", name: "/31"},
+                                {id: "255.255.255.255", name: "/32"}
+                            ];
+                    select.empty();		
+                    populate(select, maskList);
+                }
+                else if (claseBRegex.test(ip)) {
+                    var maskList = [
+                                {id: "255.255.0.0", name: "/16"},{id: "255.255.128.0", name: "/17"},{id: "255.255.192.0", name: "/18"},
+                                {id: "255.255.224.0", name: "/19"},{id: "255.255.240.0", name: "/20"},{id: "255.255.248.0", name: "/21"},
+                                {id: "255.255.252.0", name: "/22"},{id: "255.255.254.0", name: "/23"},{id: "255.255.255.0", name: "/24"},
+                                {id: "255.255.255.128", name: "/25"},{id: "255.255.255.192", name: "/26"},{id: "255.255.255.224", name: "/27"},
+                                {id: "255.255.255.240", name: "/28"},{id: "255.255.255.248", name: "/29"},{id: "255.255.255.252", name: "/30"},
+                                {id: "255.255.255.254", name: "/31"},{id: "255.255.255.255", name: "/32"}
+                            ];
+                    select.empty();		
+                    populate(select, maskList);
+                }
+                else {
+                    maskList = [
+                                {id: "255.255.255.0", name: "/24"},{id: "255.255.255.128", name: "/25"},{id: "255.255.255.192", name: "/26"},
+                                {id: "255.255.255.224", name: "/27"},{id: "255.255.255.240", name: "/28"},{id: "255.255.255.248", name: "/29"},
+                                {id: "255.255.255.252", name: "/30"},{id: "255.255.255.254", name: "/31"},{id: "255.255.255.255", name: "/32"}
+                            ];
+                    select.empty();		
+                    populate(select, maskList);		
+                }
+            }
+                } else {alert("Por favor introduzca un formato de IP válido");}		
+
+
+};
 //verificar si el formato de la IP es correcto
 function ipPublicaCorrecta (ip) {
     var correcto = false;
