@@ -103,7 +103,7 @@ function cargarDatos(panel){
 
                 for (i = 0; i <= 31; i++) {
                     var dh = $("#p1dh" + i);
-                    if (dh.length > 0 && dh.val() == "enable"){
+                    if (dh.length > 0 && dh.is(':checked')){
                         dhgrp += (dh.val() + " ");
                     }
 
