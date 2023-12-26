@@ -242,7 +242,7 @@ function checkSubnet(inputId, index) {
                     populate(select, maskList);
                     select.attr('disabled','disabled');
 
-                }else if($("#localSubnet").val() == $("#remoteSubnet").val()){
+                }else if($("#localSubnet_" + index).val() == $("#remoteSubnet_" + index).val()){
                 alert("Las subnets no pueden ser iguales");
                 } else if (claseARegex.test(ip)) {
                     var maskList = [
