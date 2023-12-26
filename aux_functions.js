@@ -90,16 +90,23 @@ function cargarDatos(panel){
                 break;
         }
         case "phase1Proposal" : {
-               phase1["proposal"] = {0: $("#phase1Auth_0").val() + "-" + $("#phase1Enc_0").val(),
-                                      1: $("#phase1Auth_1").val() + "-" + $("#phase1Enc_1").val(),
-                                      2: $("#phase1Auth_2").val() + "-" + $("#phase1Enc_2").val()
-                                    };
-                var dhgrp;                    
+                var proposal;
+
+                for (var i = 0; i <= 2; i++) {
+                    if($("#phase1Auth_" + i).length > 0){
+                        proposal += $("#phase1Auth_" + i).val() + $("#phase1Enc_" + i).val() + " ";
+                    }
+                }
+               phase1["proposal"] = proposal;
+
+                var dhgrp;
+
                 for (i = 0; i <= 31; i++) {
                     var dh = $("#p1dh" + i);
                     if (dh.length > 0 && dh.val() == "enable"){
-                        dhgrp += dh + " ";
+                        dhgrp += (dh + " ");
                     }
+
                 phase1["dhgrp"] = dhgrp;    
                 }
                 break;                                

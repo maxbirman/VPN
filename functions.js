@@ -52,7 +52,6 @@ function Siguiente (){
             }
         case "phase2Proposal": {
             cargarDatos("phase2Proposal");
-            generarConfig();
         }
         }
     }
