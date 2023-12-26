@@ -16,7 +16,7 @@ function verificarSelect(divId, siguiente) {
     // Iterar a través de los elementos del formulario
     $("#" + divId + " select[required]").each(function() {
       // Verificar si el campo está vacío
-      if ($(this).val() === '') {
+      if ($(this).val() == 'none') {
         formularioCompleto = false;
         return false; // Romper el bucle si se encuentra un campo vacío
       }
