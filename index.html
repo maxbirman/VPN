@@ -302,14 +302,14 @@
                                 <label class="pt-2">Subnets</label>
                             </div>								
                             <div class="col-3 ms-5 pe-0">
-                                <input type="localSubnet_0" class="form-control subnet" id="localSubnet_0" onblur="checkSubnet('localSubnet_0')" aria-describedby="nameHelp" placeholder="Local Subnet" required>
+                                <input type="localSubnet_0" class="form-control subnet" id="localSubnet_0" onblur="checkSubnet('localSubnet_0'), index" aria-describedby="nameHelp" placeholder="Local Subnet" required>
                             </div>
                             <div class="col-1 ps-0">
                                 <select class="form-control" name="localMask" id="localMask_0" disabled>							
                                 </select>
                             </div>								
                             <div class="col-3 pe-0">
-                                <input type="remoteSubnet" class="form-control subnet" id="remoteSubnet_0" onblur='checkSubnet("remoteSubnet_0", 0)' aria-describedby="nameHelp" placeholder="Remote Subnet" required>
+                                <input type="remoteSubnet" class="form-control subnet" id="remoteSubnet_0" onblur="checkSubnet('remoteSubnet_0', 0)" aria-describedby="nameHelp" placeholder="Remote Subnet" required>
                             </div>
                             <div class="col-1 ps-0">
                                 <select class="form-control" name="remoteMask" id="remoteMask_0" disabled>
