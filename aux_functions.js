@@ -66,7 +66,11 @@ function cargarDatos(panel){
                     nombre: '$("#contactName").val()',
                     telefono: '$(#phone").val()',
                     email: '$("#email").val()'};
-                    alert(info);
+                    var infoText;
+                    $.each(info, function(key, value) {
+                        infoText += (key + " " + value + "\n");
+                    })         
+                    alert(infoText);
             break;                    
         }
         case "general": {
