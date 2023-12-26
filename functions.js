@@ -219,7 +219,7 @@ function addSubnets(index){
                     `<div class="col-1 me-2 mt-2">
                         <labelclass="pt-2"></label>
                     </div>								
-                    <div class="col-3 pe-0">
+                    <div class="col-3 ms-5 pe-0">
                         <input type="localSubnet" class="form-control subnet"  onblur="checkSubnet(this)" id="localSubnet_${index}" aria-describedby="nameHelp" placeholder="Local Subnet" required>
                     </div>
                     <div class="col-1 ps-0">
