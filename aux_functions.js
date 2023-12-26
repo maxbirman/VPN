@@ -90,7 +90,7 @@ function cargarDatos(panel){
                 break;
         }
         case "phase1Proposal" : {
-                var proposal;
+                var proposal = "";
 
                 for (var i = 0; i <= 2; i++) {
                     if($("#phase1Auth_" + i).length > 0){
@@ -99,7 +99,7 @@ function cargarDatos(panel){
                 }
                phase1["proposal"] = proposal;
 
-                var dhgrp;
+                var dhgrp = "";
 
                 for (i = 1; i <= 31; i++) {
                     var dh = $("#p1dh" + i);
