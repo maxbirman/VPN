@@ -411,7 +411,7 @@
         $('.formDiv input[required]').on('input', function() {
             var divId = $(this).closest('.formDiv').attr('id');
             verificarCamposCompletos(divId, $("#siguiente"));
-            verificarSelect(divId, $("#siguiente"));
+            //verificarSelect(divId, $("#siguiente"));
             alertCharLimit($(this));
         });        
 
