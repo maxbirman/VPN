@@ -124,9 +124,9 @@ function cargarDatos(panel){
                         phase2[j] = {name: nombreVPN,
                                      dhgrp: dhgrp,
                                      proposal: proposal,
-                                     keylife = keylife,
-                                     localSubnet = $("#localSubnet_" + j).val() + " " + $("#localMask_" + j).val(),
-                                     remoteSubnet = $("#remoteSubnet_" + j).val() + " " + $("#remoteMask_" + j).val()
+                                     keylife: keylife,
+                                     localSubnet: $("#localSubnet_" + j).val() + " " + $("#localMask_" + j).val(),
+                                     remoteSubnet: $("#remoteSubnet_" + j).val() + " " + $("#remoteMask_" + j).val()
                                     };
                     }
                 }
