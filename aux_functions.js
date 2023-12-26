@@ -182,7 +182,7 @@ end`;
     var route = `
 config router static`;
 
-    for (var i = 0; i <3 ; i++) {
+    for (var i = 0; i < phase2.length ; i++) {
         if (phase2[i].length > 0) {
             var phase2Data = phase2[i];
             var dst = phase2Data["remoteSubnet"];
