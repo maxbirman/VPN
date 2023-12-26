@@ -218,7 +218,7 @@ function crearArchivoConf(){
 }
 function checkSubnet(inputId, index) {
     
-    var input = $("#inputId"); 
+    var input = $("#" + inputId); 
     var ip = input.val();
     console.log(ip);
 
