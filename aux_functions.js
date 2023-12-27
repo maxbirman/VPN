@@ -108,25 +108,24 @@ function cargarDatos(panel){
                     }
 
                 phase1["dhgrp"] = dhgrp;    
-                console.log("#p1dh" + i + ": " + phase1["dhgrp"]);
+               
                 }
                 break;                                
             }
             case "phase2Proposal": {
                 var nombreVPN = phase1["nombreVPN"];
-                var dhgrp;
+                var dhgrp = "";
                 var proposal = {0: $("#phase2Auth0").val() + "-" + $("#phase2Enc0").val() + " ",
                                 1: $("#phase2Auth1").val() + "-" + $("#phase2Enc1").val() + " ",
                                 2: $("#phase2Auth2").val() + "-" + $("#phase2Enc2").val()
                               }; 
                 var keylife = $("#phase2KeyLifetime").val();
 
-                for (i = 0; i <= 31; i++) {
+                for (i = 1; i <= 31; i++) {
                     var dh = $("#p2dh" + i);
-                    if (dh.length > 0 && dh.val() == "enable"){
-                        dhgrp += dh + " ";
-                    }
-                }
+                    if (dh.length > 0 && dh.is(':checked')){
+                        dhgrp += (dh.val() + " ");
+                    }  
 
 
                 for (var j = 0; j <=2; j++ ) {
@@ -138,6 +137,7 @@ function cargarDatos(panel){
                                      keylife: keylife,
                                      localSubnet: $("#localSubnet_" + j).val() + " " + $("#localMask_" + j).val(),
                                      remoteSubnet: $("#remoteSubnet_" + j).val() + " " + $("#remoteMask_" + j).val()
+                                     alert(nombreVPN);
                                     };
                     }else phase2[j] = {};
                 }
