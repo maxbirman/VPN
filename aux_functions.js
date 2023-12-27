@@ -113,7 +113,7 @@ function cargarDatos(panel){
                 break;                                
             }
             case "phase2Proposal": {
-                var nombreVPN = $("#nombreVPN").val();
+                var nombreVPN = phase1["nombreVPN"];
                 var dhgrp;
                 var proposal = {0: $("#phase2Auth0").val() + "-" + $("#phase2Enc0").val() + " ",
                                 1: $("#phase2Auth1").val() + "-" + $("#phase2Enc1").val() + " ",
@@ -132,7 +132,6 @@ function cargarDatos(panel){
                 for (var j = 0; j <=2; j++ ) {
                     
                     if($("#localSubnet_" + j).length > 0) {
-                        alert("localSubnet" + j);
                         phase2[j] = {name: nombreVPN,
                                      dhgrp: dhgrp,
                                      proposal: proposal,
@@ -172,11 +171,9 @@ config vpn ipsec phase1-interface
     end`;
 
     var phase2Conf = `
-config vpn ipsec phase2-interface
-${phase2.length}`;
+config vpn ipsec phase2-interface`;
 
     for (var i = 0; i < phase2.length ; i++) {
-        phase2Conf += "ahre";
         if (phase2[i] != {}) {
             var phase2Data = phase2[i];
             phase2Conf += `
