@@ -218,7 +218,16 @@ return infoContacto + phase1Conf + phase2Conf + route;
 function crearArchivoConf(){
     var configuracion = generarConf();
 
-    alert(configuracion);
+    var blob = new Blob([configuracion], {type: 'text/plain'});
+
+    var enlaceDescarga = document.createElement('a');
+    enlaceDescarga.href = window.URL.createObjectURL(blob);
+    enlaceDescarga.download = info["referencia"] + "_ipsec.txt";
+
+    document.body.appendChild(enlaceDescarga);
+    enlaceDescarga.click();
+
+    document.body.removeChild(enlaceDescarga);
 }
 function checkSubnet(inputId, index) {
     
