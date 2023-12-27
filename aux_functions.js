@@ -11,15 +11,8 @@ function verificarCamposCompletos(divId, siguiente) {
     
     });
 
-    $("#" + divId + " select").each(function() {
-        if ($(this).val() == "none"){
-            console.log("None");
-            formularioCompleto = false;
-            return false;
+    siguiente.prop('disabled', !formularioCompleto); //si no esta completo deshabilita el botón
         }
-    })
-siguiente.prop('disabled', !formularioCompleto); //si no esta completo deshabilita el botón
-}
 
 function verificarSelect(divId, siguiente) {
     var formularioCompleto = true;
