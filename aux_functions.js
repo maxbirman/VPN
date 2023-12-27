@@ -239,46 +239,43 @@ function checkSubnet(inputId, index) {
             else if (ip =="0.0.0.0") {
                     select.empty();
                     var maskList = [{id: "0.0.0.0", name: "/0"}]; // en caso de que la red sea 0.0.0.0 solo se permite mascara 0
-                    populate(select, maskList);
+                    populateSelect(select, maskList);
                     select.attr('disabled','disabled');
 
                 }else if($("#localSubnet_" + index).val() == $("#remoteSubnet_" + index).val()){
                 alert("Las subnets no pueden ser iguales");
                 } else if (claseARegex.test(ip)) {
-                    var maskList = [
-                                {id: "255.0.0.0", name: "/8"},{id: "255.128.0.0", name: "/9"},{id: "255.192.0.0", name: "/10"},
-                                {id: "255.224.0.0", name: "/11"},{id: "255.240.0.0", name: "/12"},{id: "255.248.0.0", name: "/13"},
-                                {id: "255.252.0.0", name: "/14"},{id: "255.254.0.0", name: "/15"},{id: "255.255.0.0", name: "/16"},
-                                {id: "255.255.128.0", name: "/17"},{id: "255.255.192.0", name: "/18"},{id: "255.255.224.0", name: "/19"},
-                                {id: "255.255.240.0", name: "/20"},{id: "255.255.248.0", name: "/21"},{id: "255.255.252.0", name: "/22"},
-                                {id: "255.255.254.0", name: "/23"},{id: "255.255.255.0", name: "/24"},{id: "255.255.255.128", name: "/25"},
-                                {id: "255.255.255.192", name: "/26"},{id: "255.255.255.224", name: "/27"},{id: "255.255.255.240", name: "/28"},
-                                {id: "255.255.255.248", name: "/29"},{id: "255.255.255.252", name: "/30"},{id: "255.255.255.254", name: "/31"},
-                                {id: "255.255.255.255", name: "/32"}
-                            ];
-                    select.empty();		
-                    populate(select, maskList);
+
+                    var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
+                    var data = [];
+                    getArrayFromFile(file, function(extData) {
+                        data = extData;  
+                        var masks = getMasks(data, 8);  
+                        select.empty();        
+                        populateSelect(select,masks);
+                    });                   
+
+                    
                 }
                 else if (claseBRegex.test(ip)) {
-                    var maskList = [
-                                {id: "255.255.0.0", name: "/16"},{id: "255.255.128.0", name: "/17"},{id: "255.255.192.0", name: "/18"},
-                                {id: "255.255.224.0", name: "/19"},{id: "255.255.240.0", name: "/20"},{id: "255.255.248.0", name: "/21"},
-                                {id: "255.255.252.0", name: "/22"},{id: "255.255.254.0", name: "/23"},{id: "255.255.255.0", name: "/24"},
-                                {id: "255.255.255.128", name: "/25"},{id: "255.255.255.192", name: "/26"},{id: "255.255.255.224", name: "/27"},
-                                {id: "255.255.255.240", name: "/28"},{id: "255.255.255.248", name: "/29"},{id: "255.255.255.252", name: "/30"},
-                                {id: "255.255.255.254", name: "/31"},{id: "255.255.255.255", name: "/32"}
-                            ];
-                    select.empty();		
-                    populateSelect(select, maskList);
+                    var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
+                    var data = [];
+                    getArrayFromFile(file, function(extData) {
+                        data = extData;  
+                        var masks = getMasks(data, 16);  
+                        select.empty();        
+                        populateSelect(select,masks);
+                    });    
                 }
                 else {
-                    maskList = [
-                                {id: "255.255.255.0", name: "/24"},{id: "255.255.255.128", name: "/25"},{id: "255.255.255.192", name: "/26"},
-                                {id: "255.255.255.224", name: "/27"},{id: "255.255.255.240", name: "/28"},{id: "255.255.255.248", name: "/29"},
-                                {id: "255.255.255.252", name: "/30"},{id: "255.255.255.254", name: "/31"},{id: "255.255.255.255", name: "/32"}
-                            ];
-                    select.empty();		
-                    populate(select, maskList);		
+                    var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
+                    var data = [];
+                    getArrayFromFile(file, function(extData) {
+                        data = extData;  
+                        var masks = getMasks(data, 24);  
+                        select.empty();        
+                        populateSelect(select,masks);
+                    });    	
                 }
             }
                 } else {alert("Por favor introduzca un formato de IP válido");}		
@@ -379,6 +376,20 @@ function populateModels (){
 
   function getAuth(data){
 
+  }
+
+  function getMasks(data, base) {
+    var splitData = data.split("\n");
+    var masks = "";
+
+    for (var i = 0; i < splitData.length; i ++){
+        var temp = splitData[i].split(";");
+        if (temp[1] >= base){
+            masks += temp[0] + ";" + temp[1] + "\n";
+        }
+    }
+
+    return masks;
   }
 
   function populatePhase (phase, index, section) { 
