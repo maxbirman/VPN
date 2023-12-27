@@ -413,7 +413,14 @@
             verificarCamposCompletos(divId, $("#siguiente"));
             //verificarSelect(divId, $("#siguiente"));
             alertCharLimit($(this));
-        });        
+        });  
+        
+        $('.formDiv select').on('change', function() {
+            var divId = $(this).closest('.formDiv').attr('id');
+            verificarCamposCompletos(divId, $("#siguiente"));
+            //verificarSelect(divId, $("#siguiente"));
+            alertCharLimit($(this));
+        });  
 
         verificarCamposCompletos("contacto", $("#siguiente"));
 
