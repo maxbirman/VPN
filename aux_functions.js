@@ -225,7 +225,7 @@ function checkSubnet(inputId, index) {
     var select = $("#localMask_" + index);
                         
 
-    if(inputId == "remoteSubnet" + index){  //si se aplica a la subnet remota
+    if(inputId == "remoteSubnet_" + index){  //si se aplica a la subnet remota
         select = $("#remoteMask_" + index);
     }					
     
@@ -253,6 +253,7 @@ function checkSubnet(inputId, index) {
                         var masks = getMasks(data, 8);  
                         select.empty();        
                         populateSelect(select,masks);
+                        select.removeAttr("disabled");
                     });                   
 
                     
@@ -265,6 +266,7 @@ function checkSubnet(inputId, index) {
                         var masks = getMasks(data, 16);  
                         select.empty();        
                         populateSelect(select,masks);
+                        select.removeAttr("disabled");
                     });    
                 }
                 else {
@@ -275,6 +277,7 @@ function checkSubnet(inputId, index) {
                         var masks = getMasks(data, 24);  
                         select.empty();        
                         populateSelect(select,masks);
+                        select.removeAttr("disabled");
                     });    	
                 }
             }
