@@ -2,7 +2,7 @@
             
             var info = {};
             var phase1 = {};
-            var phase2 = {};            
+            var phase2 = [];            
 
         //clave para cifrar archivo de salida
             var clave;        
