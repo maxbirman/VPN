@@ -420,15 +420,15 @@
             alertCharLimit($(this));
         });  
 
-        $('.formDiv input[required]').on('change', function() {
+        $('.formDiv input[required]').on('input', function() {
             var divId = $(this).closest('.formDiv').attr('id');
             verificarCamposCompletos(divId, $("#siguiente"));
             alertCharLimit($(this));
         });
 
-        $('.formDiv input[type="checkbox"]').on('change', function() {
+        /*$('.formDiv input[type="checkbox"]').on('change', function() {
             console.log("vamo");
-        });
+        });*/
 
         verificarCamposCompletos("contacto", $("#siguiente"));
 
