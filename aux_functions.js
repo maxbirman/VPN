@@ -3,7 +3,7 @@ function verificarCamposCompletos(divId, siguiente) {
     var formularioCompleto = true;
     // Iterar a través de los elementos del formulario
     $("#" + divId + " input[required]").each(function() {
-        console.log($(this)+ ": " + $(this).val());
+        console.log($(this).attr("id") + ": " + $(this).val());
       // Verificar si el campo está vacío
       if ($(this).val() === '') {
         formularioCompleto = false;
