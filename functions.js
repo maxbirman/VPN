@@ -219,14 +219,14 @@ function addSubnets(index){
                         <labelclass="pt-2"></label>
                     </div>								
                     <div class="col-3 ms-5 pe-0">
-                        <input type="localSubnet" class="form-control subnet"  onblur="checkSubnet(this)" id="localSubnet_${index}" aria-describedby="nameHelp" placeholder="Local Subnet" required>
+                        <input type="localSubnet" class="form-control subnet"  onblur="checkSubnet('localSubnet_${index}')" id="localSubnet_${index}" aria-describedby="nameHelp" placeholder="Local Subnet" required>
                     </div>
                     <div class="col-1 ps-0">
                         <select class="form-control" name="localMask" id="localMask_${index}" disabled>							
                         </select>
                     </div>								
                     <div class="col-3 pe-0">
-                        <input type="remoteSubnet" class="form-control subnet" onblur="checkSubnet(this)"  id="remoteSubnet_${index}" aria-describedby="nameHelp" placeholder="Remote Subnet" required>
+                        <input type="remoteSubnet" class="form-control subnet" onblur="checkSubnet('remoteSubnet_${index}')"  id="remoteSubnet_${index}" aria-describedby="nameHelp" placeholder="Remote Subnet" required>
                     </div>
                     <div class="col-1 ps-0">
                         <select class="form-control" name="remoteMask" id="remoteMask_${index}" disabled>
