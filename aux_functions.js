@@ -113,7 +113,7 @@ function cargarDatos(panel){
                 break;                                
             }
             case "phase2Proposal": {
-                var nombreVPN = phase1["nombreVPN"];
+                var nombreVPN = "diantres";
                 var dhgrp;
                 var proposal = {0: $("#phase2Auth0").val() + "-" + $("#phase2Enc0").val() + " ",
                                 1: $("#phase2Auth1").val() + "-" + $("#phase2Enc1").val() + " ",
