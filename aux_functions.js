@@ -1,28 +1,41 @@
 //verificar si todos los campos están completos
 function verificarCamposCompletos(divId, siguiente) {
     var formularioCompleto = true;
-    // Iterar a través de los elementos del formulario
-    $("#" + divId + " input[required]").each(function() {
-       // console.log($(this).attr("id") + ": " + $(this).val());
-      // Verificar si el campo está vacío
-      if ($(this).val() === '') {
-        formularioCompleto = false;
-        return false; // Romper el bucle si se encuentra un campo vacío
-      }
-    });
-      $("#" + divId + " select[required]").each(function() {
-        console.log($(this).val());
-       // Verificar si el campo está vacío
-       if ($(this).val() === null) {
-         formularioCompleto = false;
-         return false; // Romper el bucle si se encuentra un campo vacío
-       }
-    
-    });
+
+    if(divId == "phase1Proposal" || divId == "phase2Proposal"){
+        formularioCompleto = verificarCheckbox(divId);
+    }
+
+    if(formularioCompleto && verificarCampos(divId, "input")){
+        formularioCompleto = verificarCampos(divId, "select");
+    }    
     //console.log("formulario completo: " + formularioCompleto);
     siguiente.prop('disabled', !formularioCompleto); //si no esta completo deshabilita el botón
-        }
+}
     
+    function verificarCampos(divId, type){
+        var formularioCompleto = true;
+        $("#" + divId +  " " + type + "[required]").each(function() {
+            // console.log($(this).attr("id") + ": " + $(this).val());
+           // Verificar si el campo está vacío
+           if ($(this).val() === null || $(this).val() === '') {
+             formularioCompleto = false;
+             return false; // Romper el bucle si se encuentra un campo vacío
+           }
+         });
+         return formularioCompleto;
+    }
+
+    function verificarCheckbox(divId){
+        var checked = false;
+        $('#' + divId + ' input[type="checkbox"]').each(function() {
+            if($(this).prop('checked')) {
+                checked = true;
+                return true;
+            }
+        });
+        return checked;
+    }
 
 
 //function para alertar que el nombre de la vpn no puede tener mas de 15 caracteres
