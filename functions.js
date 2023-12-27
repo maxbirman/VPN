@@ -168,7 +168,7 @@ function addAuthEnc(phase, index){   //0 , 1
                                     </div>	
                                 </div>
                             </div>	
-                            <div class="col-2">
+                            <div class="col-1">
                                 <div class="row">
                                     <div class="col-6" id="p${phase}AERemoveButton_${index}">
                                         <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="p${phase}AERemove_${index}" onclick="removeAuthEnc(${phase}, ${index})">-</a>
