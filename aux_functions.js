@@ -11,17 +11,17 @@ function verificarCamposCompletos(divId, siguiente) {
       }
     
     });
-    console.log("formulario completo: " + formularioCompleto);
+    //console.log("formulario completo: " + formularioCompleto);
     siguiente.prop('disabled', !formularioCompleto); //si no esta completo deshabilita el botón
         }
 
-/*function verificarSelect(divId, siguiente) {
+function verificarSelect(divId, siguiente) {
     var formularioCompleto = true;
     // Iterar a través de los elementos del formulario
     $("#" + divId + " select[required]").each(function() {
-      //  console.log($(this).val());
+       console.log($(this).val());
       // Verificar si el campo está vacío
-      if ($(this).val() == 'none') {
+      if ($(this).val() === 'none') {
         formularioCompleto = false;
         return false; // Romper el bucle si se encuentra un campo vacío
       }
@@ -29,7 +29,7 @@ function verificarCamposCompletos(divId, siguiente) {
 
 siguiente.prop('disabled', !formularioCompleto); //si no esta completo deshabilita el botón
 
-}*/
+}
 
 //function para alertar que el nombre de la vpn no puede tener mas de 15 caracteres
 function alertCharLimit(input){
