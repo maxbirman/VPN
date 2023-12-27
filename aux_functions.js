@@ -2,13 +2,13 @@
 function verificarCamposCompletos(divId, siguiente) {
     var formularioCompleto = true;
 
-    if(divId == "phase1Proposal" || divId == "phase2Proposal"){
-        formularioCompleto = verificarCheckbox(divId);
+    if(formularioCompleto = verificarCampos(divId, "input")){
+        formularioCompleto = verificarCampos(divId, "select");
     }
 
-    if(formularioCompleto && verificarCampos(divId, "input")){
-        formularioCompleto = verificarCampos(divId, "select");
-    }    
+    if(formularioCompleto && (divId == "phase1Proposal" || divId == "phase2Proposal")) {
+        formularioCompleto = verificarCheckbox(divId);
+    }
     //console.log("formulario completo: " + formularioCompleto);
     siguiente.prop('disabled', !formularioCompleto); //si no esta completo deshabilita el botón
 }
