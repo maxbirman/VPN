@@ -129,7 +129,7 @@ function cargarDatos(panel){
                         dhgrp += (dh.val() + " ");
                     }  
 
-
+                }
                 for (var j = 0; j <=2; j++ ) {
                     
                     if($("#localSubnet_" + j).length > 0) {
@@ -149,15 +149,15 @@ function cargarDatos(panel){
             }
         }
     }
-}
+
 function generarConf(){
     var infoContacto = `
 ********************************************
-* Referencia: ${info["referencia"]}        *
-* Nombre de contacto: ${info["nombre"]}    *
-* Telefono: ${info["telefono"]}            *
-* Email: ${info["email"]}                  *   
-* Modelo de equipo: ${info["modelo"]}      *
+* Referencia: ${info["referencia"]}        
+* Nombre de contacto: ${info["nombre"]}    
+* Telefono: ${info["telefono"]}            
+* Email: ${info["email"]}                    
+* Modelo de equipo: ${info["modelo"]}      
 * ****************************************** `;
     
     var phase1Conf = `
@@ -197,7 +197,7 @@ end`;
 config router static`;
 
     for (var i = 0; i < phase2.length ; i++) {
-        if (phase2[i].length > 0) {
+        if (phase2[i] != {}) {
             var phase2Data = phase2[i];
             var dst = phase2Data["remoteSubnet"];
             route += `
