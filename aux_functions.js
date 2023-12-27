@@ -115,10 +115,11 @@ function cargarDatos(panel){
             case "phase2Proposal": {
                 var nombreVPN = phase1["nombreVPN"];
                 var dhgrp = "";
-                var proposal = {0: $("#phase2Auth0").val() + "-" + $("#phase2Enc0").val() + " ",
-                                1: $("#phase2Auth1").val() + "-" + $("#phase2Enc1").val() + " ",
-                                2: $("#phase2Auth2").val() + "-" + $("#phase2Enc2").val()
-                              }; 
+                for (var i = 0; i <= 2; i++) {
+                    if($("#phase2Auth_" + i).length > 0){
+                        proposal += $("#phase2Auth_" + i).val() + "-" + $("#phase2Encrypt_" + i).val() + " ";
+                    }
+                }
                 var keylife = $("#phase2KeyLifetime").val();
 
                 for (i = 1; i <= 31; i++) {
