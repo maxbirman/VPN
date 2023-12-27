@@ -3,6 +3,7 @@ function verificarCamposCompletos(divId, siguiente) {
     var formularioCompleto = true;
     // Iterar a través de los elementos del formulario
     $("#" + divId + " input[required]").each(function() {
+        console.log($(this).val());
       // Verificar si el campo está vacío
       if ($(this).val() === '') {
         formularioCompleto = false;
@@ -18,6 +19,7 @@ function verificarSelect(divId, siguiente) {
     var formularioCompleto = true;
     // Iterar a través de los elementos del formulario
     $("#" + divId + " select[required]").each(function() {
+        console.log($(this).val());
       // Verificar si el campo está vacío
       if ($(this).val() == 'none') {
         formularioCompleto = false;
@@ -28,6 +30,7 @@ function verificarSelect(divId, siguiente) {
 siguiente.prop('disabled', !formularioCompleto); //si no esta completo deshabilita el botón
 
 }
+
 //function para alertar que el nombre de la vpn no puede tener mas de 15 caracteres
 function alertCharLimit(input){
     if(input.attr('maxlength') !== undefined) {
