@@ -140,7 +140,7 @@ function cargarDatos(panel){
                                      localSubnet: $("#localSubnet_" + j).val() + " " + $("#localMask_" + j).val(),
                                      remoteSubnet: $("#remoteSubnet_" + j).val() + " " + $("#remoteMask_" + j).val()
                                     };
-                    }
+                    }else phase2[j] = {};
                 }
                 crearArchivoConf();
                 break;
@@ -177,16 +177,16 @@ ${phase2.length}`;
 
     for (var i = 0; i < phase2.length ; i++) {
         phase2Conf += "ahre";
-        if (phase2[i].length > 0) {
+        if (phase2[i] != {}) {
             var phase2Data = phase2[i];
             phase2Conf += `
     edit ${phase2Data["nombreVPN"]}_${i}
         set phase1name ${phase2Data["nombreVPN"]}
-        set dhgrp = ${phase2Data["dhgrp"]}
-        set proposal = ${phase2Data["proposal"]}
-        set keylife = ${phase2Data["keylife"]}
-        set src-subnet = ${phase2Data["localSubnet"]}
-        set dst-subnet = ${phase2Data["remoteSubnet"]}
+        set dhgrp ${phase2Data["dhgrp"]}
+        set proposal ${phase2Data["proposal"]}
+        set keylife ${phase2Data["keylife"]}
+        set src-subnet ${phase2Data["localSubnet"]}
+        set dst-subnet ${phase2Data["remoteSubnet"]}
     next`;
         }
     }
