@@ -9,7 +9,14 @@ function verificarCamposCompletos(divId, siguiente) {
         return false; // Romper el bucle si se encuentra un campo vacío
       }
     
-});
+    });
+
+    $("#" + divId + "select").each(function() {
+        if ($(this).val == "none"){
+            formularioCompleto = false;
+            return false;
+        }
+    })
 siguiente.prop('disabled', !formularioCompleto); //si no esta completo deshabilita el botón
 }
 
