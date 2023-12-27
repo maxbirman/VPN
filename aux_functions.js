@@ -114,7 +114,7 @@ function cargarDatos(panel){
             }
             case "phase2Proposal": {
                 var nombreVPN = phase1["nombreVPN"];
-                var dhgrp = "";
+                var proposal = "";
                 for (var i = 0; i <= 2; i++) {
                     if($("#phase2Auth_" + i).length > 0){
                         proposal += $("#phase2Auth_" + i).val() + "-" + $("#phase2Encrypt_" + i).val() + " ";
@@ -122,6 +122,7 @@ function cargarDatos(panel){
                 }
                 var keylife = $("#phase2KeyLifetime").val();
 
+                var dhgrp = ""
                 for (i = 1; i <= 31; i++) {
                     var dh = $("#p2dh" + i);
                     if (dh.length > 0 && dh.is(':checked')){
