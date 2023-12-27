@@ -138,7 +138,7 @@ function cargarDatos(panel){
                                      localSubnet: $("#localSubnet_" + j).val() + " " + $("#localMask_" + j).val(),
                                      remoteSubnet: $("#remoteSubnet_" + j).val() + " " + $("#remoteMask_" + j).val()                                     
                                     };
-                                    alert(nombreVPN + " " + phase2[j]);
+                                    alert(nombreVPN + " " + phase2[j]["name"]);
                                     
                     }else phase2[j] = {};
                 }
