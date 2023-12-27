@@ -129,7 +129,7 @@ function cargarDatos(panel){
                 }
 
 
-                for (j = 0; j <=2; j++ ) {
+                for (var j = 0; j <=2; j++ ) {
                     if($("#localSubnet_" + j).length > 0) {
                         phase2[j] = {name: nombreVPN,
                                      dhgrp: dhgrp,
