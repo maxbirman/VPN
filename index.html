@@ -420,7 +420,7 @@
             alertCharLimit($(this));
         });  
 
-        $('.formDiv [type="checkbox"]').on('change', function() {
+        $('.formDiv input[type="checkbox"]').on('change', function() {
             var divId = $(this).closest('.formDiv').attr('id');
             verificarCamposCompletos(divId, $("#siguiente"));
         });
