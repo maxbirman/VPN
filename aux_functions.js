@@ -172,7 +172,8 @@ config vpn ipsec phase1-interface
     end`;
 
     var phase2Conf = `
-config vpn ipsec phase2-interface`;
+config vpn ipsec phase2-interface
+${phase2.length}`;
 
     for (var i = 0; i < phase2.length ; i++) {
         phase2Conf += "ahre";
