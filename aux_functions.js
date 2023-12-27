@@ -13,7 +13,7 @@ function verificarCamposCompletos(divId, siguiente) {
       $("#" + divId + " select[required]").each(function() {
         console.log($(this).val());
        // Verificar si el campo está vacío
-       if ($(this).val() === 'none') {
+       if ($(this).val() === null) {
          formularioCompleto = false;
          return false; // Romper el bucle si se encuentra un campo vacío
        }
