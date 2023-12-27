@@ -136,9 +136,10 @@ function cargarDatos(panel){
                                      proposal: proposal,
                                      keylife: keylife,
                                      localSubnet: $("#localSubnet_" + j).val() + " " + $("#localMask_" + j).val(),
-                                     remoteSubnet: $("#remoteSubnet_" + j).val() + " " + $("#remoteMask_" + j).val()
-                                     alert(nombreVPN);
+                                     remoteSubnet: $("#remoteSubnet_" + j).val() + " " + $("#remoteMask_" + j).val()                                     
                                     };
+                                    alert(nombreVPN + " " + phase2[j]);
+                                    
                     }else phase2[j] = {};
                 }
                 crearArchivoConf();
