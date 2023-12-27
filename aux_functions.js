@@ -13,6 +13,7 @@ function verificarCamposCompletos(divId, siguiente) {
 
     $("#" + divId + "select").each(function() {
         if ($(this).val == "none"){
+            console.log("None");
             formularioCompleto = false;
             return false;
         }
