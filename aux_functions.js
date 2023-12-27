@@ -199,11 +199,10 @@ config router static`;
     for (var i = 0; i < phase2.length ; i++) {
         if (phase2[i] != {}) {
             var phase2Data = phase2[i];
-            var dst = phase2Data["remoteSubnet"];
             route += `
     edit 0
-        set dstaddr ${dst}
-        set device "${phase2Data["nombreVPN"]}
+        set dstaddr ${phase2Data['remoteSubnet']}
+        set device "${phase2Data['name']}"
     next`;
         }
     }
