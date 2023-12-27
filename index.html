@@ -426,6 +426,10 @@
             alertCharLimit($(this));
         });
 
+        $('.formDiv input[type="checkbox"]').on('change', function() {
+            console.log("vamo");
+        });
+
         verificarCamposCompletos("contacto", $("#siguiente"));
 
         var previousButton = $("#anterior");
