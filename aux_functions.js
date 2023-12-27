@@ -147,7 +147,7 @@ function cargarDatos(panel){
             }
         }
     }
-
+}
 function generarConf(){
     var infoContacto = `
 ********************************************
