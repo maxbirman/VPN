@@ -238,7 +238,7 @@ function checkSubnet(inputId, index) {
             }
             else if (ip =="0.0.0.0") {
                     select.empty();
-                    var maskList = [{id: "0.0.0.0", name: "/0"}]; // en caso de que la red sea 0.0.0.0 solo se permite mascara 0
+                    var maskList = "0.0.0.0;/0"; // en caso de que la red sea 0.0.0.0 solo se permite mascara 0
                     populateSelect(select, maskList);
                     select.attr('disabled','disabled');
 
@@ -246,7 +246,7 @@ function checkSubnet(inputId, index) {
                 alert("Las subnets no pueden ser iguales");
                 } else if (claseARegex.test(ip)) {
 
-                    var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
+                    var file = "https://raw.githubusercontent.com/maxbirman/VPN/main/masks.csv";
                     var data = [];
                     getArrayFromFile(file, function(extData) {
                         data = extData;  
@@ -258,7 +258,7 @@ function checkSubnet(inputId, index) {
                     
                 }
                 else if (claseBRegex.test(ip)) {
-                    var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
+                    var file = "https://raw.githubusercontent.com/maxbirman/VPN/main/masks.csv";
                     var data = [];
                     getArrayFromFile(file, function(extData) {
                         data = extData;  
@@ -268,7 +268,7 @@ function checkSubnet(inputId, index) {
                     });    
                 }
                 else {
-                    var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
+                    var file = "https://raw.githubusercontent.com/maxbirman/VPN/main/masks.csv";
                     var data = [];
                     getArrayFromFile(file, function(extData) {
                         data = extData;  
@@ -385,7 +385,7 @@ function populateModels (){
     for (var i = 0; i < splitData.length; i ++){
         var temp = splitData[i].split(";");
         if (temp[1] >= base){
-            masks += temp[0] + ";" + temp[1] + "\n";
+            masks += temp[0] + ";/" + temp[1] + "\n";
         }
     }
 
