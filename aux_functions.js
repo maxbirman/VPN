@@ -176,13 +176,13 @@ config vpn ipsec phase2-interface`;
         if (phase2[i].length > 0) {
             var phase2Data = phase2[i];
             phase2Conf += `
-    edit ${phase2Data['nombreVPN']}_${i}
-        set phase1name "${phase2Data['nombreVPN']}
-        set dhgrp = ${phase2Data['dhgrp']}
-        set proposal = ${phase2Data['proposal']}
-        set keylife = ${phase2Data['keylife']}
-        set src-subnet = ${phase2Data['localSubnet']}
-        set dst-subnet = ${phase2Data['remoteSubnet']}
+    edit ${phase2Data["nombreVPN"]}_${i}
+        set phase1name ${phase2Data["nombreVPN"]}
+        set dhgrp = ${phase2Data["dhgrp"]}
+        set proposal = ${phase2Data["proposal"]}
+        set keylife = ${phase2Data["keylife"]}
+        set src-subnet = ${phase2Data["localSubnet"]}
+        set dst-subnet = ${phase2Data["remoteSubnet"]}
     next`;
         }
     }
