@@ -51,14 +51,16 @@ function verificarAutEnc(phase, index, data, selected) {
                 var tempSelected = selectedEnc + ";" + selectedEnc;
                 if(tempData[i] != tempSelected){
                    data += tempData[i];
+                   console.log(i);
+                   console.log(data);
                    if (i > 0) {data += "\n";}     
                 }
             }
         }
-        console.log(data);
+        
         return verificarAutEnc(phase, index, data, selected);
     }else {
-        console.log(data);
+        //console.log(data);
         return data;
     }
 
