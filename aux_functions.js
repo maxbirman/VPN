@@ -53,7 +53,7 @@ function verificarAutEnc(phase, index, data, selected) {
                    data += tempData[i];
                    console.log(i);
                    console.log(data);
-                   if (i > 0) {data += "\n";}     
+                   if (i < tempData.length) {data += "\n";}     
                 }
             }
         }
