@@ -110,7 +110,7 @@ function populateInterfaces(){
     var select = $("#deviceModel");
     var selected = select.val();
     select = $("#interface");
-    var file = "/interfaces.csv";
+    var file = "/interfaces.txt";
     var data = [];
      
     getArrayFromFile(file, function(extData) {
