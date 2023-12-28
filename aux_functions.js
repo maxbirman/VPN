@@ -39,12 +39,12 @@ function verificarCamposCompletos(divId, siguiente) {
 
 function verificarAutEnc(phase, index, data, selected) {
     var selectedAuth = $("#phase" + phase + "Auth_" + index).val();
-    var selectedEnc = $("#phase" + phase + "Encrypt_").val();
+    var selectedEnc = $("#phase" + phase + "Encrypt_" + index).val();
 
     if(selected == selectedAuth) {
         var tempData = data.split("\n");
         data = "";
-
+ 
         for (var i = 0; i < tempData.length; i++) {
             var tempSelected = selectedEnc + ";" + selectedEnc;
             if(tempData[i] != tempSelected){
@@ -461,7 +461,7 @@ function populateModels (){
                     var enc = getOptionsFromArray(data, "enc");
                    
                     populateSelect(selectAuth, auth);
-                    enc = verificarAutEnc(phase, index, enc, selectAuth.val());
+                    enc = verificarAutEnc(phase, index - 1, enc, selectAuth.val());
                     populateSelect(selectEnc, enc);
                     selectEnc.attr("data-message", "full");
                 }
