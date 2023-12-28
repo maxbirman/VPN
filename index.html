@@ -427,6 +427,11 @@
             //alert("le has cliqueado a " + $(this).attr('id'));
         });
 
+        $('.formDiv :checkbox').change(function () {
+            var divId = $(this).closest('.formDiv').attr('id');
+            verificarCamposCompletos(divId, $("#siguiente"));
+        })
+
         /*$('.formDiv input[type="checkbox"]').on('change', function() {
             console.log("vamo");
         });*/
