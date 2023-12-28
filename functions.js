@@ -110,7 +110,7 @@ function populateInterfaces(){
     var select = $("#deviceModel");
     var selected = select.val();
     select = $("#interface");
-    var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
+    var file = "/interfaces.csv";
     var data = [];
      
     getArrayFromFile(file, function(extData) {
