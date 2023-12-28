@@ -37,6 +37,30 @@ function verificarCamposCompletos(divId, siguiente) {
         return checked;
     }
 
+function verificarAutEnc(phase, index, data, selected) {
+    var selectedAuth = $("#phase" + phase + "Auth_" + index).val();
+    var selectedEnc = $("#phase" + phase + "Encrypt_").val();
+
+    if(selected == selectedAuth) {
+        var tempData = data.split("\n");
+        data = "";
+
+        for (var i = 0; i < tempData.length; i++) {
+            var tempSelected = selectedEnc + ";" + selectedEnc;
+            if(tempData[i] != tempSelected){
+               data += tempData[i] + "\n";     
+            }
+        }
+    }
+
+    if (index > 0) {
+        return verificarAuthEnc(phase, index - 1, data, selected);
+    }else {
+        return data;
+    }
+
+    }
+    
 
 //function para alertar que el nombre de la vpn no puede tener mas de 15 caracteres
 function alertCharLimit(input){
@@ -435,7 +459,9 @@ function populateModels (){
                 var auth = getOptionsFromArray(data, "auth");
                 if(selectEnc.attr("data-message") == "empty"){
                     var enc = getOptionsFromArray(data, "enc");
+                   
                     populateSelect(selectAuth, auth);
+                    enc = verificarAutEnc(phase, index, enc, selectAuth.val());
                     populateSelect(selectEnc, enc);
                     selectEnc.attr("data-message", "full");
                 }
