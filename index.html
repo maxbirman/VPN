@@ -427,7 +427,8 @@
             //alert("le has cliqueado a " + $(this).attr('id'));
         });
 
-        $('.formDiv .check').change(function () {
+        $('.formDiv input[type=checkbox]').change(function () {
+            alert("checate esto");
             var divId = $(this).closest('.formDiv').attr('id');
             verificarCamposCompletos(divId, $("#siguiente"));
         });
