@@ -110,7 +110,7 @@ function populateInterfaces(){
     var select = $("#deviceModel");
     var selected = select.val();
     select = $("#interface");
-    var file = "/interfaces.txt";
+    var file = "https://raw.githubusercontent.com/maxbirman/VPN/main/interfaces.csv";
     var data = [];
      
     getArrayFromFile(file, function(extData) {
