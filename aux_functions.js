@@ -464,7 +464,7 @@ function populateModels (){
                     var enc = getOptionsFromArray(data, "enc");
                    
                     populateSelect(selectAuth, auth);
-                    enc = verificarAutEnc(phase, index - 1, enc, selectAuth.val());
+                    enc = verificarAutEnc(phase, index, enc, selectAuth.val());
                     populateSelect(selectEnc, enc);
                     selectEnc.attr("data-message", "full");
                 }
