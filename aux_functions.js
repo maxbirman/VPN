@@ -55,9 +55,10 @@ function verificarAutEnc(phase, index, data, selected) {
                 }
             }
         }
-
-        return verificarAuthEnc(phase, index, data, selected);
+        console.log("this one");
+        return verificarAutEnc(phase, index, data, selected);
     }else {
+        console.log("nah, esta");
         return data;
     }
 
