@@ -37,11 +37,12 @@ function verificarCamposCompletos(divId, siguiente) {
         return checked;
     }
 
-function verificarAutEnc(phase, index, data, selected) {
-    var selectedAuth = $("#phase" + phase + "Auth_" + index).val();
-    var selectedEnc = $("#phase" + phase + "Encrypt_" + index).val();
+function verificarAutEnc(phase, index, data, selected) {   
    
     if (index > 0) {
+        index = index -1;
+        var selectedAuth = $("#phase" + phase + "Auth_" + index).val();
+        var selectedEnc = $("#phase" + phase + "Encrypt_" + index).val();
         if(selected == selectedAuth) {
             var tempData = data.split("\n");
             data = "";
@@ -49,12 +50,13 @@ function verificarAutEnc(phase, index, data, selected) {
             for (var i = 0; i < tempData.length; i++) {
                 var tempSelected = selectedEnc + ";" + selectedEnc;
                 if(tempData[i] != tempSelected){
-                   data += tempData[i] + "\n";     
+                   data += tempData[i];
+                   if (index > 0) {data += "\n";}     
                 }
             }
         }
 
-        return verificarAuthEnc(phase, index - 1, data, selected);
+        return verificarAuthEnc(phase, index, data, selected);
     }else {
         return data;
     }
