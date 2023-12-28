@@ -40,20 +40,20 @@ function verificarCamposCompletos(divId, siguiente) {
 function verificarAutEnc(phase, index, data, selected) {
     var selectedAuth = $("#phase" + phase + "Auth_" + index).val();
     var selectedEnc = $("#phase" + phase + "Encrypt_" + index).val();
-
-    if(selected == selectedAuth) {
-        var tempData = data.split("\n");
-        data = "";
- 
-        for (var i = 0; i < tempData.length; i++) {
-            var tempSelected = selectedEnc + ";" + selectedEnc;
-            if(tempData[i] != tempSelected){
-               data += tempData[i] + "\n";     
+   
+    if (index > 0) {
+        if(selected == selectedAuth) {
+            var tempData = data.split("\n");
+            data = "";
+     
+            for (var i = 0; i < tempData.length; i++) {
+                var tempSelected = selectedEnc + ";" + selectedEnc;
+                if(tempData[i] != tempSelected){
+                   data += tempData[i] + "\n";     
+                }
             }
         }
-    }
 
-    if (index > 0) {
         return verificarAuthEnc(phase, index - 1, data, selected);
     }else {
         return data;
@@ -447,7 +447,7 @@ function populateModels (){
 
   function populatePhase (phase, index, section) { 
     var parent = $("#phase" + phase + "Proposal");
-    var file = "https://raw.githubusercontent.com/maxbirman/VPN/main/authenc.csv";
+    var file = "https://maxbirman/VPN/authenc.csv";
     var data = [];
 
     getArrayFromFile(file, function(extData) {
