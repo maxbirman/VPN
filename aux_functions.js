@@ -419,7 +419,7 @@ function getArrayFromFile(file, callback) {
 
 function populateModels (){
     var select = $("#deviceModel");
-    var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
+    var file = "https://maxbirman.github.io/VPN/interfaces.txt";
     var data = [];
     getArrayFromFile(file, function(extData) {
         data = extData;            
