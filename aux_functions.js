@@ -55,10 +55,10 @@ function verificarAutEnc(phase, index, data, selected) {
                 }
             }
         }
-        //console.log("this one");
+        console.log(data);
         return verificarAutEnc(phase, index, data, selected);
     }else {
-        //console.log("nah, esta");
+        console.log(data);
         return data;
     }
 
