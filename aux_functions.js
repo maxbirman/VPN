@@ -447,7 +447,7 @@ function populateModels (){
 
   function populatePhase (phase, index, section) { 
     var parent = $("#phase" + phase + "Proposal");
-    var file = "https://maxbirman/VPN/authenc.csv";
+    var file = "https://maxbirman.github.io/VPN/authenc.txt";
     var data = [];
 
     getArrayFromFile(file, function(extData) {
