@@ -51,7 +51,7 @@ function verificarAutEnc(phase, index, data, selected) {
                 var tempSelected = selectedEnc + ";" + selectedEnc;
                 if(tempData[i] != tempSelected){
                    data += tempData[i];
-                   if (index > 0) {data += "\n";}     
+                   if (i > 0) {data += "\n";}     
                 }
             }
         }
