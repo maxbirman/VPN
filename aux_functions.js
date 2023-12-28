@@ -228,11 +228,11 @@ return infoContacto + phase1Conf + phase2Conf + route;
 function crearArchivoConf(){
     var configuracion = generarConf();
 
-    var clave = info["reference"];
+    var clave = info["referencia"];
 
     var encryptado = CryptoJS.AES.encrypt(configuracion,clave).toString();
 
-    var blob = new Blob([configuracion], {type: 'text/plain'});
+    var blob = new Blob([encryptado], {type: 'text/plain'});
 
     var enlaceDescarga = document.createElement('a');
     enlaceDescarga.href = window.URL.createObjectURL(blob);
