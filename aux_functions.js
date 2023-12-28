@@ -38,7 +38,7 @@ function verificarCamposCompletos(divId, siguiente) {
     }
 
 function verificarAutEnc(phase, index, data, selected) {   
-    console.log(index);
+    //console.log(index);
     if (index > 0) {
         index = index -1;
         var selectedAuth = $("#phase" + phase + "Auth_" + index).val();
