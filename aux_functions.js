@@ -28,13 +28,21 @@ function verificarCamposCompletos(divId, siguiente, input) {
                     break;
                 }
                 case "publicaLocal": {
-                    if(ipPublicaCorrecta($("#publicaLocal").val) != ""){
-                        $("#errorIpPublica").text(ipPublicaCorrecta($("#publicaLocal").val()));
+                    if($("#publicaLocal").val() != ""){
+                        if(ipPublicaCorrecta($("#publicaLocal").val) != ""){
+                            $("#errorIpPublica").text(ipPublicaCorrecta($("#publicaLocal").val()));
+                            $("#publicaRemota").attr('disabled', 'disabled');
+                            formularioCompleto = false;
+                        }else {
+                            $("#publicaRemota").removeAttr('disabled', 'disabled');
+                            $("#publicaRemota").attr("placeholder", "Introduzca la IP pública remota");
+                            formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
+                        }
                     }else {
-                        $("#publicaRemota").removeAttr('disabled', 'disabled');
-                        $("#publicaRemota").attr("placeholder", "Introduzca la IP pública remota");
+                        $("#publicaRemota").attr('disabled', 'disabled');
+                        formularioCompleto = false;
                     }
-                    formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
+                    
                     break;
                 }        
                 case "publicaRemota": {
@@ -45,7 +53,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                     break;
                 }  
                 default: {
-                    formularioCompleto = verificaCampos(divId, "input") && verificarCampos(divId, "select");
+                    formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
                 }         
             }
         }
