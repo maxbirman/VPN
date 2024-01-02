@@ -86,8 +86,7 @@ function verificarAutEnc(phase, index, data, selected) {
         return data;
     }
 
-    }
-    
+    }    
 
 //function para alertar que el nombre de la vpn no puede tener mas de 15 caracteres
 function charLimit(input){
