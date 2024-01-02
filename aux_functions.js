@@ -405,7 +405,7 @@ function ipPublicaCorrecta (ip) {
             result = "Por favor introduzca una IP pública valida";
         }   
     
-
+    console.log(result);    
     return result;
 }	
 
