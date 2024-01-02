@@ -23,8 +23,9 @@ function verificarCamposCompletos(divId, siguiente, input) {
         case "network": {
             if(input == "deviceModel"){
                 populateInterfaces();
+                formularioCompleto = false;
             }
-            formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
+            else{formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");}            
             break;
         }
         default:
