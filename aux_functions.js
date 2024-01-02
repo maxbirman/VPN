@@ -3,7 +3,7 @@ function verificarCamposCompletos(divId, siguiente) {
     var formularioCompleto = true;
 
     switch (divId) {
-        case "contacto" {
+        case "contacto": {
             var email = $("#email").val();
             var errorEmail = $("#emailError").val();
             formularioCompleto = verificarCampos(divId, "input") && emailCorrecto(email);
