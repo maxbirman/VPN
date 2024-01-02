@@ -40,6 +40,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                             formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
                         }
                     }else {
+                        $("#publicaRemota").attr("placeholder", "Introduzca primero la IP pública local");
                         $("#publicaRemota").attr('disabled', 'disabled');
                         formularioCompleto = false;
                     }                    
