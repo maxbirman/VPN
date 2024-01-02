@@ -418,12 +418,12 @@
         
         $('.formDiv select').on('change', function() {
             var divId = $(this).closest('.formDiv').attr('id');
-            verificarCamposCompletos(divId, $("#siguiente"), $(this));
+            verificarCamposCompletos(divId, $("#siguiente"), $(this).attr('id'));
         });  
 
         $('.formDiv input[required]').on('input click', function() {
             var divId = $(this).closest('.formDiv').attr('id');
-            verificarCamposCompletos(divId, $("#siguiente"), $(this));
+            verificarCamposCompletos(divId, $("#siguiente"), $(this).attr('id'));
 
             //if ($(this).attr("id") == "email") {checkEmail();}
             //alert("le has cliqueado a " + $(this).attr('id'));
@@ -432,7 +432,7 @@
         $('.formDiv input[type=checkbox]').change(function () {
             alert("checate esto");
             var divId = $(this).closest('.formDiv').attr('id');
-            verificarCamposCompletos(divId, $("#siguiente"), $(this));
+            verificarCamposCompletos(divId, $("#siguiente"), $(this).attr('id'));
         });
 
         /*$('.formDiv input[type="checkbox"]').on('change', function() {
