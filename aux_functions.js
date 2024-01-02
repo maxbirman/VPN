@@ -29,7 +29,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                 }
                 case "publicaLocal": {
                     if($("#publicaLocal").val() != ""){
-                        if(ipPublicaCorrecta($("#publicaLocal").val) != ""){
+                        if(ipPublicaCorrecta($("#publicaLocal").val()) != ""){
                             $("#errorIpPublica").text(ipPublicaCorrecta($("#publicaLocal").val()));
                             $("#publicaRemota").attr('disabled', 'disabled');
                             formularioCompleto = false;
