@@ -19,6 +19,9 @@ function verificarCamposCompletos(divId, siguiente) {
             if(charLimit(name)) {charLimitError.attr("style", "color: red; padding-left: 2px"); }
             else {charLimitError.attr("style", "color: red; padding-left: 2px; display:none");}
         }
+        case "network": {
+            formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
+        }
         default:
             if(formularioCompleto = verificarCampos(divId, "input")){
                 formularioCompleto = verificarCampos(divId, "select");

@@ -119,6 +119,7 @@ function populateInterfaces(){
     })
     
     select.removeAttr('disabled');
+    $("#siguiente").attr('disabled', 'disabled');
 
     } 
 function pskOrCert(){
