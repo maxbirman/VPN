@@ -182,7 +182,7 @@ function cargarDatos(panel){
                                     };
                                     alert(nombreVPN + " " + phase2[j]["name"]);
                                     
-                    }else phase2[j] = {};
+                    }else phase2[j] = "";
                 }
                 crearArchivoConf();
                 break;
@@ -217,7 +217,7 @@ config vpn ipsec phase1-interface
 config vpn ipsec phase2-interface`;
 
     for (var i = 0; i < phase2.length ; i++) {
-        if (phase2[i] != {}) {
+        if (phase2[i] != "") {
             var phase2Data = phase2[i];
             phase2Conf += `
     edit ${phase2Data["name"]}_${i}
@@ -237,7 +237,7 @@ end`;
 config router static`;
 
     for (var i = 0; i < phase2.length ; i++) {
-        if (phase2[i] != {}) {
+        if (phase2[i] != "") {
             var phase2Data = phase2[i];
             route += `
     edit 0
