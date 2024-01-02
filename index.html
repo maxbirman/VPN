@@ -419,13 +419,11 @@
         $('.formDiv select').on('change', function() {
             var divId = $(this).closest('.formDiv').attr('id');
             verificarCamposCompletos(divId, $("#siguiente"));
-            alertCharLimit($(this));
         });  
 
         $('.formDiv input[required]').on('input click', function() {
             var divId = $(this).closest('.formDiv').attr('id');
             verificarCamposCompletos(divId, $("#siguiente"));
-            alertCharLimit($(this));
 
             //if ($(this).attr("id") == "email") {checkEmail();}
             //alert("le has cliqueado a " + $(this).attr('id'));
