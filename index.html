@@ -106,7 +106,7 @@
                                     <label for="deviceModel">Modelo</label>
                                 </div>
                                 <div class="col-8">
-                                    <select name="deviceModel" class="form-control" id="deviceModel"     required>
+                                    <select name="deviceModel" class="form-control" id="deviceModel" required>
                                         <option value="none" disabled selected="selected">--Seleccione el modelo del dispositivo--</option>										
                                     </select>									
                                 </div>			
@@ -132,6 +132,7 @@
                             <div class="row">
                                 <div class="col-4">
                                     <label for="publicaLocal" id="publicaLocalLabel" name="publicaLocalLabel">IP P&uacute;blica Local</label>
+                                    <small id="errorIPpublica" style="color: red; padding-left: 2px; display: none;"></small>
                                 </div>
                                 <div class="col-8">
                                     <input type="text" class="form-control" id="publicaLocal" aria-describedby="emailHelp" placeholder="IP P&uacute;blica Local" required>
@@ -408,14 +409,7 @@
 </body>
 <script>
     $(document).ready(function () {
-                
-        //asigna funcion a evento onInput en todos los inputs que tenga atributo required
-        /*$('.formDiv input[required]').on('input', function() {
-            var divId = $(this).closest('.formDiv').attr('id');
-            verificarCamposCompletos(divId, $("#siguiente"));
-            alertCharLimit($(this));
-        });*/  
-        
+                       
         $('.formDiv select').on('change', function() {
             var divId = $(this).closest('.formDiv').attr('id');
             verificarCamposCompletos(divId, $("#siguiente"), $(this).attr('id'));
@@ -425,8 +419,6 @@
             var divId = $(this).closest('.formDiv').attr('id');
             verificarCamposCompletos(divId, $("#siguiente"), $(this).attr('id'));
 
-            //if ($(this).attr("id") == "email") {checkEmail();}
-            //alert("le has cliqueado a " + $(this).attr('id'));
         });
 
         $('.formDiv input[type=checkbox]').change(function () {
@@ -434,10 +426,6 @@
             var divId = $(this).closest('.formDiv').attr('id');
             verificarCamposCompletos(divId, $("#siguiente"), $(this).attr('id'));
         });
-
-        /*$('.formDiv input[type="checkbox"]').on('change', function() {
-            console.log("vamo");
-        });*/
 
         verificarCamposCompletos("contacto", $("#siguiente"));
 
