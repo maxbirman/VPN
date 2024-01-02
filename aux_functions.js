@@ -12,6 +12,13 @@ function verificarCamposCompletos(divId, siguiente) {
             
             break;
         }
+        case "general": {
+            var name = $("#vpnName").val();
+            var charLimitError = $("#charLimit");
+            formularioCompleto = verificarCampos(divId, "input") && !charLimit(name);
+            if(charLimit(name)) {charLimitError.attr("style", "color: red; padding-left: 2px"); }
+            else {charLimitError.attr("style", "color: red; padding-left: 2px; display:none");}
+        }
         default:
             if(formularioCompleto = verificarCampos(divId, "input")){
                 formularioCompleto = verificarCampos(divId, "select");
@@ -80,17 +87,12 @@ function verificarAutEnc(phase, index, data, selected) {
     
 
 //function para alertar que el nombre de la vpn no puede tener mas de 15 caracteres
-function alertCharLimit(input){
+function charLimit(input){
     if(input.attr('maxlength') !== undefined) {
         var valor = input.val();
         var maxLength = input.attr('maxlength');
 
-        if(valor.length == maxLength) {
-            alert("El nombre de la VPN no puede tener más de 15 caracteres");        
-            input.val(valor.substring(0, maxLength-1));        
-        }
-
-        else {input.removeAttr("style");}
+        return valor.length == maxLength;
     }
 }
 
