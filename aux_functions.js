@@ -2,8 +2,20 @@
 function verificarCamposCompletos(divId, siguiente) {
     var formularioCompleto = true;
 
-    if(formularioCompleto = verificarCampos(divId, "input")){
-        formularioCompleto = verificarCampos(divId, "select");
+    switch (divId) {
+        case "contacto" {
+            var email = $("#email").val();
+            var errorEmail = $("#emailError").val();
+            formularioCompleto = verificarCampos(divId, "input") && emailCorrecto(email);
+            if(!emailCorrecto(email)) {errorEmail.attr("style", "color: red; padding-left: 2px; display:none");}
+            else {errorEmail.attr("style", "color: red; padding-left: 2px");}
+            
+            break;
+        }
+        default:
+            if(formularioCompleto = verificarCampos(divId, "input")){
+                formularioCompleto = verificarCampos(divId, "select");
+        }    
     }
 
     /*if(formularioCompleto && (divId == "phase1Proposal" || divId == "phase2Proposal")) {
@@ -360,7 +372,7 @@ function emailCorrecto(email) {
     return emailRegex.test(email);    
 }
 
-function checkEmail(){
+/*function checkEmail(){
     var email = $("#email").val();
     
     if(emailRegex.test(email)) {
@@ -371,7 +383,7 @@ function checkEmail(){
         $("#emailError").attr("style", "color: red; padding-left: 2px");
         $("#siguiente").attr('disable', 'disable');
     }
-}
+}*/
 
 function getOptionsFromArray (data, selected){
     var options = "";
