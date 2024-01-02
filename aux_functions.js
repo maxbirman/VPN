@@ -7,8 +7,8 @@ function verificarCamposCompletos(divId, siguiente) {
             var email = $("#email").val();
             var errorEmail = $("#emailError");
             formularioCompleto = verificarCampos(divId, "input") && emailCorrecto(email);
-            if(!emailCorrecto(email)) {errorEmail.attr("style", "color: red; padding-left: 2px; display:none");}
-            else {errorEmail.attr("style", "color: red; padding-left: 2px");}
+            if(!emailCorrecto(email)) {errorEmail.attr("style", "color: red; padding-left: 2px");}
+            else {errorEmail.attr("style", "color: red; padding-left: 2px; display:none");}
             
             break;
         }
