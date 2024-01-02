@@ -21,23 +21,41 @@ function verificarCamposCompletos(divId, siguiente, input) {
             break;
         }
         case "network": {
-            if(input == "deviceModel"){
-                populateInterfaces();
-                formularioCompleto = false;
+            switch(input){
+                case "deviceModel": {
+                    populateInterfaces();
+                    formularioCompleto = false;
+                    break;
+                }
+                case "publicaLocal": {
+                    if(ipPublicaCorrecta($("#publicaLocal").val) != ""){
+                        $("#errorIpPublica").text(ipPublicaCorrecta($("#publicaLocal").val()));
+                    }else {
+                        $("#publicaRemota").removeAttr('disabled', 'disabled');
+                        $("#publicaRemota").attr("placeholder", "Introduzca la IP pública remota");
+                    }
+                    formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
+                    break;
+                }        
+                case "publicaRemota": {
+                    if(ipPublicaCorrecta($("#publicaRemota").val) != ""){
+                        $("#errorIpPublica").text(ipPublicaCorrecta($("#publicaRemota").val()));
+                    }
+                    formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
+                    break;
+                }  
+                default: {
+                    formularioCompleto = verificaCampos(divId, "input") && verificarCampos(divId, "select");
+                }         
             }
-            else{formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");}            
-            break;
         }
-        default:
+        default:{
             if(formularioCompleto = verificarCampos(divId, "input")){
                 formularioCompleto = verificarCampos(divId, "select");
         }    
     }
+}
 
-    /*if(formularioCompleto && (divId == "phase1Proposal" || divId == "phase2Proposal")) {
-        formularioCompleto = verificarCheckbox(divId);
-    }*/
-    //console.log("formulario completo: " + formularioCompleto);
     siguiente.prop('disabled', !formularioCompleto); //si no esta completo deshabilita el botón
 }
     
@@ -363,10 +381,20 @@ function checkSubnet(inputId, index) {
 };
 //verificar si el formato de la IP es correcto
 function ipPublicaCorrecta (ip) {
-    var correcto = false;
-    if(publicIpRegex.test(ip)) {correcto = true;}
+    var result = "";
+    var publicaLocal = $("#publicaLocal").val();
+    var publicaRemota =  $("#publicaRemota").val();
 
-    return correcto;
+    if(publicIpRegex.test(ip)) {
+        if(publicaLocal == publicaRemota){
+            result = "La IP pública local y la IP pública remota no pueden ser iguales";
+        } 
+    }else {
+            result = "Por favor introduzca una IP pública valida";
+        }   
+    
+
+    return result;
 }	
 
 //verificar si la IP es publica
