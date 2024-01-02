@@ -47,8 +47,10 @@ function verificarCamposCompletos(divId, siguiente, input) {
                 case "publicaRemota": {
                     if(ipPublicaCorrecta($("#publicaRemota").val) != ""){
                         $("#errorIpPublica").text(ipPublicaCorrecta($("#publicaRemota").val()));
-                    }
+                        formularioCompleto = false;
+                    }else {
                     formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
+                    }
                     break;
                 }  
                 default: {
