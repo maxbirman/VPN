@@ -21,7 +21,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
             break;
         }
         case "network": {
-            if(input == $("deviceModel")){
+            if(input == $("#deviceModel")){
                 populateInterfaces();
             }
             formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
