@@ -432,10 +432,6 @@ function populateModels (){
     });                   
   }
 
-  function getAuth(data){
-
-  }
-
   function getMasks(data, base) {
     var splitData = data.split("\n");
     var masks = "";
@@ -482,8 +478,4 @@ function populateModels (){
             }
         }
     });
-}
-
-function checkPrevAuthEnc (phase, data, index) {
-
 }
