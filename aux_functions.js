@@ -41,8 +41,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                     }else {
                         $("#publicaRemota").attr('disabled', 'disabled');
                         formularioCompleto = false;
-                    }
-                    
+                    }                    
                     break;
                 }        
                 case "publicaRemota": {
