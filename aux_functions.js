@@ -301,7 +301,7 @@ function checkSubnet(inputId, index) {
                 alert("Las subnets no pueden ser iguales");
                 } else if (claseARegex.test(ip)) {
 
-                    var file = "https://maxbirman/github.io/VPN/masks.txt";
+                    var file = "https://maxbirman.github.io/VPN/masks.txt";
                     var data = [];
                     getArrayFromFile(file, function(extData) {
                         data = extData;  
@@ -314,7 +314,7 @@ function checkSubnet(inputId, index) {
                     
                 }
                 else if (claseBRegex.test(ip)) {
-                    var file = "https://maxbirman/github.io/VPN/masks.txt";
+                    var file = "https://maxbirman.github.io/VPN/masks.txt";
                     var data = [];
                     getArrayFromFile(file, function(extData) {
                         data = extData;  
@@ -325,7 +325,7 @@ function checkSubnet(inputId, index) {
                     });    
                 }
                 else {
-                    var file = "https://maxbirman/github.io/VPN/masks.txt";
+                    var file = "https://maxbirman.github.io/VPN/masks.txt";
                     var data = [];
                     getArrayFromFile(file, function(extData) {
                         data = extData;  
