@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="col-9">
                                     <input type="text" class="form-control" id="email" name="email" placeholder="Correo Electrónico" required>
-                                    <small style="color: red; padding-left: 2px;">Por favor ingrese un email v&aacute;lido</small>
+                                    <small id="emailError" style="color: red; padding-left: 2px;">Por favor ingrese un email v&aacute;lido</small>
                                 </div>
                             </div>
                         </div>
@@ -425,6 +425,8 @@
             var divId = $(this).closest('.formDiv').attr('id');
             verificarCamposCompletos(divId, $("#siguiente"));
             alertCharLimit($(this));
+
+            if ($(this).attr("id") == "email") {checkEmail();}
             //alert("le has cliqueado a " + $(this).attr('id'));
         });
 
