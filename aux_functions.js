@@ -34,7 +34,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                             $("#publicaRemota").attr('disabled', 'disabled');
                             formularioCompleto = false;
                         }else {
-                            $("#publicaRemota").removeAttr('disabled', 'disabled');
+                            $("#publicaRemota").removeAttr('disabled');
                             $("#publicaRemota").attr("placeholder", "Introduzca la IP pública remota");
                             formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
                         }
