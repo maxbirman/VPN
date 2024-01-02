@@ -119,7 +119,7 @@ function populateInterfaces(){
     })
     
     select.removeAttr('disabled');
-    verificarCamposCompletos("network", "siguiente");
+    $("#siguiente").attr('disabled', 'disabled')
 
     } 
 function pskOrCert(){
