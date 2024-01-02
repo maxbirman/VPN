@@ -1,5 +1,5 @@
 //verificar si todos los campos están completos
-function verificarCamposCompletos(divId, siguiente) {
+function verificarCamposCompletos(divId, siguiente, input) {
     var formularioCompleto = true;
 
     switch (divId) {
@@ -21,6 +21,9 @@ function verificarCamposCompletos(divId, siguiente) {
             break;
         }
         case "network": {
+            if(input == $("deviceModel")){
+                populateInterfaces();
+            }
             formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
             break;
         }
