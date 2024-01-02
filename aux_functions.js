@@ -36,6 +36,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                         }else {
                             $("#publicaRemota").removeAttr('disabled');
                             $("#publicaRemota").attr("placeholder", "Introduzca la IP pública remota");
+                            $("#errorIpPublica").text("");
                             formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
                         }
                     }else {
@@ -49,7 +50,8 @@ function verificarCamposCompletos(divId, siguiente, input) {
                         $("#errorIpPublica").text(ipPublicaCorrecta($("#publicaRemota").val()));
                         formularioCompleto = false;
                     }else {
-                    formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
+                        $("#errorIpPublica").text("");
+                        formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
                     }
                     break;
                 }  
