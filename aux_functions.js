@@ -31,6 +31,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                     if($("#publicaLocal").val() != ""){
                         if(ipPublicaCorrecta($("#publicaLocal").val()) != ""){
                             $("#errorIpPublica").text(ipPublicaCorrecta($("#publicaLocal").val()));
+                            $("#publicaRemota").attr("placeholder", "Introduzca primero la IP pública local");
                             $("#publicaRemota").attr('disabled', 'disabled');
                             formularioCompleto = false;
                         }else {
