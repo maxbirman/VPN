@@ -13,7 +13,7 @@ function verificarCamposCompletos(divId, siguiente) {
             break;
         }
         case "general": {
-            var name = $("#vpnName").val();
+            var name = $("#vpnName");
             var charLimitError = $("#charLimit");
             formularioCompleto = verificarCampos(divId, "input") && !charLimit(name);
             if(charLimit(name)) {charLimitError.attr("style", "color: red; padding-left: 2px"); }
@@ -90,7 +90,7 @@ function verificarAutEnc(phase, index, data, selected) {
 function charLimit(input){
     if(input.attr('maxlength') !== undefined) {
         var valor = input.val();
-        var maxLength = input.attr('maxlength');
+        var maxLength = (input.attr('maxlength')) - 1;
 
         return valor.length == maxLength;
     }
