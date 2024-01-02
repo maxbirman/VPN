@@ -18,9 +18,11 @@ function verificarCamposCompletos(divId, siguiente) {
             formularioCompleto = verificarCampos(divId, "input") && !charLimit(name);
             if(charLimit(name)) {charLimitError.attr("style", "color: red; padding-left: 2px"); }
             else {charLimitError.attr("style", "color: red; padding-left: 2px; display:none");}
+            break;
         }
         case "network": {
             formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
+            break;
         }
         default:
             if(formularioCompleto = verificarCampos(divId, "input")){
@@ -38,7 +40,6 @@ function verificarCamposCompletos(divId, siguiente) {
     function verificarCampos(divId, type){
         var formularioCompleto = true;
         $("#" + divId +  " " + type + "[required]").each(function() {
-            // console.log($(this).attr("id") + ": " + $(this).val());
            // Verificar si el campo está vacío
            if ($(this).val() === null || $(this).val() === '') {
              formularioCompleto = false;
