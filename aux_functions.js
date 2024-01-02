@@ -90,7 +90,7 @@ function verificarAutEnc(phase, index, data, selected) {
 function charLimit(input){
     if(input.attr('maxlength') !== undefined) {
         var valor = input.val();
-        var maxLength = (input.attr('maxlength')) - 1;
+        var maxLength = input.attr('maxlength');
 
         return valor.length == maxLength;
     }
