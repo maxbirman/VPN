@@ -377,19 +377,6 @@ function emailCorrecto(email) {
     return emailRegex.test(email);    
 }
 
-/*function checkEmail(){
-    var email = $("#email").val();
-    
-    if(emailRegex.test(email)) {
-        $("#emailError").attr("style", "color: red; padding-left: 2px; display:none");
-        $("#siguiente").removeAttr('disable');
-        
-    } else {
-        $("#emailError").attr("style", "color: red; padding-left: 2px");
-        $("#siguiente").attr('disable', 'disable');
-    }
-}*/
-
 function getOptionsFromArray (data, selected){
     var options = "";
     var filas = data.split("\n");
