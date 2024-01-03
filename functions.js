@@ -116,10 +116,15 @@ function pskOrCert(){
 function hideShowMode() {
     if ($("#ikeVersion").val() == "2") {
         $("#ikeModeParent").attr('style', 'display:none;');
-        $("#ikeMode").val() = "";
+        $("#ikeMode").empty();
+        $("#ikeMode").append('<option value="none" selected="selected"></option>');
         console.log("ike: " + $("#ikeMode").val());
 
     } else {
+        $("#ikeMode").empty();
+        $("#ikeMode").append('<option value="main" selected="selected">Main</option>');.
+        $("#ikeMode").append('<option value="aggresive">Aggresive</option>');
+        console.log("ike: " + $("#ikeMode").val());
         $("#ikeModeParent").removeAttr('style');
     }
 }    
