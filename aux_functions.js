@@ -98,6 +98,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                 return true;
             }
         });
+        console.log(checked);
         return checked;
     }
 
