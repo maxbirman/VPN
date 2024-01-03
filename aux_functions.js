@@ -91,6 +91,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
         $('#' + divId + ' input[type="checkbox"]').each(function() {
             if($(this).prop('checked')) {
                 checked = true;
+                console.log(checked);
                 return true;
             }
         });
