@@ -116,6 +116,9 @@ function pskOrCert(){
 function hideShowMode() {
     if ($("#ikeVersion").val() == "2") {
         $("#ikeModeParent").attr('style', 'display:none;');
+        $("#ikeMode").val() = "";
+        console.log("ike: " + $("#ikeMode").val());
+
     } else {
         $("#ikeModeParent").removeAttr('style');
     }
