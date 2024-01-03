@@ -129,6 +129,19 @@ function hideShowMode() {
     }
 }    
 
+function updateEnc (phase, index) {
+    var currentAuth = $("#phase" + phase + "Auth_" + index).val();
+    var prevAuth = $("#phase" + phase + "Auth_" + (index - 1)).val();
+    var prevEncSelect = $("#phase" + phase + "Encrypt_" + (index - 1));
+    var currentEncSelect = $("#phase" + phase + "Encrypt_" + (index - 1));
+
+    if (currentAuth == prevAuth){
+        currentEncSelect.empty();
+        currentEncSelect.attr("data-message", "empty");
+        populatePhase(phase, index, "authEnc");
+    }
+}
+
 function addAuthEnc(phase, index){
     var parentId = 'p' + phase + 'AE';
     var childId = parentId + "_" + index;
@@ -145,7 +158,7 @@ function addAuthEnc(phase, index){
                                 <div class="row">
                                     <div class="col-4"></div>	
                                     <div class="col-8">
-                                        <select class="form-control" id="phase${phase}Auth_${index}" name="phase${phase}Auth_${index}" data-message= "empty" required></select>
+                                        <select class="form-control" id="phase${phase}Auth_${index}" name="phase${phase}Auth_${index}" data-message= "empty" required onchange="updateEnc(${phase},${index})"> </select>
                                     </div>	
                                 </div>
                             </div>
