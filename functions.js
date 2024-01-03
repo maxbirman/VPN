@@ -175,7 +175,10 @@ function addAuthEnc(phase, index){
 
     if (nextIndex == 3){
         $("#p" + phase + "AEAdd_" + index).attr('style', 'display:none');
-    }                        
+    }            
+    
+    $("#p" + phase + "Auth_" + prevIndex).attr('disabled', 'disabled');
+    $("#p" + phase + "Encrypt_" + prevIndex).attr('disabled', 'disabled');
 }
 
 function removeAuthEnc(phase,index) {
@@ -186,6 +189,8 @@ function removeAuthEnc(phase,index) {
 
     $("#p" + phase + "AEAdd_" + (index - 1)).removeAttr("style");
     $("#p" + phase + "AERemove_" + (index - 1)).removeAttr("style");
+    $("#p" + phase + "Auth_" + (index - 1)).removeAttr('disabled');
+    $("#p" + phase + "Encrypt_" + (index - 1)).removeAttr('disabled');
 
 }
 
