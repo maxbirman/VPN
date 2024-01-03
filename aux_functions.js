@@ -34,6 +34,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                             $("#publicaRemota").attr("placeholder", "Introduzca primero la IP pública local");
                             $("#publicaRemota").attr('disabled', 'disabled');
                             formularioCompleto = false;
+                            console.log(formularioCompleto);
                         }else {
                             $("#publicaRemota").removeAttr('disabled');
                             $("#publicaRemota").attr("placeholder", "Introduzca la IP pública remota");
