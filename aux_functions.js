@@ -54,6 +54,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                     }else {
                         $("#errorIpPublica").text("");
                         formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
+                        console.log(formularioCompleto);
                     }
                     break;
                 }  
@@ -69,7 +70,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
         }    
     }
 }
-    console.log(formularioCompleto);
+    //console.log(formularioCompleto);
     siguiente.prop('disabled', !formularioCompleto); //si no esta completo deshabilita el botón
 }
     
