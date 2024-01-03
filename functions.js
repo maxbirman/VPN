@@ -13,8 +13,8 @@ function Siguiente (){
             populateModels();						
             break;
             }
-        case "network": {
-            nextPanel("network", "authentication");                       
+        case "network": {           
+            nextPanel("network", "authentication");    
             break;
             }
         case "authentication": {
