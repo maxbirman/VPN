@@ -130,16 +130,11 @@ function hideShowMode() {
 }    
 
 function updateEnc (phase, index) {
-    var currentAuth = $("#phase" + phase + "Auth_" + index).val();
-    var prevAuth = $("#phase" + phase + "Auth_" + (index - 1)).val();
-    var prevEncSelect = $("#phase" + phase + "Encrypt_" + (index - 1));
-    var currentEncSelect = $("#phase" + phase + "Encrypt_" + (index));
-
-    if (currentAuth == prevAuth){
-        currentEncSelect.empty();
-        currentEncSelect.attr("data-message", "empty");
-        populatePhase(phase, index, "authEnc");
-    }
+    
+    var currentEncSelect = $("#phase" + phase + "Encrypt_" + (index));    
+    currentEncSelect.empty();
+    currentEncSelect.attr("data-message", "empty");
+    populatePhase(phase, index, "authEnc");    
 }
 
 function addAuthEnc(phase, index){
