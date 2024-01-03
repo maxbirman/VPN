@@ -177,8 +177,8 @@ function addAuthEnc(phase, index){
         $("#p" + phase + "AEAdd_" + index).attr('style', 'display:none');
     }            
     
-    $("#p" + phase + "Auth_" + prevIndex).attr('disabled', 'disabled');
-    $("#p" + phase + "Encrypt_" + prevIndex).attr('disabled', 'disabled');
+    $("#phase" + phase + "Auth_" + prevIndex).attr('disabled', 'disabled');
+    $("#phase" + phase + "Encrypt_" + prevIndex).attr('disabled', 'disabled');
 }
 
 function removeAuthEnc(phase,index) {
