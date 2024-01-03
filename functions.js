@@ -187,8 +187,8 @@ function removeAuthEnc(phase,index) {
 
     $("#" + currentId).remove();
 
-    $("#phase" + phase + "AEAdd_" + (index - 1)).removeAttr("style");
-    $("#phase" + phase + "AERemove_" + (index - 1)).removeAttr("style");
+    $("#p" + phase + "AEAdd_" + (index - 1)).removeAttr("style");
+    $("#p" + phase + "AERemove_" + (index - 1)).removeAttr("style");
     $("#phase" + phase + "Auth_" + (index - 1)).removeAttr('disabled');
     $("#phase" + phase + "Encrypt_" + (index - 1)).removeAttr('disabled');
 
