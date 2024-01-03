@@ -61,6 +61,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                     formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
                 }         
             }
+        break;
         }
         default:{
             if(formularioCompleto = verificarCampos(divId, "input")){
