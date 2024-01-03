@@ -64,6 +64,9 @@ function verificarCamposCompletos(divId, siguiente, input) {
             }
         break;
         }
+        case "phase1Proposal": {
+            formularioCompleto = verificarCheckbox(divId);
+        }
         default:{
             if(formularioCompleto = verificarCampos(divId, "input")){
                 formularioCompleto = verificarCampos(divId, "select");
