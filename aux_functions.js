@@ -34,7 +34,6 @@ function verificarCamposCompletos(divId, siguiente, input) {
                             $("#publicaRemota").attr("placeholder", "Introduzca primero la IP pública local");
                             $("#publicaRemota").attr('disabled', 'disabled');
                             formularioCompleto = false;
-                            console.log(formularioCompleto);
                         }else {
                             $("#publicaRemota").removeAttr('disabled');
                             $("#publicaRemota").attr("placeholder", "Introduzca la IP pública remota");
@@ -69,7 +68,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
         }    
     }
 }
-
+    console.log(formularioCompleto);
     siguiente.prop('disabled', !formularioCompleto); //si no esta completo deshabilita el botón
 }
     
@@ -407,7 +406,7 @@ function ipPublicaCorrecta (ip) {
             result = "Por favor introduzca una IP pública valida";
         }   
     
-    console.log(result);    
+    //console.log(result);    
     return result;
 }	
 
