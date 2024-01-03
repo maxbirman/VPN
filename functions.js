@@ -14,24 +14,7 @@ function Siguiente (){
             break;
             }
         case "network": {
-            publicaLocal = $("#publicaLocal").val();
-            publicaRemota = $("#publicaRemota").val();
-
-            if(ipCorrecta(publicaLocal) && ipCorrecta(publicaRemota)){      
-                if(ipPublicaCorrecta(publicaLocal) && ipPublicaCorrecta(publicaRemota)){                      	
-                    if(publicaLocal !== publicaRemota){    
-                        nextPanel("network", "authentication");
-                        }else {alert("Las IP pública local y la IP pública remota no pueden ser iguales")}
-                    }else if (ipPublicaCorrecta(publicaLocal) && !ipPublicaCorrecta(publicaRemota)){
-                        alert("La IP remota introducida no es una IP pública");
-                    }else if (ipPublicaCorrecta(publicaRemota) && !ipPublicaCorrecta(publicaLocal)){
-                        alert("La IP local introducida no es una IP pública");
-                    }else {alert("Las IPs introducidas no son IPs públicas");}
-                }else if(ipCorrecta(publicaLocal) && !ipCorrecta(publicaRemota)){
-                    alert("El valor introducido como IP pública remota no es un formato IP válido");
-                }else if(ipCorrecta(publicaLocal) && !ipCorrecta(publicaRemota)){
-                    alert("El valor introducido como IP pública local no es un formato IP válido");
-                }else {alert("Los valores introducidos como IPs públicas no son formatos IP válidos")}
+            nextPanel("network", "authentication");                       
             break;
             }
         case "authentication": {
