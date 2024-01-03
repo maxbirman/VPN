@@ -259,6 +259,7 @@ config vpn ipsec phase1-interface
     edit ${phase1["nombreVPN"]}
         set interface ${phase1['interface']}
         set dpd ${phase1['dpd']}
+        set ike-version ${phase1['ikeVersion']}
         set local-gw ${phase1['publicLocal']}
         set dhgrp ${phase1['dhgrp']}
         set proposal ${phase1['proposal']}
