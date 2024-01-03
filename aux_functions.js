@@ -523,13 +523,16 @@ function populateModels (){
         data = extData; 
         switch (section) {
             case "authEnc": {
-                var selectEnc = $("#phase" + phase + "Encrypt_" + index);
-                var selectAuth = $("#phase" + phase + "Auth_" + index);
+                var selectEnc = $("#phase" + phase + "Encrypt_" + index);                
+                var selectAuth = $("#phase" + phase + "Auth_" + index);  
+
                 var auth = getOptionsFromArray(data, "auth");
-                if(selectEnc.attr("data-message") == "empty"){
-                    var enc = getOptionsFromArray(data, "enc");
-                   
+                if(selectAuth.attr("data-message") == "empty"){
                     populateSelect(selectAuth, auth);
+                    selectAuth.attr("data-message", "full");
+                }
+                if(selectEnc.attr("data-message") == "empty"){
+                    var enc = getOptionsFromArray(data, "enc");                  
                     enc = verificarAutEnc(phase, index, enc, selectAuth.val());
                     populateSelect(selectEnc, enc);
                     selectEnc.attr("data-message", "full");
