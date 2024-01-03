@@ -471,7 +471,7 @@ function populateSelect (select, data) {
     var options = data.split('\n');
     for (var i = 0; i < options.length; i++){
         var option = options[i].split(";");
-        if (option[0] != "undefined"){
+        if (option[1] != "undefined"){
             select.append('<option value="' + option[0] + '">' + option[1] + '</option>');
             console.log(i + " " + option[0] + "," + option[1]);
         }        
