@@ -122,7 +122,7 @@ function hideShowMode() {
 
     } else {
         $("#ikeMode").empty();
-        $("#ikeMode").append('<option value="main" selected="selected">Main</option>');.
+        $("#ikeMode").append('<option value="main" selected="selected">Main</option>');
         $("#ikeMode").append('<option value="aggresive">Aggresive</option>');
         console.log("ike: " + $("#ikeMode").val());
         $("#ikeModeParent").removeAttr('style');
