@@ -75,7 +75,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                     var errorSubnet = $("#subnetError");
                     var error;
 
-                    if ((error = checkSubnet(subnet)) != "") {
+                    if ((error = checkSubnet(subnet,0)) != "") {
                         errorSubnet.text(error);
                         $("#localMask_0").attr('disabled', 'disabled');
                         $("#remoteSubnet_0").attr('disabled', 'disabled');
