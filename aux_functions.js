@@ -370,6 +370,7 @@ function checkSubnet(subnet, index) {
     var error = "";
     var subnetLocal = $("#localSubnet_" + index).val();
     var subnetRemota = $("#remoteSubnet_" + index).val();
+    var mask = $("#localMask_" + index);
 
     if (subnet !== ""){
         if(ipCorrecta(subnet)){     //evalua que el formato de IP sea correcto
@@ -377,6 +378,7 @@ function checkSubnet(subnet, index) {
                 error = "Las subnets deben ser rangos privados";										
             } else if (subnetLocal == subnetRemota){
                 error = "La subnet local y la subnet remota no pueden ser iguales";
+
             } else {
                 for (var i = 0; i <= 2; i++){
                     if ($("#localSubnet_" + i).length > 0 && i != index) {
@@ -388,6 +390,9 @@ function checkSubnet(subnet, index) {
                 }
             }
         } else { error = "Por favor ingrese un formato de IP correcto"; }
+    }else {
+        mask.empty;
+        mask.attr('disable', 'disable');
     }
     console.log("error: " + error);
     return error;
