@@ -72,7 +72,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
             switch(input) {
                 case "localSubnet_0": {
                     var subnet = $("#localSubnet_0").val();
-                    var errorSubnet = $("#errorSubnet");
+                    var errorSubnet = $("#subnetError");
                     var error;
 
                     if ((error = checkSubnet(subnet)) != "") {
@@ -82,8 +82,8 @@ function verificarCamposCompletos(divId, siguiente, input) {
                         $("#remoteSubnet_0").attr('placeholder', 'Ingresar primero subnet local');
                         $("#remoteMask_0").attr('disabled', 'disabled');
                     } else {
-                        populateMask($("#localMask"));
-                        $("#localMask").removeAttr('disabled');               
+                        populateMask($("#localMask_0"));
+                        $("#localMask_0").removeAttr('disabled');               
                     }
                     formularioCompleto = false;
                     break;   
