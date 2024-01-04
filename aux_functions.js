@@ -69,6 +69,38 @@ function verificarCamposCompletos(divId, siguiente, input) {
             break;
         }
         default:{
+            switch(input) {
+                case "localSubnet_0": {
+                    var subnet = $("#localSubnet_0").val();
+                    var errorSubnet = $("#errorSubnet");
+                    var error;
+
+                    if ((error = checkSubnet(subnet)) != "") {
+                        errorSubnet.text(error);
+                        $("#localMask_0").attr('disabled', 'disabled');
+                        $("#remoteSubnet_0").attr('disabled', 'disabled');
+                        $("#remoteSubnet_0").attr('placeholder', 'Ingresar subnet remota');
+                        $("#remoteMask_0").attr('disabled', 'disabled');
+                    } else {
+                        populateMask("localMask");
+                        $("#localMask").removeAttr('disabled');               
+                    }
+                    formularioCompleto = false;
+                    break;   
+                }
+                case "localMask": {
+                    var remoteSubnet = $("#remoteSubnet").val(); 
+                    $("#remoteSubnet").removeAttr('disabled');
+                    $("#remoteSubnet").attr('placeholder', 'Ingresar primero subnet local');
+                    if(remoteSubnet != ""){
+                        $("#remoteMask").removeAttr('disabled');
+                        formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
+                    } else {
+                        formularioCompleto = false;
+                    }
+                    break;
+                }
+            }
             if(formularioCompleto = verificarCampos(divId, "input")){
                 formularioCompleto = verificarCampos(divId, "select");
         }    
@@ -333,74 +365,32 @@ function crearArchivoConf(){
 
     document.body.removeChild(enlaceDescarga);
 }
-function checkSubnet(inputId, index) {
-    
-    var input = $("#" + inputId); 
-    var ip = input.val();
 
-    var select = $("#localMask_" + index);
-                        
+function checkSubnet(subnet, index) {
+    var error = "";
+    var subnetLocal = $("#localSubnet_" + index).val();
+    var subnetRemota = $("#remoteSubnet_" + index).val();
 
-    if(inputId == "remoteSubnet_" + index){  //si se aplica a la subnet remota
-        select = $("#remoteMask_" + index);
-    }					
-    
     if (ip !== ""){
         if(ipCorrecta(ip)){     //evalua que el formato de IP sea correcto
             if(ipPublicaCorrecta(ip)){   //evalua que sea una IP privada
-                alert("Las subnets deben ser privadas"); //si es una IP publica da error
-                return;														
-            
-            }
-            else if (ip =="0.0.0.0") {
-                    select.empty();
-                    var maskList = "0.0.0.0;/0"; // en caso de que la red sea 0.0.0.0 solo se permite mascara 0
-                    populateSelect(select, maskList);
-                    select.attr('disabled','disabled');
-
-                }else if($("#localSubnet_" + index).val() == $("#remoteSubnet_" + index).val()){
-                alert("Las subnets no pueden ser iguales");
-                } else if (claseARegex.test(ip)) {
-
-                    var file = "https://maxbirman.github.io/VPN/masks.txt";
-                    var data = [];
-                    getArrayFromFile(file, function(extData) {
-                        data = extData;  
-                        var masks = getMasks(data, 8);  
-                        select.empty();        
-                        populateSelect(select,masks);
-                        select.removeAttr("disabled");
-                    });                   
-
-                    
-                }
-                else if (claseBRegex.test(ip)) {
-                    var file = "https://maxbirman.github.io/VPN/masks.txt";
-                    var data = [];
-                    getArrayFromFile(file, function(extData) {
-                        data = extData;  
-                        var masks = getMasks(data, 16);  
-                        select.empty();        
-                        populateSelect(select,masks);
-                        select.removeAttr("disabled");
-                    });    
-                }
-                else {
-                    var file = "https://maxbirman.github.io/VPN/masks.txt";
-                    var data = [];
-                    getArrayFromFile(file, function(extData) {
-                        data = extData;  
-                        var masks = getMasks(data, 24);  
-                        select.empty();        
-                        populateSelect(select,masks);
-                        select.removeAttr("disabled");
-                    });    	
+                error = "Las subnets deben ser rangos privados";										
+            } else if (subnetLocal == subnetRemota){
+                error = "La subnet local y la subnet remota no pueden ser iguales";
+            } else {
+                for (var i = 0; i <= 2; i++){
+                    if ($("#localSubnet_" + i).length > 0 && i != index) {
+                        if($("#localSubnet_" + index) == $("#localSubnet_" + i) && 
+                           $("#remoteSubnet_" + index) == $("#remoteSubnet_" + i)){
+                             error = "La combinacion de subnet local y subnet remota no pueden ser iguales en las distinta phase2";
+                           }
+                    } 
                 }
             }
-                } else {alert("Por favor introduzca un formato de IP válido");}		
-
-
-};
+        } else { error = "Por favor ingrese un formato de IP correcto"; }
+    }
+    return error;
+}
 //verificar si el formato de la IP es correcto
 function ipPublicaCorrecta (ip) {
     var result = "";
@@ -506,18 +496,14 @@ function populateModels (){
     });                   
   }
 
-  function getMasks(data, base) {
-    var splitData = data.split("\n");
-    var masks = "";
+ function populateMasks(select){
+   var file = "https://maxbirman.github.io/VPN/masks.txt";
+   var data = [];
 
-    for (var i = 0; i < splitData.length; i ++){
-        var temp = splitData[i].split(";");
-        if (temp[1] >= base){
-            masks += temp[0] + ";/" + temp[1] + "\n";
-        }
-    }
-
-    return masks;
+    getArrayFromFile(file, function(extData) {
+        data = extData;
+        populateSelect(select, data);
+    });    
   }
 
   function populatePhase (phase, index, section) { 
