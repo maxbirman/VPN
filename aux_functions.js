@@ -366,7 +366,7 @@ function crearArchivoConf(){
     document.body.removeChild(enlaceDescarga);
 }
 
-function checkSubnet(subnet, index) {
+/*function checkSubnet(subnet, index) {
     var error = "";
     var subnetLocal = $("#localSubnet_" + index).val();
     var subnetRemota = $("#remoteSubnet_" + index).val();
@@ -379,11 +379,13 @@ function checkSubnet(subnet, index) {
                 error = "Las subnets deben ser rangos privados";
                 mask.empty;
                 mask.attr('disable', 'disable');	
-                subnetError.text(error);									
+                subnetError.text(error);	
+                subnetError.attr('style', 'color: red; padding-left: 2px;');								
             } else if (subnetLocal == subnetRemota){
                 error = "La subnet local y la subnet remota no pueden ser iguales";
                 mask.empty;
                 mask.attr('disable', 'disable');
+                subnetError.attr('style', 'color: red; padding-left: 2px;');
                 subnetError.text(error);
             } else {
                 for (var i = 0; i <= 2; i++){
@@ -407,6 +409,36 @@ function checkSubnet(subnet, index) {
     }else {
         mask.empty;
         mask.attr('disable', 'disable');
+    }
+    console.log("error: " + error);
+    return error;
+}*/
+function checkSubnet(subnet, index) {
+    var error = "";
+    var subnetLocal = $("#localSubnet_" + index).val();
+    var subnetRemota = $("#remoteSubnet_" + index).val();
+    var mask = $("#localMask_" + index);
+    var subnetError = $("#subnetError");
+
+    if (subnet !== ""){
+        if(ipCorrecta(subnet)){     //evalua que el formato de IP sea correcto
+            if(ipPublicaCorrecta(subnet)){   //evalua que sea una IP privada
+                error = "Las subnets deben ser rangos privados";								
+            } else if (subnetLocal == subnetRemota){
+                error = "La subnet local y la subnet remota no pueden ser iguales";
+            } else {
+                for (var i = 0; i <= 2; i++){
+                    if ($("#localSubnet_" + i).length > 0 && i != index) {
+                        if($("#localSubnet_" + index) == $("#localSubnet_" + i) && 
+                           $("#remoteSubnet_" + index) == $("#remoteSubnet_" + i)){
+                             error = "La combinacion de subnet local y subnet remota no pueden ser iguales en las distinta phase2";
+                           }
+                    } 
+                }
+            }
+        } else { 
+            error = "Por favor ingrese un formato de IP correcto"; 
+        }
     }
     console.log("error: " + error);
     return error;
