@@ -431,9 +431,9 @@ function checkSubnet(subnet, index) {
     var subnetError = $("#subnetError");
 
     if (subnet !== ""){
-       // if(ipCorrecta(subnet)){     //evalua que el formato de IP sea correcto
+        if(ipCorrecta(subnet)){     //evalua que el formato de IP sea correcto
             if(!ipPublicaCorrecta(subnet)){   //evalua que sea una IP privada
-                error = "Las subnets deben ser rangos privados";								
+                error = "Por favor ingrese una IP privada válida";								
             } else if (subnetLocal == subnetRemota){
                 error = "La subnet local y la subnet remota no pueden ser iguales";
             } else {
@@ -446,9 +446,9 @@ function checkSubnet(subnet, index) {
                     } 
                 }
             }
-       /* } else { 
-            error = "Por favor ingrese un formato de IP correcto"; 
-        }*/
+       } else { 
+            error = "Por favor ingrese una IP privada válida"; 
+        }
     }
     console.log("error: " + error);
     return error;
