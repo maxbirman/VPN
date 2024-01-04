@@ -389,6 +389,7 @@ function checkSubnet(subnet, index) {
             }
         } else { error = "Por favor ingrese un formato de IP correcto"; }
     }
+    console.log("error: " + error);S
     return error;
 }
 //verificar si el formato de la IP es correcto
