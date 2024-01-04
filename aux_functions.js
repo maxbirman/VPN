@@ -371,17 +371,20 @@ function checkSubnet(subnet, index) {
     var subnetLocal = $("#localSubnet_" + index).val();
     var subnetRemota = $("#remoteSubnet_" + index).val();
     var mask = $("#localMask_" + index);
+    var subnetError = $("#subnetError");
 
     if (subnet !== ""){
         if(ipCorrecta(subnet)){     //evalua que el formato de IP sea correcto
             if(ipPublicaCorrecta(subnet)){   //evalua que sea una IP privada
                 error = "Las subnets deben ser rangos privados";
                 mask.empty;
-                mask.attr('disable', 'disable');										
+                mask.attr('disable', 'disable');	
+                subnetError.text(error);									
             } else if (subnetLocal == subnetRemota){
                 error = "La subnet local y la subnet remota no pueden ser iguales";
                 mask.empty;
                 mask.attr('disable', 'disable');
+                subnetError.text(error);
             } else {
                 for (var i = 0; i <= 2; i++){
                     if ($("#localSubnet_" + i).length > 0 && i != index) {
@@ -390,11 +393,17 @@ function checkSubnet(subnet, index) {
                              error = "La combinacion de subnet local y subnet remota no pueden ser iguales en las distinta phase2";
                              mask.empty;
                              mask.attr('disable', 'disable');
+                             subnetError.text(error);
                            }
                     } 
                 }
             }
-        } else { error = "Por favor ingrese un formato de IP correcto"; }
+        } else { 
+            error = "Por favor ingrese un formato de IP correcto"; 
+            mask.empty;
+            mask.attr('disable', 'disable');
+            subnetError.text(error);
+        }
     }else {
         mask.empty;
         mask.attr('disable', 'disable');
