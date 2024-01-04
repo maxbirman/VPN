@@ -80,7 +80,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                             errorSubnet.text(error);
                             errorSubnet.attr('style', 'color: red; padding-left: 2px;'); 
                             $("#localMask_0").attr('disabled', 'disabled');
-                            $("#localMask_0").empty;
+                            $("#localMask_0").empty();
                             $("#remoteSubnet_0").attr('disabled', 'disabled');
                             $("#remoteSubnet_0").attr('placeholder', 'Ingresar primero subnet local');
                             $("#remoteMask_0").attr('disabled', 'disabled');
@@ -92,6 +92,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                         formularioCompleto = false;
                     }else {
                         $("#localMask_0").attr('disabled', 'disabled');
+                        $("#localMask_0").empty();
                             $("#remoteSubnet_0").attr('disabled', 'disabled');
                             $("#remoteSubnet_0").attr('placeholder', 'Ingresar primero subnet local');
                             $("#remoteMask_0").attr('disabled', 'disabled');
