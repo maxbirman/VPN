@@ -82,13 +82,13 @@ function verificarCamposCompletos(divId, siguiente, input) {
                         $("#remoteSubnet_0").attr('placeholder', 'Ingresar subnet remota');
                         $("#remoteMask_0").attr('disabled', 'disabled');
                     } else {
-                        populateMask("localMask");
+                        populateMask($("#localMask"));
                         $("#localMask").removeAttr('disabled');               
                     }
                     formularioCompleto = false;
                     break;   
                 }
-                case "localMask": {
+                case "localMask_0": {
                     var remoteSubnet = $("#remoteSubnet").val(); 
                     $("#remoteSubnet").removeAttr('disabled');
                     $("#remoteSubnet").attr('placeholder', 'Ingresar primero subnet local');
