@@ -79,7 +79,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                         errorSubnet.text(error);
                         $("#localMask_0").attr('disabled', 'disabled');
                         $("#remoteSubnet_0").attr('disabled', 'disabled');
-                        $("#remoteSubnet_0").attr('placeholder', 'Ingresar subnet remota');
+                        $("#remoteSubnet_0").attr('placeholder', 'Ingresar primero subnet local');
                         $("#remoteMask_0").attr('disabled', 'disabled');
                     } else {
                         populateMask($("#localMask"));
@@ -496,7 +496,7 @@ function populateModels (){
     });                   
   }
 
- function populateMasks(select){
+ function populateMask(select){
    var file = "https://maxbirman.github.io/VPN/masks.txt";
    var data = [];
 
