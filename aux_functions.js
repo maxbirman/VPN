@@ -375,16 +375,21 @@ function checkSubnet(subnet, index) {
     if (subnet !== ""){
         if(ipCorrecta(subnet)){     //evalua que el formato de IP sea correcto
             if(ipPublicaCorrecta(subnet)){   //evalua que sea una IP privada
-                error = "Las subnets deben ser rangos privados";										
+                error = "Las subnets deben ser rangos privados";
+                mask.empty;
+                mask.attr('disable', 'disable');										
             } else if (subnetLocal == subnetRemota){
                 error = "La subnet local y la subnet remota no pueden ser iguales";
-
+                mask.empty;
+                mask.attr('disable', 'disable');
             } else {
                 for (var i = 0; i <= 2; i++){
                     if ($("#localSubnet_" + i).length > 0 && i != index) {
                         if($("#localSubnet_" + index) == $("#localSubnet_" + i) && 
                            $("#remoteSubnet_" + index) == $("#remoteSubnet_" + i)){
                              error = "La combinacion de subnet local y subnet remota no pueden ser iguales en las distinta phase2";
+                             mask.empty;
+                             mask.attr('disable', 'disable');
                            }
                     } 
                 }
