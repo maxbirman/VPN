@@ -75,18 +75,25 @@ function verificarCamposCompletos(divId, siguiente, input) {
                     var errorSubnet = $("#subnetError");
                     var error;
 
-                    if ((error = checkSubnet(subnet,0)) != "") {
-                        errorSubnet.text(error);
-                        errorSubnet.attr('style', 'color: red; padding-left: 2px;'); 
+                    if (subnet != ""){
+                        if ((error = checkSubnet(subnet,0)) != "") {
+                            errorSubnet.text(error);
+                            errorSubnet.attr('style', 'color: red; padding-left: 2px;'); 
+                            $("#localMask_0").attr('disabled', 'disabled');
+                            $("#remoteSubnet_0").attr('disabled', 'disabled');
+                            $("#remoteSubnet_0").attr('placeholder', 'Ingresar primero subnet local');
+                            $("#remoteMask_0").attr('disabled', 'disabled');
+                        } else{
+                            populateMask($("#localMask_0"));
+                            $("#localMask_0").removeAttr('disabled');               
+                        }
+                        formularioCompleto = false;
+                    }else {
                         $("#localMask_0").attr('disabled', 'disabled');
-                        $("#remoteSubnet_0").attr('disabled', 'disabled');
-                        $("#remoteSubnet_0").attr('placeholder', 'Ingresar primero subnet local');
-                        $("#remoteMask_0").attr('disabled', 'disabled');
-                    } else if (subnet != ""){
-                        populateMask($("#localMask_0"));
-                        $("#localMask_0").removeAttr('disabled');               
+                            $("#remoteSubnet_0").attr('disabled', 'disabled');
+                            $("#remoteSubnet_0").attr('placeholder', 'Ingresar primero subnet local');
+                            $("#remoteMask_0").attr('disabled', 'disabled');
                     }
-                    formularioCompleto = false;
                     break;   
                 }
                 case "localMask_0": {
