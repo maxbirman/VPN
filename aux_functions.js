@@ -422,7 +422,7 @@ function checkSubnet(subnet, index) {
 
     if (subnet !== ""){
         if(ipCorrecta(subnet)){     //evalua que el formato de IP sea correcto
-            if(ipPublicaCorrecta(subnet)){   //evalua que sea una IP privada
+            if(!ipPublicaCorrecta(subnet)){   //evalua que sea una IP privada
                 error = "Las subnets deben ser rangos privados";								
             } else if (subnetLocal == subnetRemota){
                 error = "La subnet local y la subnet remota no pueden ser iguales";
