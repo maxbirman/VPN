@@ -158,7 +158,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                     break;   
                 }
                 case "remoteMask_0": {
-                    $("#addButton_0").removeAttr('disabled', 'disabled');
+                    $("#addSubnet_0").removeAttr('disabled', 'disabled');
                     break;
                 }
             }
