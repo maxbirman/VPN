@@ -111,7 +111,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                 case "localMask_0": {
                     var remoteSubnet = $("#remoteSubnet_0").val(); 
                     $("#remoteSubnet_0").removeAttr('disabled');
-                    $("#remoteSubnet_0").attr('placeholder', 'Ingresar primero subnet local');
+                    $("#remoteSubnet_0").attr('placeholder', 'Subnet Remota');
                     if(remoteSubnet != ""){
                         $("#remoteMask_0").removeAttr('disabled');
                         formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
