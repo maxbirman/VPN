@@ -165,7 +165,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                 }
             }
             if(formularioCompleto = verificarCampos(divId, "input")){
-                formularioCompleto = verificarCampos(divId, "select");
+                formularioCompleto = verificarCheckbox(divId) && verificarCampos(divId, "select");
         }    
     }
 }
