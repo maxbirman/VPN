@@ -254,6 +254,7 @@ function addSubnets(index){
     if (nextIndex == 3){
         $("#addSubnet_" + index).attr('style', 'display:none');
     }   
+    $("#siguiente").attr('disabled', 'disabled');
 }
 
 function removeSubnets(index){
