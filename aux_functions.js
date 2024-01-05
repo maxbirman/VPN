@@ -85,11 +85,18 @@ function verificarCamposCompletos(divId, siguiente, input) {
                             $("#remoteSubnet_0").attr('placeholder', 'Ingresar primero subnet local');
                             $("#remoteMask_0").attr('disabled', 'disabled');
                         } else{
-                            $("#localMask_0").empty();
-                            $("#localMask_0").append('<option value="none" selected="selected" disabled>--</option>');
-                            populateMask($("#localMask_0"));
-                            $("#localMask_0").removeAttr('disabled');          
-                            errorSubnet.attr('style', 'color: red; padding-left: 2px; display: none');     
+                            if(subnet == '0.0.0.0'){
+                                $("#localMask_0").empty();
+                                $("#localMask").append('<option value ="0.0.0.0" selected="selected">0</option>');
+                                errorSubnet.attr('style', 'color: red; padding-left: 2px; display: none');
+                                $("#localMask").trigger('change');
+                            }else {
+                                $("#localMask_0").empty();
+                                $("#localMask_0").append('<option value="none" selected="selected" disabled>--</option>');
+                                populateMask($("#localMask_0"));
+                                $("#localMask_0").removeAttr('disabled');          
+                                errorSubnet.attr('style', 'color: red; padding-left: 2px; display: none');     
+                            }
                         }
                         formularioCompleto = false;
                     }else {
