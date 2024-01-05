@@ -136,15 +136,15 @@ function verificarCamposCompletos(divId, siguiente, input) {
                             $("#addButton_0").attr('disabled', 'disabled');
                         } else{
                             if(subnet == '0.0.0.0'){
-                                $("#localMask_0").empty();
-                                $("#localMask_0").append('<option value ="0.0.0.0" selected="selected">0</option>');
+                                $("#remoteMask_0").empty();
+                                $("#remoteMask_0").append('<option value ="0.0.0.0" selected="selected">0</option>');
                                 errorSubnet.attr('style', 'color: red; padding-left: 2px; display: none');
-                                $("#localMask_0").trigger('change');
+                                $("#remote_0").trigger('change');
                             }else {
-                                $("#localMask_0").empty();
-                                $("#localMask_0").append('<option value="none" selected="selected" disabled>--</option>');
-                                populateMask($("#localMask_0"));
-                                $("#localMask_0").removeAttr('disabled');          
+                                $("#remoteMask_0").empty();
+                                $("#remoteMask_0").append('<option value="none" selected="selected" disabled>--</option>');
+                                populateMask($("#remoteMask_0"));
+                                $("#remoteMask_0").removeAttr('disabled');          
                                 errorSubnet.attr('style', 'color: red; padding-left: 2px; display: none');     
                             }
                         }
