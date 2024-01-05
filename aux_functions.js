@@ -150,11 +150,9 @@ function verificarCamposCompletos(divId, siguiente, input) {
                         }
                         formularioCompleto = false;
                     }else {
-                        $("#localMask_0").attr('disabled', 'disabled');
-                        $("#localMask_0").empty();
-                            $("#remoteSubnet_0").attr('disabled', 'disabled');
-                            $("#remoteSubnet_0").attr('placeholder', 'Ingresar primero subnet local');
-                            $("#remoteMask_0").attr('disabled', 'disabled');
+                        $("#remoteMask_0").attr('disabled', 'disabled');
+                        $("#remoteMask_0").empty();
+                            $("#addButton_0").attr('disabled', 'disabled')
                     }
                     break;   
                 }
