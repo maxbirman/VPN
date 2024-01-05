@@ -85,6 +85,8 @@ function verificarCamposCompletos(divId, siguiente, input) {
                             $("#remoteSubnet_0").attr('placeholder', 'Ingresar primero subnet local');
                             $("#remoteMask_0").attr('disabled', 'disabled');
                         } else{
+                            $("#localMask_0").empty();
+                            $("#localMask_0").append(`<option value="none" selected="selected" disabled>--</option>`);
                             populateMask($("#localMask_0"));
                             $("#localMask_0").removeAttr('disabled');          
                             errorSubnet.attr('style', 'color: red; padding-left: 2px; display: none');     
