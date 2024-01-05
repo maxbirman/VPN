@@ -53,7 +53,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                     }else {
                         $("#errorIpPublica").text("");
                         formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
-                        console.log(formularioCompleto);
+                        console.log("ip 2: " + formularioCompleto);
                     }
                     break;
                 }  
