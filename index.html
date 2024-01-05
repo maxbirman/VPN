@@ -417,7 +417,7 @@
             verificarCamposCompletos(divId, $("#siguiente"), $(this).attr('id'));
         });  
 
-        $('.formDiv input[required]').on('input click', function() {
+        $('.formDiv input[required]').on('input', function() {
             var divId = $(this).closest('.formDiv').attr('id');
             verificarCamposCompletos(divId, $("#siguiente"), $(this).attr('id'));
 
