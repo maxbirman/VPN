@@ -207,7 +207,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
     }
 
     function validarLocalSubnets(index){	
-        var subnet = $("#" + type + "localSubnet_" + index).val();
+        var subnet = $("#localSubnet_" + index).val();
         var errorSubnet = $("#subnetError");
         var error;		
         var formularioCompleto = true;
