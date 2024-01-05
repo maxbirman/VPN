@@ -84,6 +84,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                             $("#remoteSubnet_0").attr('disabled', 'disabled');
                             $("#remoteSubnet_0").attr('placeholder', 'Ingresar primero subnet local');
                             $("#remoteMask_0").attr('disabled', 'disabled');
+                            $("#addButton_0").attr('disabled', 'disabled');
                         } else{
                             if(subnet == '0.0.0.0'){
                                 $("#localMask_0").empty();
@@ -115,6 +116,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                     if(remoteSubnet != ""){
                         $("#remoteMask_0").removeAttr('disabled');
                         formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
+                        $("#addButton_0").removeAttr('disabled');
                     } else {
                         formularioCompleto = false;
                     }
@@ -131,7 +133,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                             errorSubnet.attr('style', 'color: red; padding-left: 2px;'); 
                             $("#remoteMask_0").attr('disabled', 'disabled');
                             $("#remoteMask_0").empty();
-                            $("#addButton_0").removeAttr('disabled');
+                            $("#addButton_0").attr('disabled', 'disabled');
                         } else{
                             if(subnet == '0.0.0.0'){
                                 $("#localMask_0").empty();
