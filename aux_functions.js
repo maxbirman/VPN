@@ -74,6 +74,10 @@ function verificarCamposCompletos(divId, siguiente, input) {
         default:{
             switch(input) {
                 case "localSubnet_0": {
+                    if (!validarLocalSubnets(0)){
+                        formularioCompleto = validarLocalSubnets(0);
+                    }
+/*
                     var subnet = $("#localSubnet_0").val();
                     var errorSubnet = $("#subnetError");
                     var error;
@@ -111,7 +115,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                         $("#remoteSubnet_0").attr('placeholder', 'Ingresar primero subnet local');
                         $("#remoteMask_0").attr('disabled', 'disabled');
                         $("#addSubnet_0").attr('disabled', 'disabled');
-                    }
+                    }*/
                     break;   
                 }
                 case "localMask_0": {
@@ -200,6 +204,49 @@ function verificarCamposCompletos(divId, siguiente, input) {
         });
         console.log(checked);
         return checked;
+    }
+
+    function validarLocalSubnets(index){	
+        var subnet = $("#" + type + "localSubnet_" + index).val();
+        var errorSubnet = $("#subnetError");
+        var error;		
+        var formularioCompleto = true;
+                        
+        if (subnet != ""){
+            if ((error = checkSubnet(subnet,index)) != "") {
+                errorSubnet.text(error);
+                errorSubnet.attr('style', 'color: red; padding-left: 2px;'); 
+                $("#localMask_" + index).attr('disabled', 'disabled');
+                $("#localMask_" + index).empty();
+                $("#remoteSubnet_" + index).attr('disabled', 'disabled');
+                $("#remoteSubnet_" + index).attr('placeholder', 'Ingresar primero subnet local');
+                $("#remoteMask_" + index).attr('disabled', 'disabled');
+                $("#addSubnet_" + index).attr('disabled', 'disabled');
+            } else{
+                if(subnet == '0.0.0.0'){
+                    $("#localMask_" + index).empty();
+                    $("#localMask_" + index).append('<option value ="0.0.0.0" selected="selected">0</option>');
+                    errorSubnet.attr('style', 'color: red; padding-left: 2px; display: none');
+                    $("#localMask_" + index).trigger('change');
+                }else {
+                    $("#localMask_" + index).empty();
+                    $("#localMask_" + index).append('<option value="none" selected="selected" disabled>--</option>');
+                    populateMask($("#localMask_" + index));
+                    $("#localMask_" + index).removeAttr('disabled');          
+                    errorSubnet.attr('style', 'color: red; padding-left: 2px; display: none');     
+                }
+            }
+
+            formularioCompleto = false;
+        }else {
+            $("#localMask_0").attr('disabled', 'disabled');
+            $("#localMask_0").empty();
+            $("#remoteSubnet_0").attr('disabled', 'disabled');
+            $("#remoteSubnet_0").attr('placeholder', 'Ingresar primero subnet local');
+            $("#remoteMask_0").attr('disabled', 'disabled');
+            $("#addSubnet_0").attr('disabled', 'disabled');
+        }	
+        return formularioCompleto;
     }
 
 function verificarAutEnc(phase, index, data, selected) {   
