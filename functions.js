@@ -265,6 +265,8 @@ function removeSubnets(index){
 
     $("#addSubnet_" + (index - 1)).removeAttr("style");
     $("#removeSubnet_" + (index - 1)).removeAttr("style");
+
+    verificarCamposCompletos("phase2Proposal", $("#siguiente"), "remoteMask_" + prevId);
 }
     
         
