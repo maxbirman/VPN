@@ -65,6 +65,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
         }
         case "authentication": {
             formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
+            console.log(formularioCompleto);
         }
         case "phase1Proposal": {
             formularioCompleto = verificarCheckbox(divId) && verificarCampos(divId, "select");
