@@ -185,12 +185,12 @@ function verificarCamposCompletos(divId, siguiente, input) {
 
             formularioCompleto = false;
         }else {
-            $("#localMask_0").attr('disabled', 'disabled');
-            $("#localMask_0").empty();
-            $("#remoteSubnet_0").attr('disabled', 'disabled');
-            $("#remoteSubnet_0").attr('placeholder', 'Ingresar primero subnet local');
-            $("#remoteMask_0").attr('disabled', 'disabled');
-            $("#addSubnet_0").attr('disabled', 'disabled');
+            $("#localMask_" + index).attr('disabled', 'disabled');
+            $("#localMask_" + index).empty();
+            $("#remoteSubnet_" + index).attr('disabled', 'disabled');
+            $("#remoteSubnet_" + index).attr('placeholder', 'Ingresar primero subnet local');
+            $("#remoteMask_" + index).attr('disabled', 'disabled');
+            $("#addSubnet_" + index).attr('disabled', 'disabled');
         }	
         return formularioCompleto;
     }
