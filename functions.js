@@ -228,7 +228,7 @@ function addSubnets(index){
                         </select>
                     </div>								
                     <div class="col-3 pe-0">
-                        <input type="remoteSubnet" class="form-control subnet" onblur="checkSubnet('remoteSubnet_${index}', ${index})"  id="remoteSubnet_${index}" aria-describedby="nameHelp" placeholder="Remote Subnet" required>
+                        <input type="remoteSubnet" class="form-control subnet" onblur="checkSubnet('remoteSubnet_${index}', ${index})"  id="remoteSubnet_${index}" aria-describedby="nameHelp" placeholder="Remote Subnet" disabled required>
                     </div>
                     <div class="col-1 ps-0">
                         <select class="form-control" name="remoteMask" id="remoteMask_${index}" disabled>
