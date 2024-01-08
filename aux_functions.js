@@ -199,7 +199,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
     function validarRemoteSubnets(index) {
 	
         var subnet = $("#remoteSubnet_" + index).val();
-        var errorSubnet = $("#subnetError");
+        var errorSubnet = $("#subnetError_" + index);
         var error;
 
         if (subnet != ""){
