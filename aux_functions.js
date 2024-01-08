@@ -192,6 +192,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
             $("#remoteMask_" + index).attr('disabled', 'disabled');
             $("#addSubnet_" + index).attr('disabled', 'disabled');
         }	
+        console.log(error);
         return formularioCompleto;
     }
 
