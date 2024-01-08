@@ -103,7 +103,8 @@ function verificarCamposCompletos(divId, siguiente, input) {
                                 $("#remoteMask_0").empty();
                                 $("#remoteMask_0").append('<option value ="0.0.0.0" selected="selected">0</option>');
                                 errorSubnet.attr('style', 'color: red; padding-left: 2px; display: none');
-                                $("#remote_0").trigger('change');
+                                $("#remoteMask_0").trigger('change');
+                                errorSubnet.attr('style', 'color: red; padding-left: 2px; display: none');
                             }else {
                                 $("#remoteMask_0").empty();
                                 $("#remoteMask_0").append('<option value="none" selected="selected" disabled>--</option>');
