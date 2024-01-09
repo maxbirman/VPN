@@ -255,6 +255,17 @@ function addSubnets(index){
     if (nextIndex == 3){
         $("#addSubnet_" + index).attr('style', 'display:none');
     }   
+
+    $('.formDiv select').on('change', function() {
+        var divId = $(this).closest('.formDiv').attr('id');
+        verificarCamposCompletos(divId, $("#siguiente"), $(this).attr('id'));
+    });  
+
+    $('.formDiv input[required]').on('input', function() {
+        var divId = $(this).closest('.formDiv').attr('id');
+        verificarCamposCompletos(divId, $("#siguiente"), $(this).attr('id'));
+
+    });
     $("#siguiente").attr('disabled', 'disabled');
 }
 
