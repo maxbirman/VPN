@@ -71,7 +71,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
             formularioCompleto = verificarCheckbox(divId) && verificarCampos(divId, "select");
             break;
         }
-        default:{
+        case "phase2Proposal":{
             switch(input) {
                 case "localSubnet_0": {
                     if (!validarLocalSubnets(0)){

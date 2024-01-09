@@ -27,11 +27,13 @@ function Siguiente (){
             nextPanel("phase1Proposal", "phase2Proposal");
             populatePhase("2", "0", "authEnc");
             populatePhase("2", "0", "dh");
-            $("#siguiente").text("Finalizar"); // al pasar al ultimo div "siguiente" se convierte en "finalizar"
+            
             break;
             }
         case "phase2Proposal": {
+            nextPanel("phase2Proposal", "policies");
             cargarDatos("phase2Proposal");
+            $("#siguiente").text("Finalizar");  // al pasar al ultimo div "siguiente" se convierte en "finalizar"
         }
         }
     }
