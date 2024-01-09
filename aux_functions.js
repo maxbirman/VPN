@@ -535,7 +535,7 @@ function checkSubnet(subnet, index) {
     var subnetLocal = $("#localSubnet_" + index).val();
     var subnetRemota = $("#remoteSubnet_" + index).val();
     var mask = $("#localMask_" + index);
-    var subnetError = $("#subnetError");
+    var subnetError = $("#subnetError_" + index);
 
     if (subnet !== ""){
         if(ipCorrecta(subnet)){     //evalua que el formato de IP sea correcto
