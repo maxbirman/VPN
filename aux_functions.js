@@ -393,7 +393,7 @@ function cargarDatos(panel){
                                     
                     }else phase2[j] = "";
                 }
-                crearArchivoConf();
+                //crearArchivoConf();
                 break;
             }
         }
