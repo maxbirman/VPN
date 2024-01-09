@@ -546,9 +546,9 @@ function checkSubnet(subnet, index) {
             } else {
                 for (var i = 0; i <= 2; i++){
                     if ($("#localSubnet_" + i).length > 0 && i != index) {
-                        alert("demonios");
-                        if($("#localSubnet_" + index) == $("#localSubnet_" + i) && 
-                           $("#remoteSubnet_" + index) == $("#remoteSubnet_" + i)){
+                        alert($("#localSubnet_" + i).length);
+                        if($("#localSubnet_" + index).val() == $("#localSubnet_" + i).val() && 
+                           $("#remoteSubnet_" + index).val() == $("#remoteSubnet_" + i).val()){
                             error = "La combinacion de subnet local y subnet remota no pueden ser iguales en las distinta phase2";
                         }
                     } 
