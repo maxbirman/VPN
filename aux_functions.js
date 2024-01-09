@@ -546,6 +546,7 @@ function checkSubnet(subnet, index) {
             } else {
                 for (var i = 0; i <= 2; i++){
                     if ($("#localSubnet_" + i).length > 0 && i != index) {
+                        alert("demonios");
                         if($("#localSubnet_" + index) == $("#localSubnet_" + i) && 
                            $("#remoteSubnet_" + index) == $("#remoteSubnet_" + i)){
                             error = "La combinacion de subnet local y subnet remota no pueden ser iguales en las distinta phase2";
