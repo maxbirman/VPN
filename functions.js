@@ -287,15 +287,19 @@ function policyDirection(index){
     var select = $("#policyInterface_" + index);
     var direction = $("#policyDirection_" + index).val();
 
-    if(direction == "src-int") {
-        label.text("Interface Destino");
-    } else {
-        label.text("Interface Origen");
+    if(direction != "none"){
+        if(direction == "src-int") {
+            label.text("Interface Destino");
+        } else {
+            label.text("Interface Origen");
+        }
+        select.removeAttr("style");
+    }else {
+        label.text("");
+        select.attr("style", "display:none");
     }
 
-    select.removeAttr("style");
-
-    label.text("")
+    
 }
         
      
