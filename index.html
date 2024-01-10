@@ -12,6 +12,12 @@
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
     <title>Configurador de Túnel VPN</title>
+    <style>
+        .custom-label {
+          margin-bottom: 8px; /* Ajusta el espacio entre el texto del label y el input */
+          margin-left: 4px;
+        }
+      </style>
 </head>
 <body>
     <div class="container p-3 col-9">
@@ -25,7 +31,7 @@
                         <div class="col-6">
                             <div class="row">
                                 <div class="col-12">
-                                    <label class="ps-3 pb-1" for="reference" id="referenceLabel" name="referenceLabel">
+                                    <label class="custom-label" for="reference" id="referenceLabel" name="referenceLabel">
                                         Referencia
                                         <input type="number" class="form-control" id="reference" name="reference" placeholder="Referencia (sólo números)" required>
                                     </label>
