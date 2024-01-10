@@ -290,7 +290,7 @@ function policyDirection(index){
 
     if(direction != "none"){
         console.log(direction);
-        if(direction == "src-int") {
+        if(direction == "src-intf") {
             label.text("Interface Destino");
         } else {
             label.text("Interface Origen");
