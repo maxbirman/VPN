@@ -297,7 +297,7 @@ function policyDirection(index){
     }else {
         label.text("");
         select.attr("style", "display:none");
-    }    
+    }sd    
 }
         
      
