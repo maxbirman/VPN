@@ -294,7 +294,7 @@ function policyDirection(index){
             label.text("Interface Origen");
         }
         select.removeAttr("style");
-        populateInterface("")
+        populateInterface(select);
     }else {
         label.text("");
         select.attr("style", "display:none");
