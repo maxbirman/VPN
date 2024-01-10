@@ -456,7 +456,9 @@
 
         });
 
-        $("#policyDirection_0").on('change', policyDirection(0));
+        $("#policyDirection_0").on('change', function() {
+            policyDirection(0);
+        });
 
         verificarCamposCompletos("contacto", $("#siguiente"));
 
