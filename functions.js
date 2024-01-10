@@ -283,12 +283,13 @@ function removeSubnets(index){
     verificarCamposCompletos("phase2Proposal", $("#siguiente"), "remoteMask_" + (index - 1));
 }
 
-/*function policyDirection(index){
+function policyDirection(index){
     var label = $("#srcOrDst_" + index);
     var select = $("#policyInterface_" + index);
     var direction = $("#policyDirection_" + index).val();
 
     if(direction != "none"){
+        console.log(direction);
         if(direction == "src-int") {
             label.text("Interface Destino");
         } else {
@@ -299,7 +300,7 @@ function removeSubnets(index){
         label.text("");
         select.attr("style", "display:none");
     }
-}*/
+}
         
      
 
