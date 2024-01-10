@@ -22,7 +22,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
         case "network": {
             switch(input){
                 case "deviceModel": {
-                    populateInterfaces();
+                    populateInterfaces($("#interface"));
                     formularioCompleto = false;
                     break;
                 }

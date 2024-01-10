@@ -88,15 +88,14 @@ function Anterior(anterior){
     }	
    
 }
-function populateInterfaces(){
+function populateInterfaces(select){
     var device = $("#deviceModel").val();
-    select = $("#interface");
     var file = "https://raw.githubusercontent.com/maxbirman/VPN/main/interfaces.csv";
     var data = [];
      
     getArrayFromFile(file, function(extData) {
         data = extData;
-        var interfaceList = getOptionsFromArray(data, model);
+        var interfaceList = getOptionsFromArray(data, device);
         select.empty();
         select.append('<option value="" disabled selected="selected">--Seleccione una interface--</option>');
         populateSelect(select, interfaceList);
@@ -295,6 +294,7 @@ function policyDirection(index){
             label.text("Interface Origen");
         }
         select.removeAttr("style");
+        populateInterface("")
     }else {
         label.text("");
         select.attr("style", "display:none");
