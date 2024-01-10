@@ -120,13 +120,13 @@ function hideShowMode() {
         $("#ikeModeParent").attr('style', 'display:none;');
         $("#ikeMode").empty();
         $("#ikeMode").append('<option value="none" selected="selected"></option>');
-        console.log("ike: " + $("#ikeMode").val());
+        //console.log("ike: " + $("#ikeMode").val());
 
     } else {
         $("#ikeMode").empty();
         $("#ikeMode").append('<option value="main" selected="selected">Main</option>');
         $("#ikeMode").append('<option value="aggresive">Aggresive</option>');
-        console.log("ike: " + $("#ikeMode").val());
+        //console.log("ike: " + $("#ikeMode").val());
         $("#ikeModeParent").removeAttr('style');
     }
 }    
@@ -282,6 +282,7 @@ function removeSubnets(index){
 
     verificarCamposCompletos("phase2Proposal", $("#siguiente"), "remoteMask_" + (index - 1));
 }
+
 function policyDirection(index){
     var label = $("#srcOrDst_" + index);
     var select = $("#policyInterface_" + index);

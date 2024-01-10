@@ -53,7 +53,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
                     }else {
                         $("#errorIpPublica").text("");
                         formularioCompleto = verificarCampos(divId, "input") && verificarCampos(divId, "select");
-                        console.log("ip 2: " + formularioCompleto);
+                        //console.log("ip 2: " + formularioCompleto);
                     }
                     break;
                 }  
@@ -123,7 +123,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
         }    
     }
 }
-    console.log(formularioCompleto);
+    //console.log(formularioCompleto);
     siguiente.prop('disabled', !formularioCompleto); //si no esta completo deshabilita el botón
 }
     
@@ -144,11 +144,11 @@ function verificarCamposCompletos(divId, siguiente, input) {
         $('#' + divId + ' input[type="checkbox"]').each(function() {
             if($(this).prop('checked')) {
                 checked = true;
-                console.log(checked);
+               // console.log(checked);
                 return true;
             }
         });
-        console.log(checked);
+        //console.log(checked);
         return checked;
     }
 
@@ -195,7 +195,7 @@ function verificarCamposCompletos(divId, siguiente, input) {
             $("#remoteMask_" + index).attr('disabled', 'disabled');
             $("#addSubnet_" + index).attr('disabled', 'disabled');
         }	
-        console.log(error);
+       // console.log(error);
         return formularioCompleto;
     }
 
@@ -266,8 +266,8 @@ function verificarAutEnc(phase, index, data, selected) {
                 var tempSelected = selectedEnc + ";" + selectedEnc;
                 if(tempData[i] != tempSelected){
                    data += tempData[i];
-                   console.log(i);
-                   console.log(data);
+                   //console.log(i);
+                   //console.log(data);
                    if (i < tempData.length) {data += "\n";}     
                 }
             }
@@ -558,7 +558,7 @@ function checkSubnet(subnet, index) {
             error = "Por favor ingrese una IP privada válida"; 
         }
     }
-    console.log("error: " + error);
+    //console.log("error: " + error);
     return error;
 }
 //verificar si el formato de la IP es correcto
