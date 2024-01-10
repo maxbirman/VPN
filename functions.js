@@ -89,15 +89,14 @@ function Anterior(anterior){
    
 }
 function populateInterfaces(){
-    var select = $("#deviceModel");
-    var selected = select.val();
+    var device = $("#deviceModel").val();
     select = $("#interface");
     var file = "https://raw.githubusercontent.com/maxbirman/VPN/main/interfaces.csv";
     var data = [];
      
     getArrayFromFile(file, function(extData) {
         data = extData;
-        var interfaceList = getOptionsFromArray(data, selected);
+        var interfaceList = getOptionsFromArray(data, model);
         select.empty();
         select.append('<option value="" disabled selected="selected">--Seleccione una interface--</option>');
         populateSelect(select, interfaceList);
