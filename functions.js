@@ -360,5 +360,15 @@ function addPolicy(index){
     }   
 }
         
-     
+function removePolicy(index){
+    currentId = "policy_" + index;
+    prevId = "policy_"  + (index -1);
+
+    $("#" + currentId).remove();
+
+    $("#addPolicy_" + (index - 1)).removeAttr("style");
+    $("#removePolicy_" + (index - 1)).removeAttr("style");
+
+    verificarCamposCompletos("policies", $("#siguiente"), "dstAddressMask_" + (index - 1));
+}     
 
