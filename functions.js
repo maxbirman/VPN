@@ -290,7 +290,7 @@ function addPolicy(index){
 	var nextIndex = index + 1;
 	var prevIndex = index - 1;
 
-    Query('<div>', {
+    jQuery('<div>', {
         class: 'row mt-2',
 		id: childId
     }).appendTo('#policies');
