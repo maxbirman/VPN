@@ -347,7 +347,15 @@ function addPolicy(index){
                                 <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addPolicy_${nextIndex}" onclick="addPolicy(1)" disabled>+</a>
                             </div>                                    
                         </div>                                
-                    </div>
+                    </div>`
+    );
+
+    $('#addPolicy_' + prevIndex).attr("style", "display:none");
+    $('#removePolicy_' + prevIndex).attr("style", "display:none");
+
+    if (nextIndex == 5){
+        $("#addPolicy_" + index).attr('style', 'display:none');
+    }   
 }
         
      
