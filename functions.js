@@ -333,7 +333,7 @@ function addPolicy(index){
                                 <input type="text" class="form-control" id="dstAddress_${index}" name="dstAddress" placeholder="IP de destino" required>                             
                             </div>
                             <div class="col-3 ps-0">
-                                <select class="form-control" id="srcAddressMask_${index}" name="srcAddressMask" required>
+                                <select class="form-control" id="dstAddressMask_${index}" name="dstAddressMask" required>
                                     <option value="none" selected disabled>0</option>
                                 </select>
                             </div>
