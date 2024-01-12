@@ -420,7 +420,7 @@
                                         <label class="p-2" for="policyDirection" id="policyDirectionLabel">Direcci&oacute;n</label>
                                     </div>
                                     <div class="col-8">
-                                        <select class="form-control" id="policyDirection" name="policyDirection">
+                                        <select class="form-control" id="policyDirection" name="policyDirection" required>
                                             <option value="src-intf">Desde VPN</option>
                                             <option value="dst-intf">Hacia VPN</option>
                                         </select>
@@ -433,10 +433,10 @@
                                         <label class="p-2" for="srcAddress" name="srcAddressLabel" id="srcAddressLabel">Origen</label>
                                     </div>
                                     <div class="col-5 pe-0">
-                                        <input type="text" class="form-control" id="srcAddress" name="srcAddress" placeholder="IP de origen">
+                                        <input type="text" class="form-control" id="srcAddress" name="srcAddress" placeholder="IP de origen" required>
                                     </div>
                                     <div class="col-3 ps-0">
-                                        <select class="form-control" id="srcAddressMask" name="srcAddressMask">
+                                        <select class="form-control" id="srcAddressMask" name="srcAddressMask" required>
                                             <option value="none" selected disabled>0</option>
                                         </select>
                                     </div>
@@ -448,10 +448,10 @@
                                         <label class="p-2" for="dstAddress" name="dstAddressLabel" id="dstAddressLabel">Destino</label>
                                     </div>
                                     <div class="col-5 pe-0">
-                                        <input type="text" class="form-control" id="dstAddress" name="dstAddress" placeholder="IP de destino">                             
+                                        <input type="text" class="form-control" id="dstAddress" name="dstAddress" placeholder="IP de destino" required>                             
                                     </div>
                                     <div class="col-3 ps-0">
-                                        <select class="form-control" id="srcAddressMask" name="srcAddressMask">
+                                        <select class="form-control" id="srcAddressMask" name="srcAddressMask" required>
                                             <option value="none" selected disabled>0</option>
                                         </select>
                                     </div>
