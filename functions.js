@@ -34,6 +34,10 @@ function Siguiente (){
             nextPanel("phase2Proposal", "policies");
             cargarDatos("phase2Proposal");
             $("#siguiente").text("Finalizar");  // al pasar al ultimo div "siguiente" se convierte en "finalizar"
+            break;
+        }
+        case "policies": {
+            
         }
         }
     }
@@ -281,24 +285,69 @@ function removeSubnets(index){
     verificarCamposCompletos("phase2Proposal", $("#siguiente"), "remoteMask_" + (index - 1));
 }
 
-function policyDirection(index){
-    var label = $("#srcOrDst_" + index);
-    var select = $("#policyInterface_" + index);
-    var direction = $("#policyDirection_" + index).val();
+function addPolicy(index){
+    var childId = "policy_" + index; 
+	var nextIndex = index + 1;
+	var prevIndex = index - 1;
 
-    if(direction != "none"){
-        console.log(direction);
-        if(direction == "src-intf") {
-            label.text("Interface Destino");
-        } else {
-            label.text("Interface Origen");
-        }
-        select.removeAttr("style");
-        populateInterfaces(select);
-    }else {
-        label.text("");
-        select.attr("style", "display:none");
-    }
+    Query('<div>', {
+        class: 'row mt-2',
+		id: childId
+    }).appendTo('#policies');
+
+    $('#' + childId).append(`
+                    <div class="col-3">
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="p-2" for="policyDirection" id="policyDirectionLabel">Direcci&oacute;n</label>
+                            </div>
+                            <div class="col-8">
+                                <select class="form-control" id="policyDirection_${index}" name="policyDirection" required>
+                                    <option value="src-intf">Desde VPN</option>
+                                    <option value="dst-intf">Hacia VPN</option>
+                                </select>
+                            </div>    
+                        </div>                                
+                    </div>                            
+                    <div class="col-4">
+                        <div class="row">                                    
+                            <div class="col-4">
+                                <label class="p-2" for="srcAddress" name="srcAddressLabel" id="srcAddressLabel_${index}">Origen</label>
+                            </div>
+                            <div class="col-5 pe-0">
+                                <input type="text" class="form-control" id="srcAddress_${index}" name="srcAddress" placeholder="IP de origen" required>
+                            </div>
+                            <div class="col-3 ps-0">
+                                <select class="form-control" id="srcAddressMask_${index}" name="srcAddressMask" required>
+                                    <option value="none" selected disabled>0</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">                                
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="p-2" for="dstAddress" name="dstAddressLabel" id="dstAddressLabel_${index}">Destino</label>
+                            </div>
+                            <div class="col-5 pe-0">
+                                <input type="text" class="form-control" id="dstAddress_${index}" name="dstAddress" placeholder="IP de destino" required>                             
+                            </div>
+                            <div class="col-3 ps-0">
+                                <select class="form-control" id="srcAddressMask_${index}" name="srcAddressMask" required>
+                                    <option value="none" selected disabled>0</option>
+                                </select>
+                            </div>
+                        </div>                                
+                    </div>
+                    <div class="col-1">
+                        <div class="row">
+                            <div class="col-6" id="removePolicyButton_${index}">
+                                <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addPolicy_${nextIndex}" onclick="addPolicy()" disabled>+</a>
+                            <div class="col-6" id="addPolicyButton_${index}">
+                                <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addPolicy_${nextIndex}" onclick="addPolicy(1)" disabled>+</a>
+                            </div>                                    
+                        </div>                                
+                    </div>
 }
         
      
