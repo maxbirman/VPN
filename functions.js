@@ -293,7 +293,7 @@ function addPolicy(index){
     jQuery('<div>', {
         class: 'row mb-1 mt-3',
 		id: childId
-    }).appendTo('#policies');
+    }).appendTo('#policiesList');
 
     $('#' + childId).append(`
                     <div class="col-3">
