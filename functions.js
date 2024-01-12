@@ -354,6 +354,7 @@ function addPolicy(index){
     $('#addPolicy_' + prevIndex).attr("style", "display:none");
     $('#removePolicy_' + prevIndex).attr("style", "display:none");
 
+    console.log("Next Index = " + nextIndex);
     if (nextIndex == 5){
         $("#addPolicy_" + index).attr('style', 'display:none');
     }   
