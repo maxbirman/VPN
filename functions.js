@@ -291,7 +291,7 @@ function addPolicy(index){
 	var prevIndex = index - 1;
 
     jQuery('<div>', {
-        class: 'row mt-2',
+        class: 'row mb-1 mt-3',
 		id: childId
     }).appendTo('#policies');
 
