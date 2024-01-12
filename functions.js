@@ -342,10 +342,10 @@ function addPolicy(index){
                     <div class="col-1">
                         <div class="row">
                             <div class="col-6" id="removePolicyButton_${index}">
-                                <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addPolicy_${nextIndex}" onclick="addPolicy()" disabled>-</a>
+                                <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addPolicy_${index}" onclick="addPolicy(${nextIndex})" disabled>-</a>
                             </div>
                             <div class="col-6" id="addPolicyButton_${index}">
-                                <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addPolicy_${nextIndex}" onclick="addPolicy(1)">+</a>
+                                <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addPolicy_${index}" onclick="addPolicy(${nextIndex})">+</a>
                             </div>                                    
                         </div>                                
                     </div>`
