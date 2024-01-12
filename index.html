@@ -408,38 +408,63 @@
                         </div>	
                     </div>	
                 </div>
-                <div class="row border rounded p-3 mt-2 formDiv" id="policies" style="display:none;">
+                <div class="row border rounded p-3 mt-2 formDiv" id="policies" style="display: none;">
                     <div class="bg-black text-white">
                         <h3>Policies</h3>		
                     </div>
                     <div class="mb-1" id="policies">	
-                        <div class="row mt-3" id="policies_0">	
-                            <div class="col-1 me-2">
-                                <label class="pt-2">Policy 1</label>
-                            </div>								
-                            <div class="col-3 ms-5 pe-0">
-                                <select class="form-control" id="policyDirection_0" aria-describedby="nameHelp"required>
-                                    <option value="none" disabled selected="selected">--Elija el sentido de la Policy--</option>
-                                    <option value="src-intf">Desde VPN</option>
-                                    <option value="dst-intf">Hacia VPN</option>
-                                </select>
-                            </div>    								
-                            <div class="col-1 ms-5 pe-0">
-                                <label class="pt-2" id="srcOrDst_0"></label>
-                            </div>
-                            <div class="col-3 ms-5 ps-0">
-                                <select class="form-control" name="policyInterface" id="policyInterface_0" style="display:none;" required>
-                                    <option value="none" selected= "selected" disabled>--Elija una interface--</option>
-                                </select>
-                            </div>
+                        <div class="row mb-1 mt-3">
                             <div class="col-3">
                                 <div class="row">
+                                    <div class="col-4">
+                                        <label class="p-2" for="policyDirection" id="policyDirectionLabel">Direcci&oacute;n</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <select class="form-control" id="policyDirection" name="policyDirection">
+                                            <option value="src-intf">Desde VPN</option>
+                                            <option value="dst-intf">Hacia VPN</option>
+                                        </select>
+                                    </div>    
+                                </div>                                
+                            </div>                            
+                            <div class="col-4">
+                                <div class="row">                                    
+                                    <div class="col-4">
+                                        <label class="p-2" for="srcAddress" name="srcAddressLabel" id="srcAddressLabel">Origen</label>
+                                    </div>
+                                    <div class="col-5 pe-0">
+                                        <input type="text" class="form-control" id="srcAddress" name="srcAddress" placeholder="IP de origen">
+                                    </div>
+                                    <div class="col-3 ps-0">
+                                        <select class="form-control" id="srcAddressMask" name="srcAddressMask">
+                                            <option value="none" selected disabled>0</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">                                
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label class="p-2" for="dstAddress" name="dstAddressLabel" id="dstAddressLabel">Destino</label>
+                                    </div>
+                                    <div class="col-5 pe-0">
+                                        <input type="text" class="form-control" id="dstAddress" name="dstAddress" placeholder="IP de destino">                             
+                                    </div>
+                                    <div class="col-3 ps-0">
+                                        <select class="form-control" id="srcAddressMask" name="srcAddressMask">
+                                            <option value="none" selected disabled>0</option>
+                                        </select>
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="col-1">
+                                <div class="row">
                                     <div class="col-6" id="addPolicyButton_0">
-                                        <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addPolicy_0" style="display: none;" onclick="addSubnets(1)" disabled>+</a>
+                                        <button type="button" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addPolicy_0" onclick="addPolicy(1)" disabled>+</a>
                                     </div>                                    
                                 </div>                                
-                            </div>	
-                        </div>
+                            </div>
+                        </div>    
                     </div>
                 </div>
                 <div class="row mt-3" id="buttons">					
